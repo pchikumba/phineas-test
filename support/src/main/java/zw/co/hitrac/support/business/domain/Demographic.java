@@ -17,7 +17,7 @@ import javax.persistence.Id;
  * @author pchikumba
  */
 @Entity
-public class DemographicData implements Serializable {
+public class Demographic implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +25,7 @@ public class DemographicData implements Serializable {
     private String name;
     private String surname;
     private Date dob;
-    private Enum sex;
+    private EnumSex sex;
     private Enum maritalstatus;
     private Enum educationalqualification;
     private Enum religion;
@@ -62,7 +62,7 @@ public class DemographicData implements Serializable {
         return sex;
     }
 
-    public void setSex(Enum sex) {
+    public void setSex(EnumSex sex) {
         this.sex = sex;
     }
 
@@ -140,10 +140,10 @@ public class DemographicData implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof DemographicData)) {
+        if (!(object instanceof Demographic)) {
             return false;
         }
-        DemographicData other = (DemographicData) object;
+        Demographic other = (Demographic) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
