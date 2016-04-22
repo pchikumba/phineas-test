@@ -9,6 +9,7 @@ package zw.co.hitrac.support.business.domain;
  *
  * @author pchikumba
  */
-public enum EnumMaritalStatus {
-    Single,Married,Divorced,Widowed,Separated;
+public enum Accomodation {
+    Rented,Owned,ProvidedbyEmployerOrRelative;
+    
 }

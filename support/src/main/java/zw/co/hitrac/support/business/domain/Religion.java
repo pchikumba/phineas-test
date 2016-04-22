@@ -9,7 +9,8 @@ package zw.co.hitrac.support.business.domain;
  *
  * @author pchikumba
  */
-public enum EnumAccomodation {
-    Rented,Owned,ProvidedbyEmployerOrRelative;
+public enum Religion {
+    Christian,Muslim,Others;
+  
     
 }

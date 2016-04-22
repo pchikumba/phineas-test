@@ -9,8 +9,6 @@ package zw.co.hitrac.support.business.domain;
  *
  * @author pchikumba
  */
-public enum EnumReligion {
-    Christian,Muslim,Others;
-  
-    
+public enum MaritalStatus {
+    Single,Married,Divorced,Widowed,Separated;
 }

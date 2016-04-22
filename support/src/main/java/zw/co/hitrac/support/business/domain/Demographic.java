@@ -25,12 +25,12 @@ public class Demographic implements Serializable {
     private String name;
     private String surname;
     private Date dob;
-    private EnumSex sex;
-    private EnumMaritalStatus maritalstatus;
-    private EnumQualifications educationalqualification;
-    private EnumReligion religion;
+    private Sex sex;
+    private MaritalStatus maritalstatus;
+    private Qualifications educationalqualification;
+    private Religion religion;
     private String residentialaddress;
-    private EnumAccomodation accomodationtype;
+    private Accomodation accomodationtype;
     private double monthlyincome;
     private String occupation;
 
@@ -62,7 +62,7 @@ public class Demographic implements Serializable {
         return sex;
     }
 
-    public void setSex(EnumSex sex) {
+    public void setSex(Sex sex) {
         this.sex = sex;
     }
 
@@ -70,7 +70,7 @@ public class Demographic implements Serializable {
         return maritalstatus;
     }
 
-    public void setMaritalstatus(EnumMaritalStatus maritalstatus) {
+    public void setMaritalstatus(MaritalStatus maritalstatus) {
         this.maritalstatus = maritalstatus;
     }
 
@@ -78,7 +78,7 @@ public class Demographic implements Serializable {
         return educationalqualification;
     }
 
-    public void setEducationalqualification(EnumQualifications educationalqualification) {
+    public void setEducationalqualification(Qualifications educationalqualification) {
         this.educationalqualification = educationalqualification;
     }
 
@@ -86,7 +86,7 @@ public class Demographic implements Serializable {
         return religion;
     }
 
-    public void setReligion(EnumReligion religion) {
+    public void setReligion(Religion religion) {
         this.religion = religion;
     }
 
@@ -102,7 +102,7 @@ public class Demographic implements Serializable {
         return accomodationtype;
     }
 
-    public void setAccomodationtype(EnumAccomodation accomodationtype) {
+    public void setAccomodationtype(Accomodation accomodationtype) {
         this.accomodationtype = accomodationtype;
     }
 

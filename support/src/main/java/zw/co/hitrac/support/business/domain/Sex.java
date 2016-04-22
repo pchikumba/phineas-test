@@ -9,7 +9,7 @@ package zw.co.hitrac.support.business.domain;
  *
  * @author pchikumba
  */
-public enum EnumQualifications {
-    Primary,Secondary,Tertiary;
+public enum Sex {
+    male,female;
     
 }
