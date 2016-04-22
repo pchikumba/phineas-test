@@ -26,12 +26,12 @@ public class Demographic implements Serializable {
     private String surname;
     private Date dob;
     private EnumSex sex;
-    private Enum maritalstatus;
-    private Enum educationalqualification;
-    private Enum religion;
+    private EnumMaritalStatus maritalstatus;
+    private EnumQualifications educationalqualification;
+    private EnumReligion religion;
     private String residentialaddress;
-    private Enum accomodationtype;
-    private Enum monthlyincome;
+    private EnumAccomodation accomodationtype;
+    private double monthlyincome;
     private String occupation;
 
     public String getName() {
@@ -70,7 +70,7 @@ public class Demographic implements Serializable {
         return maritalstatus;
     }
 
-    public void setMaritalstatus(Enum maritalstatus) {
+    public void setMaritalstatus(EnumMaritalStatus maritalstatus) {
         this.maritalstatus = maritalstatus;
     }
 
@@ -78,7 +78,7 @@ public class Demographic implements Serializable {
         return educationalqualification;
     }
 
-    public void setEducationalqualification(Enum educationalqualification) {
+    public void setEducationalqualification(EnumQualifications educationalqualification) {
         this.educationalqualification = educationalqualification;
     }
 
@@ -86,7 +86,7 @@ public class Demographic implements Serializable {
         return religion;
     }
 
-    public void setReligion(Enum religion) {
+    public void setReligion(EnumReligion religion) {
         this.religion = religion;
     }
 
@@ -102,15 +102,15 @@ public class Demographic implements Serializable {
         return accomodationtype;
     }
 
-    public void setAccomodationtype(Enum accomodationtype) {
+    public void setAccomodationtype(EnumAccomodation accomodationtype) {
         this.accomodationtype = accomodationtype;
     }
 
-    public Enum getMonthlyincome() {
+    public double getMonthlyincome() {
         return monthlyincome;
     }
 
-    public void setMonthlyincome(Enum monthlyincome) {
+    public void setMonthlyincome(Double monthlyincome) {
         this.monthlyincome = monthlyincome;
     }
 
