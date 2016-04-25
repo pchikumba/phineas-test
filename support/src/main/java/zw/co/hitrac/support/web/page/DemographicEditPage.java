@@ -5,18 +5,19 @@
  */
 package zw.co.hitrac.support.web.page;
 
-import java.util.Date;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
-import org.apache.wicket.markup.html.form.validation.IFormValidator;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demographic;
+import zw.co.hitrac.support.business.domain.Sex;
 import zw.co.hitrac.support.business.service.DemographicService;
+import zw.co.hitrac.support.web.model.DemographicListModel;
 import zw.co.hitrac.support.web.model.DemographicModel;
 
 /**
@@ -38,6 +39,10 @@ public class DemographicEditPage extends WebPage{
         add(new FeedbackPanel("feedback"));
         Form<Demographic> form = new Form<Demographic>("form", new CompoundPropertyModel<Demographic>(demographicModel));
 
+        
+         DropDownChoice<Sex> sexDropDownChoice = new CustomDropDownChoice<>("sex",
+                DemographicListModel, true);
+        
         form.add(new RequiredTextField("name"));
         form.add(new RequiredTextField("surname"));
         form.add(new RequiredTextField("dob"));
