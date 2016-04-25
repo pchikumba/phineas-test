@@ -8,11 +8,11 @@ import org.apache.wicket.util.string.StringValue;
  * @author Tonderai Ndangana
  * 21/04/2016
  */
-public class SupportPageParametersUtil1 {
+public class SupportPageParametersUtil {
 
     public final static String ID = "id";
 
-    private SupportPageParametersUtil1() {
+    private SupportPageParametersUtil() {
     }
 
     public static Long extractId(PageParameters parameters, String IdName) {

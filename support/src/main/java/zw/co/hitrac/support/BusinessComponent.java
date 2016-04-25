@@ -8,7 +8,7 @@ import java.util.List;
  * @author hitrac
  * @param <T>
  */
-public interface BusinessComponent1<T> extends Serializable {
+public interface BusinessComponent<T> extends Serializable {
 
     public T save(T t);
 
