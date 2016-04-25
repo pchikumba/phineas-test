@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @author hitrac
  */
 @Configuration
-@EnableJpaRepositories(basePackages = {"zw.co.hitrac.support.business.repo"})
+@EnableJpaRepositories(basePackages = {"zw.co.hitrac.support.business.repository"})
 @EnableTransactionManagement
 @ComponentScan(basePackages = {"zw.co.hitrac.support.business.service.impl"})
 @PropertySource("classpath:zw/co/hitrac/support/business/config/jdbc.properties")
