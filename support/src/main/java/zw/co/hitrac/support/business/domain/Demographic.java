@@ -25,7 +25,7 @@ public class Demographic implements Serializable {
     private String name;
     private String surname;
     private Date dob;
-    private Sex sex;
+    private Gender sex;
     private MaritalStatus maritalstatus;
     private Qualifications educationalqualification;
     private Religion religion;
@@ -62,7 +62,7 @@ public class Demographic implements Serializable {
         return sex;
     }
 
-    public void setSex(Sex sex) {
+    public void setSex(Gender sex) {
         this.sex = sex;
     }
 

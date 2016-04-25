@@ -10,6 +10,19 @@ package zw.co.hitrac.support.business.domain;
  * @author pchikumba
  */
 public enum Accomodation {
-    Rented,Owned,ProvidedbyEmployerOrRelative;
+    RENTED("Rented"),
+    OWNED("Owned"),
+    PE("Provided by Employer"),
+ PR("Provided by Relative");
+//changed 25/04/2016
+ private Accomodation(String accomodationName) {
+        this.accomodationName = accomodationName;
+    }
+
+@Override
+    public String toString() {
+        return accomodationName;
+    }
+    private final String accomodationName;
     
 }

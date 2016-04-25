@@ -10,7 +10,19 @@ package zw.co.hitrac.support.business.domain;
  * @author pchikumba
  */
 public enum Religion {
-    Christian,Muslim,Others;
+    CHRISTIAN("Christian"),
+    MUSLIM("Muslim"),
+    OTHERS("Others");
   
+    
+     private Religion(String religionName) {
+        this.religionName = religionName;
+    }
+
+@Override
+    public String toString() {
+        return religionName;
+    }
+    private final String religionName;
     
 }

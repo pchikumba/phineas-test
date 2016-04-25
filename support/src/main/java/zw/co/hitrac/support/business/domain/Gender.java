@@ -9,20 +9,19 @@ package zw.co.hitrac.support.business.domain;
  *
  * @author pchikumba
  */
-public enum Qualifications {
-    PRIMARY("Primary"),
-    SECONDARY("Secondary"),
-    TERTIARY("Tertiary");
+public enum Gender {
+    MALE("male"),
+    FEMALE("female");
     
-    private Qualifications(String qualificationsName) {
-        this.qualificationsName = qualificationsName;
+    private Gender(String genderName) {
+        this.genderName = genderName;
     }
 
 @Override
     public String toString() {
-        return qualificationsName;
+        return genderName;
     }
-    private final String qualificationsName;
+    private final String genderName;
     
     
     

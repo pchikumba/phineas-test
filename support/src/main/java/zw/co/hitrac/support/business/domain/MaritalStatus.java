@@ -10,5 +10,21 @@ package zw.co.hitrac.support.business.domain;
  * @author pchikumba
  */
 public enum MaritalStatus {
-    Single,Married,Divorced,Widowed,Separated;
+    SINGLE("Single"),
+    MARRIED("Married"),
+    DIVORCED("Divorced"),
+    WIDOWED("Widowed"),
+    SEPARATED("Separated");
+    
+     private MaritalStatus(String maritalstatusName) {
+        this.maritalstatusName = maritalstatusName;
+    }
+
+@Override
+    public String toString() {
+        return maritalstatusName;
+    }
+    private final String maritalstatusName;
+    
+    
 }
