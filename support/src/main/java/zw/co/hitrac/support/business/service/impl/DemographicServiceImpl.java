@@ -19,18 +19,20 @@ import zw.co.hitrac.support.business.service.DemographicService;
 @Service
 public class DemographicServiceImpl implements DemographicService{
     
+    
+    
     @Autowired
-private DemographicRepo repo;
-    public Demographic save(Demographic t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+private DemographicRepo demographicRepo;
+    public Demographic save(Demographic demographic) {
+        return demographicRepo.save(demographic);
     }
 
     public List<Demographic> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return demographicRepo.findAll();
     }
 
     public Demographic find(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return demographicRepo.findOne(id);
     }
     
 }
