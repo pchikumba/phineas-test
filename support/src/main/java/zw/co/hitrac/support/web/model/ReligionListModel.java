@@ -9,17 +9,17 @@ import zw.co.hitrac.support.web.model.*;
 import java.util.Arrays;
 import java.util.List;
 import org.apache.wicket.model.LoadableDetachableModel;
-import zw.co.hitrac.support.business.domain.Gender;
+import zw.co.hitrac.support.business.domain.Religion;
 
 /**
  *
  * @author pchikumba
  */
-public class GenderListModel extends LoadableDetachableModel<List<Gender>>{
+public class ReligionListModel extends LoadableDetachableModel<List<Religion>>{
 
     @Override
-    protected List<Gender> load() {
-        return Arrays.asList(Gender.values());
+    protected List<Religion> load() {
+        return Arrays.asList(Religion.values());
     }
 
     

@@ -52,7 +52,7 @@ ChoiceRenderer<Gender> choiceRenderer = new ChoiceRenderer<Gender>("sex");
         form.add(new RequiredTextField("name"));
         form.add(new RequiredTextField("surname"));
         form.add(new RequiredTextField("dob"));
-        form.add(new RequiredTextField("sex"));
+        //form.add(new RequiredTextField("sex"));
         form.add(new DropDownChoice<Gender>("sex", genderListModel, choiceRenderer));
         form.add(new RequiredTextField("maritalstatus"));
         form.add(new RequiredTextField("educationalqualification"));

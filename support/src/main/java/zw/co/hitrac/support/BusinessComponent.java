@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  *
- * @author hitrac
+ * @author tndangana
  * @param <T>
  */
 public interface BusinessComponent<T> extends Serializable {
