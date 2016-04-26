@@ -23,6 +23,7 @@ public class DemographicServiceImpl implements DemographicService{
     
     @Autowired
 private DemographicRepo demographicRepo;
+    
     public Demographic save(Demographic demographic) {
         return demographicRepo.save(demographic);
     }
@@ -32,7 +33,9 @@ private DemographicRepo demographicRepo;
     }
 
     public Demographic find(Long id) {
-        return demographicRepo.findOne(id);
+        Demographic demographic = demographicRepo.findOne(id);
+        
+        return demographic;
     }
     
 }
