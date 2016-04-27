@@ -26,7 +26,7 @@ public class Demographic implements Serializable {
     private String surname;
     private Date dob;
     private Gender gender;
-    private MaritalStatus maritalstatus;
+//    private MaritalStatus maritalstatus;
     private Qualifications educationalqualification;
     private Religion religion;
     private String residentialaddress;
@@ -66,13 +66,7 @@ public class Demographic implements Serializable {
         this.gender = gender;
     }
 
-    public Enum getMaritalstatus() {
-        return maritalstatus;
-    }
-
-    public void setMaritalstatus(MaritalStatus maritalstatus) {
-        this.maritalstatus = maritalstatus;
-    }
+ 
 
     public Enum getEducationalqualification() {
         return educationalqualification;

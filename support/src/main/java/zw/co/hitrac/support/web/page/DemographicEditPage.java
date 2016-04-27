@@ -18,8 +18,8 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demographic;
 import zw.co.hitrac.support.business.domain.Gender;
 import zw.co.hitrac.support.business.service.DemographicService;
-import zw.co.hitrac.support.web.model.DemographicListModel;
 import zw.co.hitrac.support.web.model.DemographicModel;
+import zw.co.hitrac.support.web.model.MaritalStatusModel;
 import zw.co.hitrac.support.web.model.GenderListModel;
 
 /**
@@ -45,7 +45,7 @@ public class DemographicEditPage extends WebPage{
    Form<Demographic> form = new Form<Demographic>("form", new CompoundPropertyModel<Demographic>(demographicModel));
    
     GenderListModel genderListModel = new GenderListModel();
-ChoiceRenderer<Gender> choiceRenderer = new ChoiceRenderer<Gender>("sex");
+ChoiceRenderer<Gender> choiceRenderer = new ChoiceRenderer<Gender>("gender");
         
         
         
@@ -54,7 +54,7 @@ ChoiceRenderer<Gender> choiceRenderer = new ChoiceRenderer<Gender>("sex");
         form.add(new RequiredTextField("dob"));
         form.add(new RequiredTextField("gender"));
 //        form.add(new DropDownChoice<Gender>("gender", genderListModel, choiceRenderer));
-        form.add(new RequiredTextField("maritalstatus"));
+//        form.add(new RequiredTextField("maritalstatus"));
         form.add(new RequiredTextField("educationalqualification"));
         form.add(new RequiredTextField("religion"));
         form.add(new RequiredTextField("residentialaddress"));
