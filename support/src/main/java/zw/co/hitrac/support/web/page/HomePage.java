@@ -20,5 +20,6 @@ public class HomePage extends WebPage{
         super(parameters);
         add(new BookmarkablePageLink("demographic",DemographicListPage.class));
           add(new BookmarkablePageLink("maritalstatus",MaritalStatusListPage.class));
+          add(new BookmarkablePageLink("religion", ReligionListPage.class));
     }
 }

@@ -28,7 +28,7 @@ public class Demographic implements Serializable {
     private Gender gender;
 //    private MaritalStatus maritalstatus;
     private Qualifications educationalqualification;
-    private Religion religion;
+    private String religion;
     private String residentialaddress;
     private Accomodation accomodationtype;
     private double monthlyincome;
@@ -76,11 +76,11 @@ public class Demographic implements Serializable {
         this.educationalqualification = educationalqualification;
     }
 
-    public Enum getReligion() {
+    public String getReligion() {
         return religion;
     }
 
-    public void setReligion(Religion religion) {
+    public void setReligion(String religion) {
         this.religion = religion;
     }
 
