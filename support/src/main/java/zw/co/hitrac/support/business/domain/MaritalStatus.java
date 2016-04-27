@@ -19,6 +19,10 @@ public enum MaritalStatus {
      private MaritalStatus(String maritalstatusName) {
         this.maritalstatusName = maritalstatusName;
     }
+     
+     public String getMaritalStatus() {
+        return maritalstatusName;
+    }
 
 @Override
     public String toString() {

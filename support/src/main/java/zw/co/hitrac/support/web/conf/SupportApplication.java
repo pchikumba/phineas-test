@@ -10,8 +10,9 @@ import zw.co.hitrac.support.web.page.HomePage;
 /**
  *
  * @author hitrac
+ * 
  */
-public class support extends WebApplication {
+public class SupportApplication extends WebApplication {
 
    @Override
     public Class<? extends Page> getHomePage() {

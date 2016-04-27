@@ -21,7 +21,7 @@ public class DemographicServiceImpl implements DemographicService{
     
     
     
-    @Autowired
+ @Autowired
 private DemographicRepo demographicRepo;
     
     public Demographic save(Demographic demographic) {

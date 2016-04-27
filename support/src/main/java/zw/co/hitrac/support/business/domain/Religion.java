@@ -18,7 +18,11 @@ public enum Religion {
      private Religion(String religionName) {
         this.religionName = religionName;
     }
-
+  public String getReligionName() {
+        return religionName;
+    }
+     
+     
 @Override
     public String toString() {
         return religionName;

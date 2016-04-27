@@ -8,7 +8,7 @@ package zw.co.hitrac.support.business.domain;
 /**
  *
  * @author pchikumba
- */
+ *///tndangana changed 26/04/2016
 public enum Gender {
     MALE("male"),
     FEMALE("female");
@@ -16,7 +16,13 @@ public enum Gender {
     private Gender(String genderName) {
         this.genderName = genderName;
     }
-
+ public String getGenderName() {
+        return genderName;
+    }
+ 
+    
+    
+    
 @Override
     public String toString() {
         return genderName;

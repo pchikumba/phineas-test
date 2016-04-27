@@ -16,9 +16,9 @@ import zw.co.hitrac.support.business.config.PersistenceConfig;
  * @pchikumba
  */
 @WebFilter(value = "/*", initParams = {
-   @WebInitParam(name = "applicationClassName", value = "zw.co.hitrac.support.web.conf.support"),
+   @WebInitParam(name = "applicationClassName", value = "zw.co.hitrac.support.web.conf.SupportApplication"),
    @WebInitParam(name = "filterMappingUrlPattern", value = "/*")})
-public class supportWebInitializer extends WicketFilter implements WebApplicationInitializer {
+public class SupportWebInitializer extends WicketFilter implements WebApplicationInitializer {
 
    public void onStartup(ServletContext servletContext) throws ServletException {
        AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();

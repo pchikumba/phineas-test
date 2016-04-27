@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package zw.co.hitrac.support.business.domain;
 
 import java.io.Serializable;
@@ -18,7 +14,7 @@ import javax.persistence.Id;
  * 26/04/2016
  */
 @Entity
-public class staffMembers implements Serializable {
+public class EmploymentDetails implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,6 +23,10 @@ public class staffMembers implements Serializable {
     private String lastname;
     private Gender gender;
     private Date dob;
+    private MaritalStatus ms;
+    private String national_id;
+    private String address;
+    private String email;
     private int phonenumber;
 
     public String getFirstname() {
@@ -68,6 +68,38 @@ public class staffMembers implements Serializable {
     public void setPhonenumber(int phonenumber) {
         this.phonenumber = phonenumber;
     }
+
+    public MaritalStatus getMs() {
+        return ms;
+    }
+
+    public void setMs(MaritalStatus ms) {
+        this.ms = ms;
+    }
+
+    public String getNational_id() {
+        return national_id;
+    }
+
+    public void setNational_id(String national_id) {
+        this.national_id = national_id;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
     
 
     public Long getId() {
@@ -88,10 +120,10 @@ public class staffMembers implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof staffMembers)) {
+        if (!(object instanceof EmploymentDetails)) {
             return false;
         }
-        staffMembers other = (staffMembers) object;
+        EmploymentDetails other = (EmploymentDetails) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

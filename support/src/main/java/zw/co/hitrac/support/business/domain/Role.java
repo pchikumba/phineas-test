@@ -3,7 +3,7 @@ package zw.co.hitrac.support.business.domain;
 
 /**
  *
- * @author tonderai ndanngana
+ * @author tonderai ndangana
  *  created 26/04/2016
  */
 public enum Role {
