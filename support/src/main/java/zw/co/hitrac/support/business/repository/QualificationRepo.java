@@ -7,12 +7,13 @@ package zw.co.hitrac.support.business.repository;
 
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import zw.co.hitrac.support.business.domain.EmploymentDetail;
+import zw.co.hitrac.support.business.domain.Qualification;
 
 /**
  *
- * @author hitrac
+ * @author tonderai ndangana
+ * created 28/04/2016
  */
-public interface EmploymentDetailsRepo extends JpaRepository<EmploymentDetail, Serializable>{
+public interface QualificationRepo extends JpaRepository<Qualification, Serializable> {
     
 }

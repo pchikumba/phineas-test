@@ -35,6 +35,12 @@ public class ReligionServiceImpl implements ReligionService{
     public Religion find(Long id) {
         return religionRepo.findOne(id);
     }
+
+    public void delete(Religion religion) {
+        
+        religionRepo.delete(religion);
+       
+    }
    
     
 }

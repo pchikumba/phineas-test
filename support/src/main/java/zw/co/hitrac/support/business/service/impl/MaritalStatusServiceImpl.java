@@ -37,6 +37,11 @@ public class MaritalStatusServiceImpl implements MaritalStatusService {
         return maritalStatusRepo.findOne(id);
     }
 
+    public void delete(MaritalStatus maritalstatus) {
+         maritalStatusRepo.delete(maritalstatus);
+    }
+
+   
   
     
 }

@@ -28,7 +28,7 @@ public class DemographicListPage extends WebPage {
                 item.add(new Label("name"));
                 item.add(new Label("surname"));
                 item.add(new Label("dob"));
-                item.add(new Label("gender"));
+//                item.add(new Label("gender"));
 //                item.add(new Label("maritalstatus"));
                 item.add(new Label("educationalqualification"));
                 item.add(new Label("religion"));

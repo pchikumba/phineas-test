@@ -37,5 +37,11 @@ private DemographicRepo demographicRepo;
         
         return demographic;
     }
+
+    public void delete(Demographic demographic) {
+        
+        demographicRepo.delete(demographic);
+      
+    }
     
 }
