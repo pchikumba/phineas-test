@@ -4,7 +4,7 @@ package zw.co.hitrac.support.business.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import zw.co.hitrac.support.business.domain.Qualification;
+import zw.co.hitrac.support.business.domain.Demo.Qualification;
 import zw.co.hitrac.support.business.repository.QualificationRepo;
 import zw.co.hitrac.support.business.service.QualificationService;
 

@@ -8,7 +8,7 @@ package zw.co.hitrac.support.business.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import zw.co.hitrac.support.business.domain.Religion;
+import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.business.repository.ReligionRepo;
 import zw.co.hitrac.support.business.service.ReligionService;
 

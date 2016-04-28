@@ -44,7 +44,9 @@ public class PersistenceConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource());
-        factoryBean.setPackagesToScan(new String[]{"zw.co.hitrac.support.business.domain"});
+        factoryBean.setPackagesToScan(new String[]{"zw.co.hitrac.support.business.domain.Demo",
+                                                   "zw.co.hitrac.support.business.domain.HealthInformation"
+                                                    });
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         factoryBean.setJpaVendorAdapter(vendorAdapter);
         Properties jpaProperties = new Properties();

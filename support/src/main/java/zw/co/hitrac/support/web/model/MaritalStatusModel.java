@@ -4,7 +4,7 @@ package zw.co.hitrac.support.web.model;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
-import zw.co.hitrac.support.business.domain.MaritalStatus;
+import zw.co.hitrac.support.business.domain.Demo.MaritalStatus;
 import zw.co.hitrac.support.business.service.MaritalStatusService;
 
 /**

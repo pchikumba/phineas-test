@@ -6,12 +6,12 @@
 package zw.co.hitrac.support.business.service;
 
 import zw.co.hitrac.support.BusinessComponent;
-import zw.co.hitrac.support.business.domain.Demo.Gender;
+import zw.co.hitrac.support.business.domain.Demo.EmploymentDetail;
 
 /**
  *
- * @author pchikumba
+ * @author hitrac
  */
-public interface GenderService extends BusinessComponent<Gender>{
+public interface EmploymentDetailService extends BusinessComponent<EmploymentDetail> {
     
 }

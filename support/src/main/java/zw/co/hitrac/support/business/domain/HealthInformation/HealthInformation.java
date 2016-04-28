@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.co.hitrac.support.business.domain;
+package zw.co.hitrac.support.business.domain.HealthInformation;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,12 +16,11 @@ import javax.persistence.Id;
  * @author hitrac
  */
 @Entity
-public class MaritalStatus implements Serializable {
+public class HealthInformation implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String statustype;
 
     public Long getId() {
         return id;
@@ -30,16 +29,6 @@ public class MaritalStatus implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public String getStatustype() {
-        return statustype;
-    }
-
-    public void setStatustype(String statustype) {
-        this.statustype = statustype;
-    }
-    
-    
 
     @Override
     public int hashCode() {
@@ -51,10 +40,10 @@ public class MaritalStatus implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof MaritalStatus)) {
+        if (!(object instanceof HealthInformation)) {
             return false;
         }
-        MaritalStatus other = (MaritalStatus) object;
+        HealthInformation other = (HealthInformation) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -63,7 +52,7 @@ public class MaritalStatus implements Serializable {
 
     @Override
     public String toString() {
-        return "zw.co.hitrac.support.business.domain.MaritalStatus[ id=" + id + " ]";
+        return "zw.co.hitrac.support.business.domain.HealthInformation[ id=" + id + " ]";
     }
     
 }

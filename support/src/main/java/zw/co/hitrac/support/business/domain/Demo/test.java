@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.co.hitrac.support.business.domain;
+package zw.co.hitrac.support.business.domain.Demo;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -13,24 +13,14 @@ import javax.persistence.Id;
 
 /**
  *
- * @author pchikumba
+ * @author hitrac
  */
 @Entity
-public class Religion implements Serializable {
+public class test implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    public String getReligiontype() {
-        return religiontype;
-    }
-
-    public void setReligiontype(String religiontype) {
-        this.religiontype = religiontype;
-    }
-    
-    private String religiontype;
 
     public Long getId() {
         return id;
@@ -50,10 +40,10 @@ public class Religion implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Religion)) {
+        if (!(object instanceof test)) {
             return false;
         }
-        Religion other = (Religion) object;
+        test other = (test) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -62,7 +52,7 @@ public class Religion implements Serializable {
 
     @Override
     public String toString() {
-        return "zw.co.hitrac.support.business.domain.Religion[ id=" + id + " ]";
+        return "zw.co.hitrac.support.business.domain.test[ id=" + id + " ]";
     }
     
 }

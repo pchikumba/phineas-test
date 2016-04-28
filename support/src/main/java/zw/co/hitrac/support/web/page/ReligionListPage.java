@@ -12,7 +12,7 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PropertyListView;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import zw.co.hitrac.support.SupportPageParametersUtil;
-import zw.co.hitrac.support.business.domain.Religion;
+import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.web.model.ReligionListModel;
 
 /**

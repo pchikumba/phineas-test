@@ -8,7 +8,7 @@ package zw.co.hitrac.support.business.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import zw.co.hitrac.support.business.domain.MaritalStatus;
+import zw.co.hitrac.support.business.domain.Demo.MaritalStatus;
 import zw.co.hitrac.support.business.repository.MaritalStatusRepo;
 import zw.co.hitrac.support.business.service.MaritalStatusService;
 

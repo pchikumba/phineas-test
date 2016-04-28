@@ -6,7 +6,7 @@
 package zw.co.hitrac.support.business.service;
 
 import zw.co.hitrac.support.BusinessComponent;
-import zw.co.hitrac.support.business.domain.Qualification;
+import zw.co.hitrac.support.business.domain.Demo.Qualification;
 
 /**
  *

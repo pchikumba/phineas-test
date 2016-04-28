@@ -7,7 +7,7 @@ package zw.co.hitrac.support.business.repository;
 
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import zw.co.hitrac.support.business.domain.EmploymentDetail;
+import zw.co.hitrac.support.business.domain.Demo.EmploymentDetail;
 
 /**
  *

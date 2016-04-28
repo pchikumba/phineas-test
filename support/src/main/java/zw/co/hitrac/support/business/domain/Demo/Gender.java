@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.co.hitrac.support.business.domain;
+package zw.co.hitrac.support.business.domain.Demo;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -13,31 +13,33 @@ import javax.persistence.Id;
 
 /**
  *
- * @author tonderai ndangana
- * created 28/04/2016
+ * @author pchikumba
  */
 @Entity
-public class Qualification implements Serializable {
+public class Gender implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String qualificationtype;
+    private String gendertype;
 
     public Long getId() {
         return id;
     }
 
+    public String getGendertype() {
+        return gendertype;
+    }
+
+    public void setGendertype(String gendertype) {
+        this.gendertype = gendertype;
+    }
+
+    
+   
+
     public void setId(Long id) {
         this.id = id;
-    }
-    
-    public String getQualificationType(){
-    return qualificationtype;
-    }
-    
-    public void setQualificationType(String qualificationtype){
-    this.qualificationtype = qualificationtype;
     }
 
     @Override
@@ -50,10 +52,10 @@ public class Qualification implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Qualification)) {
+        if (!(object instanceof Gender)) {
             return false;
         }
-        Qualification other = (Qualification) object;
+        Gender other = (Gender) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -62,7 +64,7 @@ public class Qualification implements Serializable {
 
     @Override
     public String toString() {
-        return "zw.co.hitrac.support.business.domain.Qualifications[ id=" + id + " ]";
+        return "zw.co.hitrac.support.business.domain.Gender[ id=" + id + " ]";
     }
     
 }

@@ -6,12 +6,13 @@
 package zw.co.hitrac.support.business.service;
 
 import zw.co.hitrac.support.BusinessComponent;
-import zw.co.hitrac.support.business.domain.EmploymentDetail;
+import zw.co.hitrac.support.business.domain.HealthInformation.HerbPrescriber;
 
 /**
  *
- * @author hitrac
+ * @author tonderai ndangana
+ * 28/04/2016
  */
-public interface EmploymentDetailsService extends BusinessComponent<EmploymentDetail> {
+public interface HerbPrescriberService extends BusinessComponent<HerbPrescriber> {
     
 }

@@ -8,9 +8,9 @@ package zw.co.hitrac.support.business.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import zw.co.hitrac.support.business.domain.EmploymentDetail;
+import zw.co.hitrac.support.business.domain.Demo.EmploymentDetail;
 import zw.co.hitrac.support.business.repository.EmploymentDetailsRepo;
-import zw.co.hitrac.support.business.service.EmploymentDetailsService;
+import zw.co.hitrac.support.business.service.EmploymentDetailService;
 
 /**
  *
@@ -18,7 +18,7 @@ import zw.co.hitrac.support.business.service.EmploymentDetailsService;
  *created 27/04/2016
  */
 @Service
-public class EmploymentDetailsServiceImpl implements EmploymentDetailsService{
+public class EmploymentDetailsServiceImpl implements EmploymentDetailService{
     
     @Autowired
     private EmploymentDetailsRepo edrepo;

@@ -9,8 +9,8 @@ import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import zw.co.hitrac.support.SupportPageParametersUtil;
-import zw.co.hitrac.support.business.domain.Qualification;
-import zw.co.hitrac.support.business.domain.Religion;
+import zw.co.hitrac.support.business.domain.Demo.Qualification;
+import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.business.service.QualificationService;
 import zw.co.hitrac.support.web.model.QualificationModel;
 

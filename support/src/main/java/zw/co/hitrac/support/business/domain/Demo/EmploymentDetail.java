@@ -1,5 +1,5 @@
 
-package zw.co.hitrac.support.business.domain;
+package zw.co.hitrac.support.business.domain.Demo;
 
 import java.io.Serializable;
 import java.util.Date;

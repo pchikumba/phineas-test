@@ -7,13 +7,13 @@ package zw.co.hitrac.support.business.repository;
 
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import zw.co.hitrac.support.business.domain.Demo.Qualification;
+import zw.co.hitrac.support.business.domain.HealthInformation.HerbPrescriber;
 
 /**
  *
  * @author tonderai ndangana
- * created 28/04/2016
+ * 28/04/2016
  */
-public interface QualificationRepo extends JpaRepository<Qualification, Serializable> {
+public interface HerbPrescriberRepo extends JpaRepository<HerbPrescriber, Serializable> {
     
 }
