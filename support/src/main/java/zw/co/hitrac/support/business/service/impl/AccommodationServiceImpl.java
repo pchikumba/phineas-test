@@ -34,6 +34,10 @@ public class AccommodationServiceImpl implements AccommodationService{
     public Accommodation find(Long id) {
      return accommodationRepo.findOne(id);
     }
+
+    public void delete(Accommodation accommodation) {
+        accommodationRepo.delete(accommodation);
+    }
  
     
     
