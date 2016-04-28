@@ -14,7 +14,7 @@ import javax.persistence.Id;
  * 26/04/2016
  */
 @Entity
-public class EmploymentDetails implements Serializable {
+public class EmploymentDetail implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -120,10 +120,10 @@ public class EmploymentDetails implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof EmploymentDetails)) {
+        if (!(object instanceof EmploymentDetail)) {
             return false;
         }
-        EmploymentDetails other = (EmploymentDetails) object;
+        EmploymentDetail other = (EmploymentDetail) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

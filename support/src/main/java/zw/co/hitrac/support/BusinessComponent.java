@@ -16,6 +16,8 @@ public interface BusinessComponent<T> extends Serializable {
 
     public T find(Long id);
     
+    public void delete(T t);
+    
   
 
 }

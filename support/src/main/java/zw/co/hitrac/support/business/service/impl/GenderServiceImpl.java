@@ -34,6 +34,10 @@ public class GenderServiceImpl implements GenderService{
     public Gender find(Long id) {
         return genderRepo.findOne(id);
     }
+
+    public void delete(Gender gender) {
+       genderRepo.delete(gender);
+    }
     
     
     
