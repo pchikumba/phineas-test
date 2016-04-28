@@ -7,6 +7,7 @@ package zw.co.hitrac.support.business.service.impl;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import zw.co.hitrac.support.business.domain.Religion;
 import zw.co.hitrac.support.business.repository.ReligionRepo;
 import zw.co.hitrac.support.business.service.ReligionService;
@@ -15,14 +16,16 @@ import zw.co.hitrac.support.business.service.ReligionService;
  *
  * @author pchikumba
  */
-public class ReligionServiceImpl implements ReligionService{
-    
-    
-     @Autowired
-private ReligionRepo religionRepo;
 
-  public Religion save(Religion religion) {
-        return religionRepo.save(religion);
+@Service
+public class ReligionServiceImpl implements ReligionService{
+
+   @Autowired
+   
+   private ReligionRepo religionRepo;
+
+    public Religion save(Religion religion) {
+        return religionRepo.save(religion) ;
     }
 
     public List<Religion> findAll() {
@@ -30,10 +33,8 @@ private ReligionRepo religionRepo;
     }
 
     public Religion find(Long id) {
-        Religion religion = religionRepo.findOne(id);
-        
-        return religion;
+        return religionRepo.findOne(id);
     }
-    
+   
     
 }

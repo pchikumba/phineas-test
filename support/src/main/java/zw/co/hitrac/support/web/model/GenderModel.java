@@ -5,7 +5,6 @@
  */
 package zw.co.hitrac.support.web.model;
 
-import java.util.List;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
@@ -16,24 +15,27 @@ import zw.co.hitrac.support.business.service.GenderService;
  *
  * @author pchikumba
  */
-public class GenderListModel extends LoadableDetachableModel<List<Gender>> {
+public class GenderModel extends LoadableDetachableModel<Gender>{
+ 
+  private Long id;  
+    
+  @SpringBean
+    private GenderService genderService;
+    public GenderModel(Long id){
+        this.id=id;
+        Injector.get().inject(this);
+    }
+    
+    
+    @Override
+    protected Gender load() {
+        
+      if (id==null){
+         return new Gender();
+      } else{
+          return genderService.find(id);
+      } 
+    }
 
-    @SpringBean
-   private GenderService genderService;
-   
-   public GenderListModel(){
-       Injector.get().inject(this);
-       
-       
-   }
-  
-   @Override
-   protected List<Gender> load(){
-       return genderService.findAll();
-   }  
-    
-    
-    
-    
-    
+ 
 }
