@@ -1,4 +1,3 @@
-
 package zw.co.hitrac.support.web.page;
 
 import org.apache.wicket.markup.html.WebPage;
@@ -20,6 +19,7 @@ public class DemographicListPage extends WebPage {
     public DemographicListPage(PageParameters parameters) {
         super(parameters);
 
+        add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", DemographicEditPage.class));
         add(new PropertyListView<Demographic>("demographic", new DemographicListModel()) {
 
@@ -36,8 +36,7 @@ public class DemographicListPage extends WebPage {
                 item.add(new Label("accomodationtype"));
                 item.add(new Label("monthlyincome"));
                 item.add(new Label("occupation"));
-                
-              
+
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());
                 item.add(new BookmarkablePageLink("edit", DemographicEditPage.class, pageParameters));

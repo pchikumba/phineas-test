@@ -22,5 +22,6 @@ public class HomePage extends WebPage{
           add(new BookmarkablePageLink("maritalstatus",MaritalStatusListPage.class));
           add(new BookmarkablePageLink("religion",ReligionListPage.class));
           add(new BookmarkablePageLink("gender", GenderListPage.class));
+          add(new BookmarkablePageLink("accommodation", AccommodationListPage.class));
     }
 }
