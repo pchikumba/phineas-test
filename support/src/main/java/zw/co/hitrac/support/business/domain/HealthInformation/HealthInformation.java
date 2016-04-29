@@ -6,6 +6,7 @@
 package zw.co.hitrac.support.business.domain.HealthInformation;
 
 import java.io.Serializable;
+import java.time.Year;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +22,10 @@ public class HealthInformation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Year vctyear;
+    private Boolean tradmedicinevct = Boolean.FALSE;
+    private Boolean art = Boolean.FALSE;
+    
 
     public Long getId() {
         return id;

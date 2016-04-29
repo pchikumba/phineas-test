@@ -1,5 +1,5 @@
 
-package zw.co.hitrac.support.business.domain.Demo;
+package zw.co.hitrac.support.business.domain.Nutrition;
 
 /**
  *
