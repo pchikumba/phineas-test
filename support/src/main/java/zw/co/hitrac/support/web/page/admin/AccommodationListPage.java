@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.co.hitrac.support.web.page;
+package zw.co.hitrac.support.web.page.admin;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
@@ -12,29 +12,31 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PropertyListView;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import zw.co.hitrac.support.SupportPageParametersUtil;
-import zw.co.hitrac.support.business.domain.Demo.MaritalStatus;
-import zw.co.hitrac.support.web.model.MaritalStatusListModel;
+import zw.co.hitrac.support.business.domain.Demo.Accommodation;
+import zw.co.hitrac.support.web.model.AccommodationListModel;
+
+
 
 /**
  *
- * @author hitrac
+ * @author pchikumba
  */
-public class MaritalStatusListPage extends WebPage {
+public class AccommodationListPage extends WebPage {
     
     
-    public MaritalStatusListPage(PageParameters parameters) {
+    public AccommodationListPage(PageParameters parameters) {
         super(parameters);
 
-        add(new BookmarkablePageLink("new", MaritalStatusEditPage.class));
-        add(new PropertyListView<MaritalStatus>("maritalstatus", new MaritalStatusListModel()){
+        add(new BookmarkablePageLink("new", AccommodationEditPage.class));
+        add(new PropertyListView<Accommodation>("accommodation", new AccommodationListModel()){
 
             @Override
-            protected void populateItem(ListItem<MaritalStatus> item) {
-               item.add(new Label("statustype"));
+            protected void populateItem(ListItem<Accommodation> item) {
+               item.add(new Label("accommodationtype"));
                
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());
-                item.add(new BookmarkablePageLink("edit", MaritalStatusEditPage.class, pageParameters));
+                item.add(new BookmarkablePageLink("edit", AccommodationEditPage.class, pageParameters));
                
                
             }

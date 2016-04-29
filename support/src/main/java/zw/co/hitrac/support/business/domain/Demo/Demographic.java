@@ -25,6 +25,7 @@ public class Demographic implements Serializable {
     private String name;
     private String surname;
     private Date dob;
+//    ############ still to use commented out infor
    // private Gender gender;
 //    private MaritalStatus maritalstatus;
 //    private Qualification educationalqualification;

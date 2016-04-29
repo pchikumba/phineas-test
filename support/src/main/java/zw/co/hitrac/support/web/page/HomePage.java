@@ -5,6 +5,11 @@
  */
 package zw.co.hitrac.support.web.page;
 
+import zw.co.hitrac.support.web.page.admin.ReligionListPage;
+import zw.co.hitrac.support.web.page.admin.GenderListPage;
+import zw.co.hitrac.support.web.page.admin.QualificationListPage;
+import zw.co.hitrac.support.web.page.admin.AccommodationListPage;
+import zw.co.hitrac.support.web.page.admin.MaritalStatusListPage;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -23,5 +28,7 @@ public class HomePage extends WebPage{
           add(new BookmarkablePageLink("religion",ReligionListPage.class));
           add(new BookmarkablePageLink("gender", GenderListPage.class));
           add(new BookmarkablePageLink("accommodation", AccommodationListPage.class));
+          add(new BookmarkablePageLink("employmentdetail", EmploymentDetailListPage.class));
+           add(new BookmarkablePageLink("qualification", QualificationListPage.class));
     }
 }

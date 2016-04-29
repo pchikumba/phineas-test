@@ -1,5 +1,5 @@
 
-package zw.co.hitrac.support.web.page;
+package zw.co.hitrac.support.web.page.admin;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;

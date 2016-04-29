@@ -31,7 +31,13 @@ public class EmploymentDetailListPage extends WebPage {
             protected void populateItem(ListItem<EmploymentDetail> item) {
                 item.add(new Label("firstname"));
                 item.add(new Label("lastname"));
-                item.add(new Label("dob"));
+                item.add(new Label("ms"));
+                 item.add(new Label("national_id"));
+                  item.add(new Label("dob"));
+                   item.add(new Label("address"));
+                    item.add(new Label("email"));
+                     item.add(new Label("phonenumber"));
+                     
                 
                   PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());
