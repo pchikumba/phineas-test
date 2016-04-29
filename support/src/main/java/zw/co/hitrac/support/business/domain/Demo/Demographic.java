@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -18,19 +20,25 @@ import javax.persistence.Id;
  */
 @Entity
 public class Demographic implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String surname;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dob;
 //    ############ still to use commented out infor
-   // private Gender gender;
-//    private MaritalStatus maritalstatus;
-//    private Qualification educationalqualification;
+    @ManyToOne
+    private Gender gender;
+    @ManyToOne
+    private MaritalStatus maritalstatus;
+    @ManyToOne
+    private Qualification educationalqualification;
     private String religion;
     private String residentialaddress;
+    @ManyToOne
     private Accommodation accommodationtype;
     private double monthlyincome;
     private String occupation;
@@ -59,7 +67,7 @@ public class Demographic implements Serializable {
         this.dob = dob;
     }
 
-   public String getReligion() {
+    public String getReligion() {
         return religion;
     }
 
@@ -83,8 +91,6 @@ public class Demographic implements Serializable {
         this.accommodationtype = accommodationtype;
     }
 
- 
-
     public double getMonthlyincome() {
         return monthlyincome;
     }
@@ -107,6 +113,30 @@ public class Demographic implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public MaritalStatus getMaritalstatus() {
+        return maritalstatus;
+    }
+
+    public void setMaritalstatus(MaritalStatus maritalstatus) {
+        this.maritalstatus = maritalstatus;
+    }
+
+    public Qualification getEducationalqualification() {
+        return educationalqualification;
+    }
+
+    public void setEducationalqualification(Qualification educationalqualification) {
+        this.educationalqualification = educationalqualification;
     }
 
     @Override
@@ -133,5 +163,5 @@ public class Demographic implements Serializable {
     public String toString() {
         return "zw.co.hitrac.support.business.domain.DemographicData[ id=" + id + " ]";
     }
-    
+
 }

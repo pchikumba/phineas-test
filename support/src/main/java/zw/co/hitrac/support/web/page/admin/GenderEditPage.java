@@ -1,6 +1,7 @@
 package zw.co.hitrac.support.web.page.admin;
 
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
@@ -12,27 +13,27 @@ import zw.co.hitrac.support.business.domain.Demo.Gender;
 import zw.co.hitrac.support.business.service.GenderService;
 import zw.co.hitrac.support.web.model.GenderModel;
 
-
 /**
  *
  * @author pchikumba 27/04/2016
- * 
+ *
  */
 public class GenderEditPage extends WebPage {
-
+    
     private GenderModel genderModel;
-
+    
     @SpringBean
     private GenderService genderService;
-
+    
     public GenderEditPage(PageParameters parameters) {
         super(parameters);
         createGenderModel(parameters);
         add(new FeedbackPanel("feedback"));
-
+        
         Form<Gender> form = new Form<Gender>("form", new CompoundPropertyModel<Gender>(genderModel));;
         form.add(new RequiredTextField("gendertype"));
-
+        form.add(new CheckBox("retired"));
+        
         form.add(new org.apache.wicket.markup.html.form.Button("submit") {
             @Override
             public void onSubmit() {
@@ -42,13 +43,13 @@ public class GenderEditPage extends WebPage {
             }
         });
         add(form);
-
+        
     }
-
+    
     private void createGenderModel(PageParameters parameters) {
         Long id = SupportPageParametersUtil.extractId(parameters);
         genderModel = new GenderModel(id);
-
+        
     }
-
+    
 }

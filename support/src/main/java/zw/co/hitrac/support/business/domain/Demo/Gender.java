@@ -17,11 +17,13 @@ import javax.persistence.Id;
  */
 @Entity
 public class Gender implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String gendertype;
+    private Boolean retired = Boolean.FALSE;
 
     public Long getId() {
         return id;
@@ -35,11 +37,16 @@ public class Gender implements Serializable {
         this.gendertype = gendertype;
     }
 
-    
-   
-
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Boolean getRetired() {
+        return retired;
+    }
+
+    public void setRetired(Boolean retired) {
+        this.retired = retired;
     }
 
     @Override
@@ -66,5 +73,5 @@ public class Gender implements Serializable {
     public String toString() {
         return "zw.co.hitrac.support.business.domain.Gender[ id=" + id + " ]";
     }
-    
+
 }
