@@ -22,7 +22,7 @@ public class EmploymentDetailListPage extends WebPage {
     
     public EmploymentDetailListPage(PageParameters parameters){
              super(parameters);
-             
+             add(new BookmarkablePageLink("back", HomePage.class));
               add(new BookmarkablePageLink("new", EmploymentDetailEditPage.class));
               add(new PropertyListView<EmploymentDetail>("employmentdetail", new EmploymentDetailListModel()){
                   

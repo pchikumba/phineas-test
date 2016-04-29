@@ -14,36 +14,32 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Qualification;
 import zw.co.hitrac.support.web.model.QualificationListModel;
+import zw.co.hitrac.support.web.page.HomePage;
 
 /**
  *
- * @author tonderai ndangana;
- * created on 28/04/2016
+ * @author tonderai ndangana; created on 28/04/2016
  */
 public class QualificationListPage extends WebPage {
-    
-    
+
     public QualificationListPage(PageParameters parameters) {
         super(parameters);
-
+        add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", QualificationEditPage.class));
-        add(new PropertyListView<Qualification>("qualification", new QualificationListModel()){
+        add(new PropertyListView<Qualification>("qualification", new QualificationListModel()) {
 
             @Override
             protected void populateItem(ListItem<Qualification> item) {
-               item.add(new Label("qualificationtype"));
-               
+                item.add(new Label("qualificationtype"));
+
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());
                 item.add(new BookmarkablePageLink("edit", QualificationEditPage.class, pageParameters));
-               
-               
-            }
-            
-            });
 
-        }
-    
-    
-    
+            }
+
+        });
+
+    }
+
 }
