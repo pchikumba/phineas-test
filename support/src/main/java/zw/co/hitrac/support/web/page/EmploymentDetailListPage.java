@@ -36,6 +36,7 @@ public class EmploymentDetailListPage extends WebPage {
                   item.add(new Label("dob"));
                    item.add(new Label("address"));
                     item.add(new Label("email"));
+                     item.add(new Label("gender"));
                      item.add(new Label("phonenumber"));
                      
                 

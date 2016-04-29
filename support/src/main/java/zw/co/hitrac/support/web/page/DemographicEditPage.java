@@ -20,11 +20,17 @@ import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import zw.co.hitrac.support.SupportPageParametersUtil;
+import zw.co.hitrac.support.business.domain.Demo.Accommodation;
 import zw.co.hitrac.support.business.domain.Demo.Demographic;
 import zw.co.hitrac.support.business.domain.Demo.Gender;
+import zw.co.hitrac.support.business.domain.Demo.MaritalStatus;
+import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.business.service.DemographicService;
+import zw.co.hitrac.support.web.model.AccommodationListModel;
 import zw.co.hitrac.support.web.model.DemographicModel;
 import zw.co.hitrac.support.web.model.GenderListModel;
+import zw.co.hitrac.support.web.model.MaritalStatusListModel;
+import zw.co.hitrac.support.web.model.ReligionListModel;
 
 /**
  *
@@ -46,20 +52,31 @@ public class DemographicEditPage extends WebPage {
         add(new FeedbackPanel("feedback"));
 
         Form<Demographic> form = new Form<Demographic>("form", new CompoundPropertyModel<Demographic>(demographicModel));
-
+        
+        ReligionListModel religionListModel = new ReligionListModel();
+        ChoiceRenderer<Religion> relchoiceRenderer = new ChoiceRenderer<Religion>("religiontype");
+        
+        AccommodationListModel accommodationListModel = new AccommodationListModel();
+         ChoiceRenderer<Accommodation> accommchoiceRenderer = new ChoiceRenderer<Accommodation>("accommodationtype","id");
+        
+         MaritalStatusListModel maritalStatusListModel = new MaritalStatusListModel();
+         ChoiceRenderer<MaritalStatus> mschoiceRenderer = new ChoiceRenderer<MaritalStatus>("statustype","id");
+        
         GenderListModel genderListModel = new GenderListModel();
-        ChoiceRenderer<Gender> choiceRenderer = new ChoiceRenderer<Gender>("gendertype", "id");
+       ChoiceRenderer<Gender> choiceRenderer = new ChoiceRenderer<Gender>("gendertype", "id");
 
         form.add(new RequiredTextField("name"));
         form.add(new RequiredTextField("surname"));
         form.add(new DateTextField("dob", dobModel, new PatternDateConverter("dd/MM/yy", true)).add(new DatePicker()));
 
         form.add(new DropDownChoice<Gender>("gender", genderListModel, choiceRenderer));
-//        form.add(new RequiredTextField("maritalstatus"));
+        form.add(new DropDownChoice<Accommodation>("accommodation", accommodationListModel, accommchoiceRenderer));
+       
+        form.add(new DropDownChoice<MaritalStatus>("maritalstatus", maritalStatusListModel, mschoiceRenderer));
 //        form.add(new RequiredTextField("educationalqualification"));
-        form.add(new RequiredTextField("religion"));
+        form.add(new DropDownChoice("religion", religionListModel, relchoiceRenderer));
         form.add(new RequiredTextField("residentialaddress"));
-        form.add(new RequiredTextField("accommodationtype"));
+//     
         form.add(new RequiredTextField("monthlyincome"));
         form.add(new RequiredTextField("occupation"));
 
