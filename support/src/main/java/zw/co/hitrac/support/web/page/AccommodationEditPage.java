@@ -8,7 +8,7 @@ import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import zw.co.hitrac.support.SupportPageParametersUtil;
-import zw.co.hitrac.support.business.domain.Accommodation;
+import zw.co.hitrac.support.business.domain.Demo.Accommodation;
 import zw.co.hitrac.support.business.service.AccommodationService;
 import zw.co.hitrac.support.web.model.AccommodationModel;
 

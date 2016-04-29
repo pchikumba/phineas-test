@@ -30,7 +30,7 @@ public class Demographic implements Serializable {
 //    private Qualification educationalqualification;
     private String religion;
     private String residentialaddress;
-    private Accomodation accomodationtype;
+    private Accommodation accommodationtype;
     private double monthlyincome;
     private String occupation;
 
@@ -74,13 +74,15 @@ public class Demographic implements Serializable {
         this.residentialaddress = residentialaddress;
     }
 
-    public Enum getAccomodationtype() {
-        return accomodationtype;
+    public Accommodation getAccommodationtype() {
+        return accommodationtype;
     }
 
-    public void setAccomodationtype(Accomodation accomodationtype) {
-        this.accomodationtype = accomodationtype;
+    public void setAccomodationtype(Accommodation accommodationtype) {
+        this.accommodationtype = accommodationtype;
     }
+
+ 
 
     public double getMonthlyincome() {
         return monthlyincome;

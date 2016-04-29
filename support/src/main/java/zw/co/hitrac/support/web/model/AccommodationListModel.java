@@ -9,7 +9,7 @@ import java.util.List;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
-import zw.co.hitrac.support.business.domain.Accommodation;
+import zw.co.hitrac.support.business.domain.Demo.Accommodation;
 import zw.co.hitrac.support.business.service.AccommodationService;
 
 /**

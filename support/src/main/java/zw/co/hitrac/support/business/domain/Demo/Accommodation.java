@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.co.hitrac.support.business.domain;
+package zw.co.hitrac.support.business.domain.Demo;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
