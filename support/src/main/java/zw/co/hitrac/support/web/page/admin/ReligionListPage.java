@@ -14,6 +14,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.web.model.ReligionListModel;
+import zw.co.hitrac.support.web.page.HomePage;
 
 /**
  *
@@ -23,7 +24,7 @@ public class ReligionListPage extends WebPage {
 
     public ReligionListPage(PageParameters parameters) {
         super(parameters);
-
+        add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", ReligionEditPage.class));
         add(new PropertyListView<Religion>("religion", new ReligionListModel()) {
 

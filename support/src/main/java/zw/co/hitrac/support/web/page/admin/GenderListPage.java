@@ -13,38 +13,33 @@ import org.apache.wicket.markup.html.list.PropertyListView;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Gender;
-import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.web.model.GenderListModel;
-
+import zw.co.hitrac.support.web.page.HomePage;
 
 /**
  *
  * @author pchikumba
  */
 public class GenderListPage extends WebPage {
-    
-    
+
     public GenderListPage(PageParameters parameters) {
         super(parameters);
-
+        add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", GenderEditPage.class));
-        add(new PropertyListView<Gender>("gender", new GenderListModel()){
+        add(new PropertyListView<Gender>("gender", new GenderListModel()) {
 
             @Override
             protected void populateItem(ListItem<Gender> item) {
-               item.add(new Label("gendertype"));
-               
+                item.add(new Label("gendertype"));
+
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());
                 item.add(new BookmarkablePageLink("edit", GenderEditPage.class, pageParameters));
-               
-               
-            }
-            
-            });
 
-        }
-    
-    
-    
+            }
+
+        });
+
+    }
+
 }

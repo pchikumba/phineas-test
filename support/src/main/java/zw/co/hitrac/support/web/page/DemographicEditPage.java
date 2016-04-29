@@ -14,6 +14,7 @@ import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.PropertyModel;
@@ -41,7 +42,7 @@ public class DemographicEditPage extends WebPage {
         super(parameters);
         this.dob = new Date();
         final PropertyModel<Date> dobModel = new PropertyModel<Date>(this, "dob");
-
+        add(new BookmarkablePageLink("back", HomePage.class));
         createProgramModel(parameters);
         add(new FeedbackPanel("feedback"));
 

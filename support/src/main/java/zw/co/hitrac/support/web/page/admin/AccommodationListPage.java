@@ -14,37 +14,32 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Accommodation;
 import zw.co.hitrac.support.web.model.AccommodationListModel;
-
-
+import zw.co.hitrac.support.web.page.HomePage;
 
 /**
  *
  * @author pchikumba
  */
 public class AccommodationListPage extends WebPage {
-    
-    
+
     public AccommodationListPage(PageParameters parameters) {
         super(parameters);
-
+        add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", AccommodationEditPage.class));
-        add(new PropertyListView<Accommodation>("accommodation", new AccommodationListModel()){
+        add(new PropertyListView<Accommodation>("accommodation", new AccommodationListModel()) {
 
             @Override
             protected void populateItem(ListItem<Accommodation> item) {
-               item.add(new Label("accommodationtype"));
-               
+                item.add(new Label("accommodationtype"));
+
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());
                 item.add(new BookmarkablePageLink("edit", AccommodationEditPage.class, pageParameters));
-               
-               
-            }
-            
-            });
 
-        }
-    
-    
-    
+            }
+
+        });
+
+    }
+
 }

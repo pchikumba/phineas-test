@@ -4,6 +4,7 @@ package zw.co.hitrac.support.web.page;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -29,7 +30,7 @@ public class EmploymentDetailEditPage extends WebPage{
     super(parameters);
         createEmploymentDetailModel(parameters);
         add(new FeedbackPanel("feedback"));
-        
+        add(new BookmarkablePageLink("back", HomePage.class));
          Form<EmploymentDetail> form = new Form<EmploymentDetail>("form", new CompoundPropertyModel<EmploymentDetail>(edModel));;
         form.add(new RequiredTextField("firstname"));
         form.add(new RequiredTextField("lastname"));

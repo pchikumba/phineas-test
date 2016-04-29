@@ -3,6 +3,7 @@ package zw.co.hitrac.support.web.page.admin;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -11,11 +12,12 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.MaritalStatus;
 import zw.co.hitrac.support.business.service.MaritalStatusService;
 import zw.co.hitrac.support.web.model.MaritalStatusModel;
+import zw.co.hitrac.support.web.page.HomePage;
 
 /**
  *
  * @author tonderai ndangana 27/04/2016
- * 
+ *
  */
 public class MaritalStatusEditPage extends WebPage {
 
@@ -28,7 +30,7 @@ public class MaritalStatusEditPage extends WebPage {
         super(parameters);
         createMaritalStatusModel(parameters);
         add(new FeedbackPanel("feedback"));
-
+        add(new BookmarkablePageLink("back", MaritalStatusListPage.class));
         Form<MaritalStatus> form = new Form<MaritalStatus>("form", new CompoundPropertyModel<MaritalStatus>(maritalStatusModel));;
         form.add(new RequiredTextField("statustype"));
 
