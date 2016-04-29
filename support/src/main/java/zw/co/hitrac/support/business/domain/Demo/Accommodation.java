@@ -27,7 +27,12 @@ public class Accommodation implements Serializable {
         return id;
     }
 
-    public String getAccommodationtype() {
+   
+ public void setId(Long id) {
+        this.id = id;
+    }
+ 
+  public String getAccommodationtype() {
         return accommodationtype;
     }
 
@@ -35,11 +40,7 @@ public class Accommodation implements Serializable {
         this.accommodationtype = accommodationtype;
     }
 
-    
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+ 
 
     @Override
     public int hashCode() {

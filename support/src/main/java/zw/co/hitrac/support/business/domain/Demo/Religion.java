@@ -21,6 +21,7 @@ public class Religion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+     private String religiontype;
 
     public String getReligiontype() {
         return religiontype;
@@ -30,7 +31,7 @@ public class Religion implements Serializable {
         this.religiontype = religiontype;
     }
     
-    private String religiontype;
+   
 
     public Long getId() {
         return id;

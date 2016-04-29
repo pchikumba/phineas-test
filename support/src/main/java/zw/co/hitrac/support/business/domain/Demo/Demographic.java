@@ -39,7 +39,7 @@ public class Demographic implements Serializable {
     private String religion;
     private String residentialaddress;
     @ManyToOne
-    private Accommodation accommodationtype;
+    private Accommodation accommodation;
     private double monthlyincome;
     private String occupation;
 
@@ -83,13 +83,14 @@ public class Demographic implements Serializable {
         this.residentialaddress = residentialaddress;
     }
 
-    public Accommodation getAccommodationtype() {
-        return accommodationtype;
+    public Accommodation getAccommodation() {
+        return accommodation;
     }
 
-    public void setAccomodationtype(Accommodation accommodationtype) {
-        this.accommodationtype = accommodationtype;
+    public void setAccommodation(Accommodation accommodation) {
+        this.accommodation = accommodation;
     }
+
 
     public double getMonthlyincome() {
         return monthlyincome;

@@ -31,7 +31,7 @@ public class EmploymentDetailListPage extends WebPage {
             protected void populateItem(ListItem<EmploymentDetail> item) {
                 item.add(new Label("firstname"));
                 item.add(new Label("lastname"));
-                item.add(new Label("ms"));
+                item.add(new Label("maritalstatus"));
                  item.add(new Label("national_id"));
                   item.add(new Label("dob"));
                    item.add(new Label("address"));

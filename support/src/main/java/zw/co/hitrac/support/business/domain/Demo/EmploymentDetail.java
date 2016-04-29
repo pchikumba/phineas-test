@@ -21,9 +21,9 @@ public class EmploymentDetail implements Serializable {
     private Long id;
     private String firstname;
     private String lastname;
-    private String sex;
+    private Gender gender;
     private Date dob;
-    private MaritalStatus ms;
+    private MaritalStatus maritalstatus;
     private String national_id;
     private String address;
     private String email;
@@ -49,14 +49,7 @@ public class EmploymentDetail implements Serializable {
         return dob;
     }
 
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-    
+ 
 
     public void setDob(Date dob) {
         this.dob = dob;
@@ -70,13 +63,7 @@ public class EmploymentDetail implements Serializable {
         this.phonenumber = phonenumber;
     }
 
-    public MaritalStatus getMs() {
-        return ms;
-    }
-
-    public void setMs(MaritalStatus ms) {
-        this.ms = ms;
-    }
+   
 
     public String getNational_id() {
         return national_id;
@@ -88,6 +75,22 @@ public class EmploymentDetail implements Serializable {
 
     public String getAddress() {
         return address;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public MaritalStatus getMaritalstatus() {
+        return maritalstatus;
+    }
+
+    public void setMaritalstatus(MaritalStatus maritalstatus) {
+        this.maritalstatus = maritalstatus;
     }
 
     public void setAddress(String address) {
