@@ -35,7 +35,7 @@ public class Demographic implements Serializable {
     @ManyToOne
     private MaritalStatus maritalstatus;
     @ManyToOne
-    private Qualification educationalqualification;
+    private Qualification qualification;
     private String religion;
     private String residentialaddress;
     @ManyToOne
@@ -132,14 +132,15 @@ public class Demographic implements Serializable {
         this.maritalstatus = maritalstatus;
     }
 
-    public Qualification getEducationalqualification() {
-        return educationalqualification;
+    public Qualification getQualification() {
+        return qualification;
     }
 
-    public void setEducationalqualification(Qualification educationalqualification) {
-        this.educationalqualification = educationalqualification;
+    public void setQualification(Qualification qualification) {
+        this.qualification = qualification;
     }
 
+  
     @Override
     public int hashCode() {
         int hash = 0;

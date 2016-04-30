@@ -25,12 +25,14 @@ import zw.co.hitrac.support.business.domain.Demo.Accommodation;
 import zw.co.hitrac.support.business.domain.Demo.Demographic;
 import zw.co.hitrac.support.business.domain.Demo.Gender;
 import zw.co.hitrac.support.business.domain.Demo.MaritalStatus;
+import zw.co.hitrac.support.business.domain.Demo.Qualification;
 import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.business.service.DemographicService;
 import zw.co.hitrac.support.web.model.AccommodationListModel;
 import zw.co.hitrac.support.web.model.DemographicModel;
 import zw.co.hitrac.support.web.model.GenderListModel;
 import zw.co.hitrac.support.web.model.MaritalStatusListModel;
+import zw.co.hitrac.support.web.model.QualificationListModel;
 import zw.co.hitrac.support.web.model.ReligionListModel;
 
 /**
@@ -53,9 +55,11 @@ public class DemographicEditPage extends WebPage {
         add(new FeedbackPanel("feedback"));
 
         Form<Demographic> form = new Form<Demographic>("form", new CompoundPropertyModel<Demographic>(demographicModel));
+        QualificationListModel qualistModel = new QualificationListModel();
+        ChoiceRenderer<Qualification> quarenderer = new  ChoiceRenderer<Qualification>("qualificationtype","id");
         
         ReligionListModel religionListModel = new ReligionListModel();
-        ChoiceRenderer<Religion> relchoiceRenderer = new ChoiceRenderer<Religion>("religiontype");
+        ChoiceRenderer<Religion> relchoiceRenderer = new ChoiceRenderer<Religion>("religiontype","id");
         
         AccommodationListModel accommodationListModel = new AccommodationListModel();
          ChoiceRenderer<Accommodation> accommchoiceRenderer = new ChoiceRenderer<Accommodation>("accommodationtype","id");
@@ -74,10 +78,10 @@ public class DemographicEditPage extends WebPage {
         form.add(new DropDownChoice<Accommodation>("accommodation", accommodationListModel, accommchoiceRenderer));
        
         form.add(new DropDownChoice<MaritalStatus>("maritalstatus", maritalStatusListModel, mschoiceRenderer));
-//        form.add(new RequiredTextField("educationalqualification"));
+        form.add(new DropDownChoice<Qualification>("qualification", qualistModel, quarenderer));
         form.add(new DropDownChoice("religion", religionListModel, relchoiceRenderer));
         form.add(new RequiredTextField("residentialaddress"));
-//     
+    
         form.add(new RequiredTextField("monthlyincome"));
         form.add(new RequiredTextField("occupation"));
 
