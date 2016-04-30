@@ -86,7 +86,7 @@ public class DemographicEditPage extends WebPage {
        
         form.add(new DropDownChoice<MaritalStatus>("maritalstatus", maritalStatusListModel, mschoiceRenderer));
         form.add(new DropDownChoice<Qualification>("qualification", qualistModel, quarenderer));
-        form.add(new DropDownChoice("religion", religionListModel, relchoiceRenderer));
+        form.add(new DropDownChoice<Religion>("religion", religionListModel, relchoiceRenderer));
         form.add(new RequiredTextField("residentialaddress"));
     
         

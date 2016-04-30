@@ -31,9 +31,14 @@ public class Demographic implements Serializable {
     private Gender gender;
     @ManyToOne
     private MaritalStatus maritalstatus;
+    
+   
+    @ManyToOne
+    private Religion religion;
+    
     @ManyToOne
     private Qualification qualification;
-    private String religion;
+    
     private String residentialaddress;
     @ManyToOne
     private Accommodation accommodation;
@@ -66,13 +71,15 @@ public class Demographic implements Serializable {
         this.dob = dob;
     }
 
-    public String getReligion() {
+    public Religion getReligion() {
         return religion;
     }
 
-    public void setReligion(String religion) {
+    public void setReligion(Religion religion) {
         this.religion = religion;
     }
+
+  
 
     public String getResidentialaddress() {
         return residentialaddress;
