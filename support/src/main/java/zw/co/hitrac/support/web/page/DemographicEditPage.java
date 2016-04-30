@@ -24,6 +24,7 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Accommodation;
 import zw.co.hitrac.support.business.domain.Demo.Demographic;
 import zw.co.hitrac.support.business.domain.Demo.Gender;
+import zw.co.hitrac.support.business.domain.Demo.Income;
 import zw.co.hitrac.support.business.domain.Demo.MaritalStatus;
 import zw.co.hitrac.support.business.domain.Demo.Qualification;
 import zw.co.hitrac.support.business.domain.Demo.Religion;
@@ -31,6 +32,7 @@ import zw.co.hitrac.support.business.service.DemographicService;
 import zw.co.hitrac.support.web.model.AccommodationListModel;
 import zw.co.hitrac.support.web.model.DemographicModel;
 import zw.co.hitrac.support.web.model.GenderListModel;
+import zw.co.hitrac.support.web.model.IncomeListModel;
 import zw.co.hitrac.support.web.model.MaritalStatusListModel;
 import zw.co.hitrac.support.web.model.QualificationListModel;
 import zw.co.hitrac.support.web.model.ReligionListModel;
@@ -53,8 +55,13 @@ public class DemographicEditPage extends WebPage {
         add(new BookmarkablePageLink("back", HomePage.class));
         createProgramModel(parameters);
         add(new FeedbackPanel("feedback"));
+        
 
         Form<Demographic> form = new Form<Demographic>("form", new CompoundPropertyModel<Demographic>(demographicModel));
+        IncomeListModel incomelistmodel = new IncomeListModel();
+        ChoiceRenderer<Income> incChoice = new ChoiceRenderer<Income> ("incomelevel","id");
+        
+        
         QualificationListModel qualistModel = new QualificationListModel();
         ChoiceRenderer<Qualification> quarenderer = new  ChoiceRenderer<Qualification>("qualificationtype","id");
         
@@ -73,7 +80,7 @@ public class DemographicEditPage extends WebPage {
         form.add(new RequiredTextField("name"));
         form.add(new RequiredTextField("surname"));
         form.add(new DateTextField("dob", dobModel, new PatternDateConverter("dd/MM/yy", true)).add(new DatePicker()));
-
+        form.add(new DropDownChoice("income", incomelistmodel, incChoice));
         form.add(new DropDownChoice<Gender>("gender", genderListModel, choiceRenderer));
         form.add(new DropDownChoice<Accommodation>("accommodation", accommodationListModel, accommchoiceRenderer));
        
@@ -82,7 +89,7 @@ public class DemographicEditPage extends WebPage {
         form.add(new DropDownChoice("religion", religionListModel, relchoiceRenderer));
         form.add(new RequiredTextField("residentialaddress"));
     
-        form.add(new RequiredTextField("monthlyincome"));
+        
         form.add(new RequiredTextField("occupation"));
 
         form.add(new org.apache.wicket.markup.html.form.Button("submit") {

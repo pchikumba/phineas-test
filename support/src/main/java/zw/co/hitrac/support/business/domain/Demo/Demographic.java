@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package zw.co.hitrac.support.business.domain.Demo;
 
 import java.io.Serializable;
@@ -18,6 +14,7 @@ import javax.persistence.Temporal;
  *
  * @author pchikumba
  */
+
 @Entity
 public class Demographic implements Serializable {
 
@@ -40,7 +37,9 @@ public class Demographic implements Serializable {
     private String residentialaddress;
     @ManyToOne
     private Accommodation accommodation;
-    private double monthlyincome;
+    
+    @ManyToOne
+    private Income income;
     private String occupation;
 
     public String getName() {
@@ -91,15 +90,17 @@ public class Demographic implements Serializable {
         this.accommodation = accommodation;
     }
 
-
-    public double getMonthlyincome() {
-        return monthlyincome;
+    public Income getIncome() {
+        return income;
     }
 
-    public void setMonthlyincome(Double monthlyincome) {
-        this.monthlyincome = monthlyincome;
+    public void setIncome(Income income) {
+        this.income = income;
     }
 
+  
+
+ 
     public String getOccupation() {
         return occupation;
     }

@@ -34,7 +34,7 @@ public class DemographicListPage extends WebPage {
                 item.add(new Label("religion"));
                 item.add(new Label("residentialaddress"));
                 item.add(new Label("accommodation"));
-                item.add(new Label("monthlyincome"));
+                item.add(new Label("income"));
                 item.add(new Label("occupation"));
 
                 PageParameters pageParameters = new PageParameters();
