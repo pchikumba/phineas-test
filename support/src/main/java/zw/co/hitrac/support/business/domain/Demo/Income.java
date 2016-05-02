@@ -21,7 +21,7 @@ public class Income implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Double incomelevel;
+    private int incomelevel;
 
     public Long getId() {
         return id;
@@ -31,11 +31,11 @@ public class Income implements Serializable {
         this.id = id;
     }
 
-    public Double getIncomelevel() {
+    public int getIncomelevel() {
         return incomelevel;
     }
 
-    public void setIncomelevel(Double incomelevel) {
+    public void setIncomelevel(int incomelevel) {
         this.incomelevel = incomelevel;
     }
      
