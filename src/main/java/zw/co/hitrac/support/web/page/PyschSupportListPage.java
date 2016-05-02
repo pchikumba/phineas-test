@@ -35,6 +35,7 @@ public class PyschSupportListPage extends WebPage{
                     li.add(new Label("socialmedia"));
                     li.add(new Label("internetacces"));
                     li.add(new Label("mobileOs"));
+//                    li.add(new Label("supportspecify"));
                     
                     PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, li.getModelObject().getId());

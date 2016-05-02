@@ -26,7 +26,7 @@ import zw.co.hitrac.support.web.model.PyschSupportModel;
  */
 public class PyschSupportEditPage extends WebPage {
     
-    
+    private Boolean znnnpaffil;
     private PyschSupportModel pyschModel;
     
     @SpringBean
@@ -46,7 +46,12 @@ public class PyschSupportEditPage extends WebPage {
         form.add(new CheckBox("socialmedia"));
         form.add(new CheckBox("internetacces"));
         form.add(new RequiredTextField("mobileOs"));                                                                                                                                                                                                                                                                                        
-        
+    
+//        if(znnnpaffil==Boolean.TRUE ){
+//    
+//    form.add(new RequiredTextField("specifysocial"));
+//    }
+//        
         form.add(new org.apache.wicket.markup.html.form.Button("submit"){
         
          @Override

@@ -30,6 +30,7 @@ public class PyschSupport implements Serializable {
     private Boolean socialmedia = Boolean.FALSE;
     private Boolean internetacces = Boolean.FALSE;
     private String mobileOs;
+    private String specifysocial;
     
 
     public Long getId() {
@@ -95,6 +96,15 @@ public class PyschSupport implements Serializable {
     public void setMobileOs(String mobileOs) {
         this.mobileOs = mobileOs;
     }
+
+    public String getSpecifysocial() {
+        return specifysocial;
+    }
+
+    public void setSpecifysocial(String specifysocial) {
+        this.specifysocial = specifysocial;
+    }
+    
     
 
     @Override
