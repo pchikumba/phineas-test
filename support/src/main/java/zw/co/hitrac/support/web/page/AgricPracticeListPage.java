@@ -19,17 +19,17 @@ import zw.co.hitrac.support.web.model.AgricPracticeListModel;
  *
  * @author gerald matsika
  */
-public class AgricPracticeListPage  extends WebPage{
+public class AgricPracticeListPage extends WebPage{
     
-        public AgricPracticeListPage(PageParameters parameters) {
+       public AgricPracticeListPage(PageParameters parameters) {
         super(parameters);
         add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", AgricPracticeEditPage.class));
-        add(new PropertyListView<AgricPractice>("agricpractice", new AgricPracticeListModel()) {
+        add(new PropertyListView< AgricPractice>("agricpractice", new AgricPracticeListModel()) {
 
             @Override
-            protected void populateItem(ListItem<AgricPractice> item) {
-                item.add(new Label("agricpractice"));
+            protected void populateItem(ListItem< AgricPractice> item) {
+                item.add(new Label("agricpracticetype"));
 
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());
@@ -40,8 +40,8 @@ public class AgricPracticeListPage  extends WebPage{
         });
 
     }
-        
+
 }
 
-
+    
 

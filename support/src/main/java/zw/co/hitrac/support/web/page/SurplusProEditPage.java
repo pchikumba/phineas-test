@@ -39,7 +39,6 @@ public class SurplusProEditPage extends WebPage{
 
         Form<SurplusPro> form = new Form<SurplusPro>("form", new CompoundPropertyModel<SurplusPro>(surplusproModel));;
         form.add(new RequiredTextField("purpose"));
-        form.add(new CheckBox("retired"));
 
         form.add(new org.apache.wicket.markup.html.form.Button("submit") {
             @Override

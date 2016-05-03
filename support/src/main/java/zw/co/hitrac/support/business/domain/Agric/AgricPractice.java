@@ -21,23 +21,28 @@ public class AgricPractice implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String agricpractice;
+    private String agricpracticetype;
 
     public Long getId() {
         return id;
     }
     
-    public String getAgricpractice(){
-        return agricpractice;
-    }
+   
 
     public void setId(Long id) {
         this.id = id;
     }
-    
-    public void setAgricpractice(){
-        this.agricpractice = agricpractice;
+
+    public String getAgricpracticetype() {
+        return agricpracticetype;
     }
+
+    public void setAgricpracticetype(String agricpracticetype) {
+        this.agricpracticetype = agricpracticetype;
+    }
+    
+    
+    
 
     @Override
     public int hashCode() {

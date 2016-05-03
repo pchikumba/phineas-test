@@ -7,6 +7,7 @@ package zw.co.hitrac.support.business.service.impl;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import zw.co.hitrac.support.business.domain.Agric.Purpose;
 import zw.co.hitrac.support.business.repository.PurposeRepo;
 import zw.co.hitrac.support.business.service.PurposeService;
@@ -15,6 +16,7 @@ import zw.co.hitrac.support.business.service.PurposeService;
  *
  * @author gerald matsika
  */
+@Service
 public class PurposeServiceImpl implements PurposeService{
     
     @Autowired 

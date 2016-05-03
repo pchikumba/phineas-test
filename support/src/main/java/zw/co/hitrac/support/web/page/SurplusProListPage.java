@@ -25,7 +25,7 @@ public class SurplusProListPage extends WebPage{
         super(parameters);
         add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", SurplusProEditPage.class));
-        add(new PropertyListView< SurplusPro>(" surpluspro", new SurplusProListModel()) {
+        add(new PropertyListView< SurplusPro>("surpluspro", new SurplusProListModel()) {
 
             @Override
             protected void populateItem(ListItem< SurplusPro> item) {

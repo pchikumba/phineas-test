@@ -37,8 +37,8 @@ public class AgricPracticeEditPage extends WebPage{
         add(new FeedbackPanel("feedback"));
        add(new BookmarkablePageLink("back", AgricPracticeListPage.class));
 
-        Form<AgricPractice> form = new Form<AgricPractice>("form", new CompoundPropertyModel<AgricPractice>(agricpracticeModel));;
-        form.add(new RequiredTextField("agricpractice"));
+        Form<AgricPractice> form = new Form<AgricPractice>("form", new CompoundPropertyModel<AgricPractice>(agricpracticeModel));
+        form.add(new RequiredTextField("agricpracticetype"));
     
 
         form.add(new org.apache.wicket.markup.html.form.Button("submit") {

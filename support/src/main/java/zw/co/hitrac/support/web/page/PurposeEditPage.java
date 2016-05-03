@@ -39,8 +39,7 @@ public class PurposeEditPage extends WebPage{
        add(new BookmarkablePageLink("back", PurposeListPage.class));
 
         Form<Purpose> form = new Form<Purpose>("form", new CompoundPropertyModel<Purpose>(purposeModel));;
-        form.add(new RequiredTextField(" sp"));
-        form.add(new CheckBox("retired"));
+        form.add(new RequiredTextField("sp"));
 
         form.add(new org.apache.wicket.markup.html.form.Button("submit") {
             @Override
