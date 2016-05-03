@@ -59,6 +59,7 @@ public class DemographicEditPage extends WebPage {
         
 
         Form<Demographic> form = new Form<Demographic>("form", new CompoundPropertyModel<Demographic>(demographicModel));
+       
         IncomeListModel incomelistmodel = new IncomeListModel();
         ChoiceRenderer<Income> incChoice = new ChoiceRenderer<Income> ("incomelevel","id");
         
