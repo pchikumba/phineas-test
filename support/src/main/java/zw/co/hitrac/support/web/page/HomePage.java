@@ -25,6 +25,7 @@ public class HomePage extends WebPage{
     public HomePage(PageParameters parameters){
         super(parameters);
         add(new BookmarkablePageLink("demographic",DemographicListPage.class));
+        add(new BookmarkablePageLink("agricactivity",AgricActivityListPage.class));
           add(new BookmarkablePageLink("maritalstatus",MaritalStatusListPage.class));
           add(new BookmarkablePageLink("religion",ReligionListPage.class));
           add(new BookmarkablePageLink("gender", GenderListPage.class));
@@ -32,5 +33,9 @@ public class HomePage extends WebPage{
           add(new BookmarkablePageLink("employmentdetail", EmploymentDetailListPage.class));
            add(new BookmarkablePageLink("qualification", QualificationListPage.class));
             add(new BookmarkablePageLink("income", IncomeListPage.class));
+              add(new BookmarkablePageLink("agricpractice", AgricPracticeListPage.class));
+              add(new BookmarkablePageLink("purpose", PurposeListPage.class));
+               add(new BookmarkablePageLink("surpluspro", SurplusProListPage.class));
+              
     }
 }
