@@ -1,15 +1,19 @@
-package zw.co.hitrac.support.business.domain.Nutrition;
+package zw.co.hitrac.support.business.domain;
+
 
 /**
  *
  * @author tonderai ndangana
- * 01/04/2016
+ *  created 26/04/2016
  */
-public enum AdminRole { ADMINSTRATOR("Admnistrator");
-
-
-
-private AdminRole(String roleName) {
+public enum Role {
+     
+    RESEARCHANALYST("Research Analysts"),
+    ADMINISTRATOR_PI("Adminstrator"),
+    PATIENT("patient");
+    
+    
+    private Role(String roleName) {
         this.roleName = roleName;
     }
 
@@ -22,5 +26,4 @@ private AdminRole(String roleName) {
         return roleName;
     }
     private final String roleName;
-    
 }
