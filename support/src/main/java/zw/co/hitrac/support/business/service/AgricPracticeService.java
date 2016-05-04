@@ -5,12 +5,14 @@
  */
 package zw.co.hitrac.support.business.service;
 
+import org.hibernate.persister.entity.Loadable;
 import zw.co.hitrac.support.BusinessComponent;
-import zw.co.hitrac.support.business.domain.Agric.AgricActivity;
+import zw.co.hitrac.support.business.domain.Agric.AgricPractice;
 
 /**
  *
  * @author gerald matsika
  */
-public interface AgricActivityService extends BusinessComponent<AgricActivity>{   
+public interface AgricPracticeService extends BusinessComponent<AgricPractice>{
+    
 }
