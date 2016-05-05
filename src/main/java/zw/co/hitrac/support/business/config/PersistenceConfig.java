@@ -44,7 +44,7 @@ public class PersistenceConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource());
-        factoryBean.setPackagesToScan(new String[]{"zw.co.hitrac.support.business.domain.Demo",
+        factoryBean.setPackagesToScan(new String[]{"zw.co.hitrac.support.business.domain","zw.co.hitrac.support.business.domain.Demo",
                                                    "zw.co.hitrac.support.business.domain.HealthInformation","zw.co.hitrac.support.business.domain.Nutrition",
                                                    "zw.co.hitrac.support.business.domain.Pysch"
                                                     });
