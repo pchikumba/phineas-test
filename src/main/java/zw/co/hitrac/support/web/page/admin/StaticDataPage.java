@@ -8,6 +8,9 @@ package zw.co.hitrac.support.web.page.admin;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import zw.co.hitrac.support.web.page.AgricPracticeListPage;
+import zw.co.hitrac.support.web.page.PurposeListPage;
+import zw.co.hitrac.support.web.page.SurplusProListPage;
 
 /**
  *
@@ -26,6 +29,9 @@ public class StaticDataPage extends WebPage {
           add(new BookmarkablePageLink("accommodation", AccommodationListPage.class));
           add(new BookmarkablePageLink("income", IncomeListPage.class));
           add(new BookmarkablePageLink("qualification", QualificationListPage.class));
+           add(new BookmarkablePageLink("purpose", PurposeListPage.class));
+            add(new BookmarkablePageLink("surpluspro", SurplusProListPage.class));
+             add(new BookmarkablePageLink("agricpractice", AgricPracticeListPage.class));
     }
     
     
