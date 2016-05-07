@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -21,8 +23,12 @@ public class EmploymentDetail implements Serializable {
     private Long id;
     private String firstname;
     private String lastname;
+    @ManyToOne
     private Gender gender;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dob;
+    
+    @ManyToOne
     private MaritalStatus maritalstatus;
     private String national_id;
     private String address;

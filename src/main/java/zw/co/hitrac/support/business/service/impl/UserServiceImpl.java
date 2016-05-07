@@ -39,5 +39,9 @@ public class UserServiceImpl implements UserService{
         userRepo.delete(user);
         
     }
+
+    public User get(String username, String password) {
+        return userRepo.getOne(this);
+    }
     
 }

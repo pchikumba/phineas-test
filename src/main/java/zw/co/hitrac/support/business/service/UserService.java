@@ -14,5 +14,6 @@ import zw.co.hitrac.support.business.domain.User;
  * created on 3/5/2016
  */
 public interface UserService extends BusinessComponent<User>{
+       public User get(String username,String password); 
     
 }

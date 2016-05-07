@@ -58,6 +58,7 @@ public class PyschSupportEditPage extends WebPage {
         public void onSubmit(){
         PyschSupport pyschSupport = pyschModel.getObject();
         pyschSupportService.save(pyschSupport);
+          setResponsePage( PyschSupportListPage.class);
         }});
         add(form);
         

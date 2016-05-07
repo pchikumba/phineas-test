@@ -23,7 +23,7 @@ public class Gender implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String gendertype;
-    private Boolean retired = Boolean.FALSE;
+//    private Boolean retired = Boolean.FALSE;
 
     public Long getId() {
         return id;
@@ -41,13 +41,13 @@ public class Gender implements Serializable {
         this.id = id;
     }
 
-    public Boolean getRetired() {
-        return retired;
-    }
-
-    public void setRetired(Boolean retired) {
-        this.retired = retired;
-    }
+//    public Boolean getRetired() {
+//        return retired;
+//    }
+//
+//    public void setRetired(Boolean retired) {
+//        this.retired = retired;
+//    }
 
     @Override
     public int hashCode() {
