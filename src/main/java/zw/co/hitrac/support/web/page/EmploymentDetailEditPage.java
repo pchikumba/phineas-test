@@ -1,7 +1,9 @@
 
 package zw.co.hitrac.support.web.page;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import org.apache.wicket.datetime.PatternDateConverter;
 import org.apache.wicket.datetime.markup.html.form.DateTextField;
 import org.apache.wicket.extensions.yui.calendar.DatePicker;
@@ -9,6 +11,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.RadioChoice;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
@@ -22,9 +25,7 @@ import zw.co.hitrac.support.business.domain.Demo.Gender;
 import zw.co.hitrac.support.business.domain.Demo.MaritalStatus;
 import zw.co.hitrac.support.business.service.EmploymentDetailService;
 import zw.co.hitrac.support.web.model.EmploymentDetailModel;
-import zw.co.hitrac.support.web.model.GenderListModel;
 import zw.co.hitrac.support.web.model.MaritalStatusListModel;
-import zw.co.hitrac.support.web.model.MaritalStatusModel;
 
 /**
  *
@@ -37,7 +38,7 @@ public class EmploymentDetailEditPage extends WebPage{
     
     @SpringBean
     EmploymentDetailService edservice;
-    private Date dob;
+    private final Date dob;
     
     public  EmploymentDetailEditPage(PageParameters parameters){
     super(parameters);
@@ -51,26 +52,26 @@ public class EmploymentDetailEditPage extends WebPage{
         
         
          Form<EmploymentDetail> form = new Form<EmploymentDetail>("form", new CompoundPropertyModel<EmploymentDetail>(edModel));;
-         GenderListModel gModel = new GenderListModel();
-  ChoiceRenderer<Gender> gchoice = new ChoiceRenderer<Gender>("gendertype","id");
+  
          
         MaritalStatusListModel mslModel = new MaritalStatusListModel();
         ChoiceRenderer<MaritalStatus> msChoicerenderer = new ChoiceRenderer<MaritalStatus>("statustype","id");
          
-        form.add(new DropDownChoice("gender",gModel,gchoice));
-         form.add(new DropDownChoice("maritalstatus",mslModel, msChoicerenderer));
         
-        form.add(new RequiredTextField("firstname"));
-        form.add(new RequiredTextField("lastname"));             
-       form.add(new RequiredTextField("national_id"));
+           form.add(new DropDownChoice("maritalstatus",mslModel, msChoicerenderer));
+           form.add(genderRadioButton().setRequired(true));
+           form.add(new RequiredTextField("firstname"));
+           form.add(new RequiredTextField("lastname"));             
+           form.add(new RequiredTextField("national_id"));
            form.add(new DateTextField("dob", dobModel, new PatternDateConverter("dd/MM/yy", true)).add(new DatePicker()));
            form.add(new RequiredTextField("address"));
-             form.add(new RequiredTextField("email"));
-               form.add(new RequiredTextField("phonenumber"));
+           form.add(new RequiredTextField("email"));
+           form.add(new RequiredTextField("phonenumber"));
+          
            
         
         
-        form.add(new org.apache.wicket.markup.html.form.Button("submit") {
+          form.add(new org.apache.wicket.markup.html.form.Button("submit") {
             @Override
             public void onSubmit() {
                 EmploymentDetail employmentDetail =  edModel.getObject();
@@ -82,13 +83,23 @@ public class EmploymentDetailEditPage extends WebPage{
         
     
     }
+  
 
     private void createEmploymentDetailModel(PageParameters parameters) {
         Long id = SupportPageParametersUtil.extractId(parameters);
         edModel = new EmploymentDetailModel(id);
     }
     
+       private RadioChoice<Gender> genderRadioButton(){
+      List<Gender> genderList = Arrays.asList(Gender.values());
+        ChoiceRenderer<Gender> choiceRenderer = new ChoiceRenderer<Gender>("gender");
+        RadioChoice<Gender> genderChoice = new RadioChoice("gender",
+                genderList, choiceRenderer);
+              return genderChoice;
     
     
     
+    
+}
+
 }

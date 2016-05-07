@@ -12,6 +12,7 @@ public enum Role {
     ADMINISTRATOR_PI("Adminstrator"),
     PATIENT("patient");
     
+    private final String roleName;
     
     private Role(String roleName) {
         this.roleName = roleName;
@@ -25,5 +26,5 @@ public enum Role {
     public String toString() {
         return roleName;
     }
-    private final String roleName;
+    
 }

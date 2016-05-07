@@ -23,7 +23,6 @@ public class EmploymentDetail implements Serializable {
     private Long id;
     private String firstname;
     private String lastname;
-    @ManyToOne
     private Gender gender;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dob;

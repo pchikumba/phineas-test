@@ -5,16 +5,10 @@
  */
 package zw.co.hitrac.support.web.page;
 
-import zw.co.hitrac.support.web.page.admin.ReligionListPage;
-import zw.co.hitrac.support.web.page.admin.GenderListPage;
-import zw.co.hitrac.support.web.page.admin.QualificationListPage;
-import zw.co.hitrac.support.web.page.admin.AccommodationListPage;
-import zw.co.hitrac.support.web.page.admin.MaritalStatusListPage;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import zw.co.hitrac.support.web.page.admin.AdminPage;
-import zw.co.hitrac.support.web.page.admin.IncomeListPage;
 import zw.co.hitrac.support.web.page.admin.UserListPage;
 
 

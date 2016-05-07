@@ -26,7 +26,7 @@ public class Demographic implements Serializable {
     private String surname;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dob; 
-    @ManyToOne
+    
     private Gender gender;
     @ManyToOne
     private MaritalStatus maritalstatus;

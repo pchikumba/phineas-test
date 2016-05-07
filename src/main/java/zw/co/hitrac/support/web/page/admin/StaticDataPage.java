@@ -28,7 +28,7 @@ public class StaticDataPage extends WebPage {
              add(new BookmarkablePageLink("agricpractice", AgricPracticeListPage.class));
          add(new BookmarkablePageLink("maritalstatus", MaritalStatusListPage.class));
         add(new BookmarkablePageLink("religion", ReligionListPage.class));
-        add(new BookmarkablePageLink("gender", GenderListPage.class));
+      
         add(new BookmarkablePageLink("accommodation", AccommodationListPage.class));
         add(new BookmarkablePageLink("income", IncomeListPage.class));
         add(new BookmarkablePageLink("qualification", QualificationListPage.class));

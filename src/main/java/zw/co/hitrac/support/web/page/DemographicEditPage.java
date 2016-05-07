@@ -5,7 +5,9 @@
  */
 package zw.co.hitrac.support.web.page;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import org.apache.wicket.datetime.PatternDateConverter;
 import org.apache.wicket.datetime.markup.html.form.DateTextField;
 import org.apache.wicket.extensions.yui.calendar.DatePicker;
@@ -13,6 +15,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.RadioChoice;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
@@ -31,7 +34,7 @@ import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.business.service.DemographicService;
 import zw.co.hitrac.support.web.model.AccommodationListModel;
 import zw.co.hitrac.support.web.model.DemographicModel;
-import zw.co.hitrac.support.web.model.GenderListModel;
+
 import zw.co.hitrac.support.web.model.IncomeListModel;
 import zw.co.hitrac.support.web.model.MaritalStatusListModel;
 import zw.co.hitrac.support.web.model.QualificationListModel;
@@ -76,16 +79,15 @@ public class DemographicEditPage extends WebPage {
          MaritalStatusListModel maritalStatusListModel = new MaritalStatusListModel();
          ChoiceRenderer<MaritalStatus> mschoiceRenderer = new ChoiceRenderer<MaritalStatus>("statustype","id");
         
-        GenderListModel genderListModel = new GenderListModel();
-       ChoiceRenderer<Gender> choiceRenderer = new ChoiceRenderer<Gender>("gendertype", "id");
+   
 
         form.add(new RequiredTextField("name"));
         form.add(new RequiredTextField("surname"));
         form.add(new DateTextField("dob", dobModel, new PatternDateConverter("dd/MM/yy", true)).add(new DatePicker()));
         form.add(new DropDownChoice("income", incomelistmodel, incChoice));
-        form.add(new DropDownChoice<Gender>("gender", genderListModel, choiceRenderer));
+        
         form.add(new DropDownChoice<Accommodation>("accommodation", accommodationListModel, accommchoiceRenderer));
-       
+        form.add(genderRadioButton().setRequired(true));
         form.add(new DropDownChoice<MaritalStatus>("maritalstatus", maritalStatusListModel, mschoiceRenderer));
         form.add(new DropDownChoice<Qualification>("qualification", qualistModel, quarenderer));
         form.add(new DropDownChoice<Religion>("religion", religionListModel, relchoiceRenderer));
@@ -110,6 +112,16 @@ public class DemographicEditPage extends WebPage {
     private void createProgramModel(PageParameters parameters) {
         Long id = SupportPageParametersUtil.extractId(parameters);
         demographicModel = new DemographicModel(id);
+    }
+    
+    private RadioChoice<Gender> genderRadioButton(){
+      List<Gender> genderList = Arrays.asList(Gender.values());
+        ChoiceRenderer<Gender> choiceRenderer = new ChoiceRenderer<Gender>("gender");
+        RadioChoice<Gender> genderChoice = new RadioChoice("gender",
+                genderList, choiceRenderer);
+        return genderChoice;
+
+    
     }
 
     public Date getDob() {
