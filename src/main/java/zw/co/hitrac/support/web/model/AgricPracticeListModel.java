@@ -9,38 +9,31 @@ import java.util.List;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
-import zw.co.hitrac.support.business.domain.Agric.AgricActivity;
-import zw.co.hitrac.support.business.service.AgricActivityService;
+import zw.co.hitrac.support.business.domain.Agric.AgricPractice;
+import zw.co.hitrac.support.business.service.AgricPracticeService;
 
 /**
  *
  * @author gerald matsika
  */
-public class AgricActivityListModel extends LoadableDetachableModel<List<AgricActivity>>{
+public class AgricPracticeListModel extends LoadableDetachableModel<List<AgricPractice>>{
     
-     @SpringBean
-   private AgricActivityService agricactivityService;
+    
+    @SpringBean 
+   private AgricPracticeService agricpracticeService;
    
-   public AgricActivityListModel(){
+   public AgricPracticeListModel(){
        Injector.get().inject(this);
        
        
    }
   
    @Override
-   protected List<AgricActivity> load(){
-       return agricactivityService.findAll();
+   protected List<AgricPractice> load(){
+       return agricpracticeService.findAll();
    }  
     
     
-}
-
-
-  
-
-
-
-
-
-
     
+    
+}

@@ -6,11 +6,12 @@
 package zw.co.hitrac.support.business.service;
 
 import zw.co.hitrac.support.BusinessComponent;
-import zw.co.hitrac.support.business.domain.Agric.AgricActivity;
+import zw.co.hitrac.support.business.domain.Nutrition.Nutrition;
 
 /**
  *
- * @author gerald matsika
+ * @author pchikumba
  */
-public interface AgricActivityService extends BusinessComponent<AgricActivity>{   
+public interface NutritionService extends BusinessComponent<Nutrition>{
+    
 }

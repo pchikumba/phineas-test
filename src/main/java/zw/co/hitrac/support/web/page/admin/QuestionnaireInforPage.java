@@ -8,6 +8,7 @@ package zw.co.hitrac.support.web.page.admin;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import zw.co.hitrac.support.web.page.AgricActivityListPage;
 import zw.co.hitrac.support.web.page.DemographicListPage;
 import zw.co.hitrac.support.web.page.EmploymentDetailListPage;
 import zw.co.hitrac.support.web.page.PyschSupportListPage;
@@ -25,6 +26,7 @@ public class QuestionnaireInforPage extends WebPage {
              add(new BookmarkablePageLink("demographic",DemographicListPage.class));
              add(new BookmarkablePageLink("ps", PyschSupportListPage.class));
              add(new BookmarkablePageLink("employmentdetail", EmploymentDetailListPage.class));
+              add(new BookmarkablePageLink("agricactivity", AgricActivityListPage.class));
              
         
     }

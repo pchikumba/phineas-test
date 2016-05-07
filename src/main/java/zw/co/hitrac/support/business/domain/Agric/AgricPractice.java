@@ -1,5 +1,9 @@
-
-package zw.co.hitrac.support.business.domain.Nutrition;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package zw.co.hitrac.support.business.domain.Agric;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -9,32 +13,36 @@ import javax.persistence.Id;
 
 /**
  *
- * @author pchikumba
+ * @author gerald matsika
  */
 @Entity
-public class FoodRecommender implements Serializable {
+public class AgricPractice implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String recommendername;
+    private String agricpracticetype;
 
-    public String getRecommendername() {
-        return recommendername;
-    }
-
-    public void setRecommendername(String recommendername) {
-        this.recommendername = recommendername;
-    }
-
-    
     public Long getId() {
         return id;
     }
+    
+   
 
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getAgricpracticetype() {
+        return agricpracticetype;
+    }
+
+    public void setAgricpracticetype(String agricpracticetype) {
+        this.agricpracticetype = agricpracticetype;
+    }
+    
+    
+    
 
     @Override
     public int hashCode() {
@@ -46,10 +54,10 @@ public class FoodRecommender implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof FoodRecommender)) {
+        if (!(object instanceof AgricPractice)) {
             return false;
         }
-        FoodRecommender other = (FoodRecommender) object;
+        AgricPractice other = (AgricPractice) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -58,7 +66,7 @@ public class FoodRecommender implements Serializable {
 
     @Override
     public String toString() {
-        return "zw.co.hitrac.support.business.domain.Nutrition.FoodRecommender[ id=" + id + " ]";
+        return "zw.co.hitrac.support.business.domain.Agric.AgricPractice[ id=" + id + " ]";
     }
     
 }

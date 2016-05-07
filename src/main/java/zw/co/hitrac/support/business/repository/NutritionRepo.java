@@ -7,11 +7,12 @@ package zw.co.hitrac.support.business.repository;
 
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import zw.co.hitrac.support.business.domain.Agric.AgricActivity;
+import zw.co.hitrac.support.business.domain.Nutrition.Nutrition;
 
 /**
  *
- * @author gerald matsika
+ * @author pchikumba
  */
-public interface AgricActivityRepo extends JpaRepository<AgricActivity, Serializable> {   
+public interface NutritionRepo extends JpaRepository<Nutrition, Serializable>{
+    
 }

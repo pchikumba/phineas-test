@@ -8,7 +8,7 @@ package zw.co.hitrac.support.business.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import zw.co.hitrac.support.business.domain.Demo.AgricActivity;
+import zw.co.hitrac.support.business.domain.Agric.AgricActivity;
 import zw.co.hitrac.support.business.repository.AgricActivityRepo;
 import zw.co.hitrac.support.business.service.AgricActivityService;
 

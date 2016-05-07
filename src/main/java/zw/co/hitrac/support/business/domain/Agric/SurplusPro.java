@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.co.hitrac.support.business.domain.Demo;
+package zw.co.hitrac.support.business.domain.Agric;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,44 +16,28 @@ import javax.persistence.Id;
  * @author gerald matsika
  */
 @Entity
-public class AgricActivity implements Serializable {
+public class SurplusPro implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String agricpractice;
-    private String sp;
     private String purpose;
 
     public Long getId() {
         return id;
     }
     
-    public String getAgricPractice() {
-        return agricpractice;
-    }
-    
-    public String getSP(){
-        return sp;
-    }
- 
-   public String getPurpose(){
-       return purpose;
-   }
     public void setId(Long id) {
         this.id = id;
     }
-    
-public void setAgricPractice(){
-    this.agricpractice =agricpractice;
-}
+    public String getPurpose() {
+        return purpose;
+    }
 
-public void setSP(){
-    this.sp = sp;
-}
-public void setPurpose(){
-    this.purpose =purpose;
-}
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -64,10 +48,10 @@ public void setPurpose(){
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof AgricActivity)) {
+        if (!(object instanceof SurplusPro)) {
             return false;
         }
-        AgricActivity other = (AgricActivity) object;
+        SurplusPro other = (SurplusPro) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -76,7 +60,7 @@ public void setPurpose(){
 
     @Override
     public String toString() {
-        return "zw.co.hitrac.support.business.domain.Demo.AgricActivity[ id=" + id + " ]";
+        return "zw.co.hitrac.support.business.domain.Agric.SurplusPro[ id=" + id + " ]";
     }
     
 }
