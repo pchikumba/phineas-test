@@ -10,7 +10,7 @@
     <name>support</name>
     <url>http://maven.apache.org</url>
 
-    <dependencies>
+   <dependencies>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>

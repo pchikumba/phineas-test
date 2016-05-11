@@ -59,7 +59,7 @@ public class MaritalStatus implements Serializable {
 
     @Override
     public String toString() {
-        return "zw.co.hitrac.support.business.domain.MaritalStatus[ id=" + id + " ]";
+        return statustype;
     }
     
 }

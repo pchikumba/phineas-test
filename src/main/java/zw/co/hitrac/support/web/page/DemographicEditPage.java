@@ -100,6 +100,7 @@ public class DemographicEditPage extends WebPage {
             @Override
             public void onSubmit() {
                 Demographic demographic = demographicModel.getObject();
+                System.out.println("DDDDDDDDDDDDDDD"+demographic.getDob());
                 demographicService.save(demographic);
                 setResponsePage(DemographicListPage.class);
             }
