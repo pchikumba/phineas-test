@@ -14,9 +14,9 @@ import zw.co.hitrac.support.web.page.PyschSupportListPage;
  * @author tonderai ndangana
  * 02/04/2016
  */
-public class AdminPage  extends WebPage{
+public class PrincipalInvestigatorAdminPage  extends WebPage{
 
-    public AdminPage(PageParameters parameters) {
+    public PrincipalInvestigatorAdminPage(PageParameters parameters) {
         super(parameters);
        
            
