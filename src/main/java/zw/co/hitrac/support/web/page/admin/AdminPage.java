@@ -1,6 +1,7 @@
 
 package zw.co.hitrac.support.web.page.admin;
 
+import zw.co.hitrac.support.web.page.QuestionnaireInforPage;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.request.mapper.parameter.PageParameters;

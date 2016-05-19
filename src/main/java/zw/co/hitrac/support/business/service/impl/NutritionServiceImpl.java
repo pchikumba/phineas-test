@@ -12,34 +12,30 @@ import zw.co.hitrac.support.business.domain.Nutrition.Nutrition;
 import zw.co.hitrac.support.business.repository.NutritionRepo;
 import zw.co.hitrac.support.business.service.NutritionService;
 
-/**
- *
- * @author pchikumba
- */
-
 @Service
-public class NutritionServiceImpl implements NutritionService{
-@Autowired
-private NutritionRepo nutritionRepo;
+public class NutritionServiceImpl implements NutritionService {
+    
+    @Autowired
+    private NutritionRepo nutritionrepo;
 
     public Nutrition save(Nutrition nutrition) {
-        return nutritionRepo.save(nutrition);
+        return nutritionrepo.save(nutrition);
         
     }
 
     public List<Nutrition> findAll() {
-        return nutritionRepo.findAll();
-        
+       return nutritionrepo.findAll();
     }
 
     public Nutrition find(Long id) {
-        return nutritionRepo.findOne(id);
-        
+       return nutritionrepo.findOne(id);
     }
 
     public void delete(Nutrition nutrition) {
-        nutritionRepo.delete(nutrition);
+        
+        nutritionrepo.delete(nutrition);
         
     }
+    
     
 }
