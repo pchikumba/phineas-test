@@ -76,7 +76,7 @@ public class Demographic implements Serializable {
 
     public void setReligion(Religion religion) {
         this.religion = religion;
-    }
+    }  
 
   
 
