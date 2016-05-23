@@ -18,6 +18,12 @@ public class HomePage extends WebPage{
         super(parameters);
         add(new BookmarkablePageLink("admin",PrincipalInvestigatorAdminPage.class));
         add(new BookmarkablePageLink("user",UserListPage.class));
+        add(new BookmarkablePageLink("demographic",DemographicListPage.class));
+//        add(new BookmarkablePageLink("agricactivity", AgricActivityListPage.class));
+        add(new BookmarkablePageLink("nutrition", NutritionListPage.class));
+        add(new BookmarkablePageLink("ps", PyschSupportListPage.class));
+             
+        
       
               
     }
