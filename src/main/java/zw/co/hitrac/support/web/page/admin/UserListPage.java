@@ -10,13 +10,14 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.User;
 import zw.co.hitrac.support.web.model.UserListModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author tonderai ndangana created on 03/05/2016
  * 
  */
-public class UserListPage extends WebPage {
+public class UserListPage extends TemplatePage {
 
     public UserListPage(PageParameters parameters) {
         super(parameters);
