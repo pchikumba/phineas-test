@@ -7,12 +7,12 @@ package zw.co.hitrac.support.business.repository;
 
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import zw.co.hitrac.support.business.domain.Nutrition.Nutrition;
+import zw.co.hitrac.support.business.domain.Nutrition.FrequencyOfConsumption;
 
 /**
  *
  * @author hitrac
  */
-public interface NutritionRepo extends JpaRepository<Nutrition, Serializable>{
+public interface FrequencyOfConsumptionRepo extends JpaRepository<FrequencyOfConsumption, Serializable> {
     
 }

@@ -1,15 +1,21 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package zw.co.hitrac.support.business.domain.Nutrition;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 /**
- @author pchikumba
+ *
+ * @author hitrac
  */
 @Entity
 public class Nutrition implements Serializable {
@@ -17,47 +23,12 @@ public class Nutrition implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne
-    private FoodRecommender foodrecommender;
-    @ManyToOne
-    private Frequency frequency;
-    @ManyToOne
-    private TraditionalDish traditionalDish;
-    @ManyToOne
-    private TraditionalFood traditionalFood;
+    private FrequencyOfConsumption  frequencyOfConsumption ;
+    private Recommender recommender;
+    private TraditionalFoodTaken traditionalFoodTaken;
+    @Enumerated(EnumType.STRING)
+    private TraditionalFoodEnum traditionalFoodEnum ;
 
-    public FoodRecommender getFoodrecommender() {
-        return foodrecommender;
-    }
-
-    public void setFoodrecommender(FoodRecommender foodrecommender) {
-        this.foodrecommender = foodrecommender;
-    }
-
-    public Frequency getFrequency() {
-        return frequency;
-    }
-
-    public void setFrequency(Frequency frequency) {
-        this.frequency = frequency;
-    }
-
-    public TraditionalDish getTraditionalDish() {
-        return traditionalDish;
-    }
-
-    public void setTraditionalDish(TraditionalDish traditionalDish) {
-        this.traditionalDish = traditionalDish;
-    }
-
-    public TraditionalFood getTraditionalFood() {
-        return traditionalFood;
-    }
-
-    public void setTraditionalFood(TraditionalFood traditionalFood) {
-        this.traditionalFood = traditionalFood;
-    }
-    
     public Long getId() {
         return id;
     }
@@ -65,6 +36,42 @@ public class Nutrition implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public FrequencyOfConsumption getFrequencyOfConsumption() {
+        return frequencyOfConsumption;
+    }
+
+    public void setFrequencyOfConsumption(FrequencyOfConsumption frequencyOfConsumption) {
+        this.frequencyOfConsumption = frequencyOfConsumption;
+    }
+
+    public Recommender getRecommender() {
+        return recommender;
+    }
+
+    public void setRecommender(Recommender recommender) {
+        this.recommender = recommender;
+    }
+
+    public TraditionalFoodTaken getTraditionalFoodTaken() {
+        return traditionalFoodTaken;
+    }
+
+    public void setTraditionalFoodTaken(TraditionalFoodTaken traditionalFoodTaken) {
+        this.traditionalFoodTaken = traditionalFoodTaken;
+    }
+
+    public TraditionalFoodEnum getTraditionalFoodEnum() {
+        return traditionalFoodEnum;
+    }
+
+    public void setTraditionalFoodEnum(TraditionalFoodEnum traditionalFoodEnum) {
+        this.traditionalFoodEnum = traditionalFoodEnum;
+    }
+
+
+    
+    
 
     @Override
     public int hashCode() {

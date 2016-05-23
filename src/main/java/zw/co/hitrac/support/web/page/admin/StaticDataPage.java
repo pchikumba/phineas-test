@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package zw.co.hitrac.support.web.page.admin;
 
 import org.apache.wicket.markup.html.WebPage;
@@ -33,10 +29,13 @@ public class StaticDataPage extends WebPage {
         add(new BookmarkablePageLink("income", IncomeListPage.class));
         add(new BookmarkablePageLink("qualification", QualificationListPage.class));
 
-        add(new BookmarkablePageLink("recommendername", FoodRecommenderListPage.class));
-        add(new BookmarkablePageLink("frequency", FrequencyListPage.class));
-        add(new BookmarkablePageLink("traditionaldish", TraditionalDishListPage.class));
-        add(new BookmarkablePageLink("traditonalfood", TraditionalFoodListPage.class));
+        
+        add(new BookmarkablePageLink("frequency", FrequencyOfConsumptionListPage.class));
+        add(new BookmarkablePageLink("traditionalFoodTaken", TraditionalFoodTakenListPage.class));
+         add(new BookmarkablePageLink("recommender", RecommenderListPage.class));
+          
+          
+      
 
 
     }

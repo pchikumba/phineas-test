@@ -6,12 +6,12 @@
 package zw.co.hitrac.support.business.service;
 
 import zw.co.hitrac.support.BusinessComponent;
-import zw.co.hitrac.support.business.domain.Nutrition.Nutrition;
+import zw.co.hitrac.support.business.domain.Nutrition.FrequencyOfConsumption;
 
 /**
  *
  * @author hitrac
  */
-public interface NutritionService extends BusinessComponent<Nutrition> {
+public interface FrequencyOfConsumptionService extends BusinessComponent<FrequencyOfConsumption> {
     
 }
