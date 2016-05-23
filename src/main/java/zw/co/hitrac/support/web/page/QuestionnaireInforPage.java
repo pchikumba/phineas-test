@@ -14,7 +14,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
  * @author TONDERAI NDANGANA
  * CREATED ON 02/05/2016
  */
-public class QuestionnaireInforPage extends WebPage {
+public class QuestionnaireInforPage extends TemplatePage {
 
     public QuestionnaireInforPage(PageParameters parameters) {
         super(parameters);

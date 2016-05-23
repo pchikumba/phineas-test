@@ -22,7 +22,7 @@ public class UserListPage extends TemplatePage {
     public UserListPage(PageParameters parameters) {
         super(parameters);
 
-        add(new BookmarkablePageLink("back", HomePage.class));
+        
         add(new BookmarkablePageLink("new", UserEditPage.class));
         add(new PropertyListView<User>("user", new UserListModel()) {
 
