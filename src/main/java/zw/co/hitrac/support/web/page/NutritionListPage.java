@@ -16,7 +16,7 @@ import zw.co.hitrac.support.web.model.NutritionListModel;
  * @author pchikumba
  * 05/05/2016
  */
-public class NutritionListPage extends WebPage{
+public class NutritionListPage extends TemplatePage{
 
     public NutritionListPage(PageParameters parameters) {
         super(parameters);
