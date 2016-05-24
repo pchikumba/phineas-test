@@ -18,12 +18,13 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Nutrition.Recommender;
 import zw.co.hitrac.support.business.service.RecommenderService;
 import zw.co.hitrac.support.web.model.RecommenderModel;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author pchikumba
  */
-public class RecommenderEditPage extends WebPage{
+public class RecommenderEditPage extends TemplatePage{
    
     
     private RecommenderModel recommenderModel;

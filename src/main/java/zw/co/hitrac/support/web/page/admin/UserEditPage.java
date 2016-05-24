@@ -20,13 +20,14 @@ import zw.co.hitrac.support.business.domain.User;
 import zw.co.hitrac.support.business.service.UserService;
 import zw.co.hitrac.support.web.model.UserModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author tonderai ndangana
  * 03/05/2016
  */
-public class UserEditPage extends WebPage{
+public class UserEditPage extends TemplatePage{
     
     
     private UserModel userModel;

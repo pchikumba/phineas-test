@@ -31,7 +31,7 @@ import zw.co.hitrac.support.web.model.SurplusProListModel;
  *
  * @author gerald matsika
  */
-public class AgricActivityEditPage extends WebPage{
+public class AgricActivityEditPage extends TemplatePage{
     
     
     private AgricActivityModel agricactivityModel;

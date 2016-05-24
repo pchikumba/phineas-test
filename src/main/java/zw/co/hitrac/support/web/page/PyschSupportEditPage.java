@@ -24,7 +24,7 @@ import zw.co.hitrac.support.web.model.PyschSupportModel;
  * @author tonderai ndaNGANA
  * 30/04.2016
  */
-public class PyschSupportEditPage extends WebPage {
+public class PyschSupportEditPage extends TemplatePage {
     
     private Boolean znnnpaffil;
     private PyschSupportModel pyschModel;

@@ -13,13 +13,14 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Income;
 import zw.co.hitrac.support.business.service.IncomeService;
 import zw.co.hitrac.support.web.model.IncomeModel;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author tonderai ndangana
  * created on 30/04/2016
  */
-public class IncomeEditPage extends WebPage{
+public class IncomeEditPage extends TemplatePage{
     
     private IncomeModel incomeModel;
     

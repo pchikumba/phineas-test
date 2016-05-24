@@ -7,12 +7,13 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import zw.co.hitrac.support.web.page.AgricPracticeListPage;
 import zw.co.hitrac.support.web.page.PurposeListPage;
 import zw.co.hitrac.support.web.page.SurplusProListPage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author tonderai ndangana created on 02/04/2016
  */
-public class StaticDataPage extends WebPage {
+public class StaticDataPage extends TemplatePage {
 
     public StaticDataPage(PageParameters parameters) {
         super(parameters);

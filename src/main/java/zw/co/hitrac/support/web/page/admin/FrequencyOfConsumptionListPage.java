@@ -15,12 +15,13 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Nutrition.FrequencyOfConsumption;
 import zw.co.hitrac.support.web.model.FrequencyOfConsumptionListModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author pchikumba
  */
-public class FrequencyOfConsumptionListPage extends WebPage{
+public class FrequencyOfConsumptionListPage extends TemplatePage{
     
   public FrequencyOfConsumptionListPage(PageParameters parameters) {
         super(parameters);

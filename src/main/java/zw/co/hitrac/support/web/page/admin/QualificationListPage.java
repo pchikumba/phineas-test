@@ -15,12 +15,13 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Qualification;
 import zw.co.hitrac.support.web.model.QualificationListModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author tonderai ndangana; created on 28/04/2016
  */
-public class QualificationListPage extends WebPage {
+public class QualificationListPage extends TemplatePage {
 
     public QualificationListPage(PageParameters parameters) {
         super(parameters);

@@ -13,13 +13,14 @@ import zw.co.hitrac.support.business.domain.Demo.MaritalStatus;
 import zw.co.hitrac.support.business.service.MaritalStatusService;
 import zw.co.hitrac.support.web.model.MaritalStatusModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author tonderai ndangana 27/04/2016
  *
  */
-public class MaritalStatusEditPage extends WebPage {
+public class MaritalStatusEditPage extends TemplatePage {
 
     private MaritalStatusModel maritalStatusModel;
 

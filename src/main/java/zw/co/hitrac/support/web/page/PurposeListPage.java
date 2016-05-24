@@ -20,7 +20,7 @@ import zw.co.hitrac.support.web.model.PurposeListModel;
  * @author gerald matsika
  *
  */
-public class PurposeListPage extends WebPage{
+public class PurposeListPage extends TemplatePage{
         public PurposeListPage(PageParameters parameters) {
         super(parameters);
         add(new BookmarkablePageLink("back", HomePage.class));

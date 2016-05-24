@@ -15,13 +15,14 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Income;
 import zw.co.hitrac.support.web.model.IncomeListModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author tonderai ndangana
  * created on 30/04/2016
  */
-public class IncomeListPage extends  WebPage {
+public class IncomeListPage extends  TemplatePage {
 
     public IncomeListPage(PageParameters parameters) {
         super(parameters);

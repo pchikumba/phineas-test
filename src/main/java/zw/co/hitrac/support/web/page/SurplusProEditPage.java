@@ -23,7 +23,7 @@ import zw.co.hitrac.support.web.model.SurplusProModel;
  *
  * @author gerald matsika
  */
-public class SurplusProEditPage extends WebPage{
+public class SurplusProEditPage extends TemplatePage{
     
     
     private SurplusProModel surplusproModel;

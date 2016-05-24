@@ -32,7 +32,7 @@ import zw.co.hitrac.support.web.model.TraditionalFoodTakenListModel;
  * @author pchikumba
  * 05.05.2016
  */
-public class NutritionEditPage extends WebPage {
+public class NutritionEditPage extends TemplatePage {
     
 
     private NutritionModel nutritionModel;

@@ -16,7 +16,7 @@ import zw.co.hitrac.support.web.model.EmploymentDetailListModel;
  * @author tonderai ndangana
  * created on 28/04/2016
  */
-public class EmploymentDetailListPage extends WebPage {
+public class EmploymentDetailListPage extends TemplatePage {
     
     public EmploymentDetailListPage(PageParameters parameters){
              super(parameters);

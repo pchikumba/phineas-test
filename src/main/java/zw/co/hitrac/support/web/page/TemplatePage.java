@@ -12,6 +12,7 @@ import zw.co.hitrac.support.web.page.admin.UserListPage;
 /**
  *
  * @author pchikumba
+ * @author tndangana
  */
 public abstract class TemplatePage extends WebPage{
     public TemplatePage(PageParameters parameters){

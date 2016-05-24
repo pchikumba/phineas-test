@@ -17,12 +17,13 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Nutrition.TraditionalFoodTaken;
 import zw.co.hitrac.support.business.service.TraditionalFoodTakenService;
 import zw.co.hitrac.support.web.model.TraditionalFoodTakenModel;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author pchikumba
  */
-public class TraditionalFoodTakenEditPage extends WebPage{
+public class TraditionalFoodTakenEditPage extends TemplatePage{
   
     private TraditionalFoodTakenModel traditionalFoodTakenModel;
 

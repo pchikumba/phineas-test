@@ -16,7 +16,7 @@ import zw.co.hitrac.support.web.model.PyschSupportListModel;
  * @author tonderai ndangana
  * 01/05/2016
  */
-public class PyschSupportListPage extends WebPage{
+public class PyschSupportListPage extends TemplatePage{
 
     public PyschSupportListPage(PageParameters parameters) {
         super(parameters);

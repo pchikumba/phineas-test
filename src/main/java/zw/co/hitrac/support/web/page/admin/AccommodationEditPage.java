@@ -13,13 +13,14 @@ import zw.co.hitrac.support.business.domain.Demo.Accommodation;
 import zw.co.hitrac.support.business.service.AccommodationService;
 import zw.co.hitrac.support.web.model.AccommodationModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author pchikumba 27/04/2016
  *
  */
-public class AccommodationEditPage extends WebPage {
+public class AccommodationEditPage extends TemplatePage {
 
     private AccommodationModel accommodationModel;
 

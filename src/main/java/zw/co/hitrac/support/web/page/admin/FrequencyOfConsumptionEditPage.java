@@ -18,12 +18,13 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Nutrition.FrequencyOfConsumption;
 import zw.co.hitrac.support.business.service.FrequencyOfConsumptionService;
 import zw.co.hitrac.support.web.model.FrequencyOfConsumptionModel;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author pchikumba
  */
-public class FrequencyOfConsumptionEditPage extends WebPage{
+public class FrequencyOfConsumptionEditPage extends TemplatePage{
     
     private FrequencyOfConsumptionModel frequencyModel;
 

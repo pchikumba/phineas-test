@@ -32,7 +32,7 @@ import zw.co.hitrac.support.web.model.MaritalStatusListModel;
  * @author tonderai ndangana
  * created on 28/04/2016
  */
-public class EmploymentDetailEditPage extends WebPage{
+public class EmploymentDetailEditPage extends TemplatePage{
     
     private EmploymentDetailModel edModel;
     

@@ -12,12 +12,13 @@ import zw.co.hitrac.support.business.domain.Nutrition.Recommender;
 
 import zw.co.hitrac.support.web.model.RecommenderListModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author pchikumba 04/05/2016
  */
-public class RecommenderListPage extends WebPage{
+public class RecommenderListPage extends TemplatePage{
   
     
     public RecommenderListPage(PageParameters parameters) {

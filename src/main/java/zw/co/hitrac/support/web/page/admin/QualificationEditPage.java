@@ -14,12 +14,13 @@ import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.business.service.QualificationService;
 import zw.co.hitrac.support.web.model.QualificationModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author Tonderai ndangana 28/04/2016
  */
-public class QualificationEditPage extends WebPage {
+public class QualificationEditPage extends TemplatePage {
 
     private QualificationModel qualificationmodel;
 

@@ -22,7 +22,7 @@ import zw.co.hitrac.support.web.model.AgricPracticeModel;
  *
  * @author gerald matsika
  */
-public class AgricPracticeEditPage extends WebPage{
+public class AgricPracticeEditPage extends TemplatePage{
     
     
     private AgricPracticeModel agricpracticeModel;

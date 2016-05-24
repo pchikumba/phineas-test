@@ -19,7 +19,7 @@ import zw.co.hitrac.support.web.model.AgricPracticeListModel;
  *
  * @author gerald matsika
  */
-public class AgricPracticeListPage extends WebPage{
+public class AgricPracticeListPage extends TemplatePage{
     
        public AgricPracticeListPage(PageParameters parameters) {
         super(parameters);

@@ -15,12 +15,13 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Accommodation;
 import zw.co.hitrac.support.web.model.AccommodationListModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author pchikumba
  */
-public class AccommodationListPage extends WebPage {
+public class AccommodationListPage extends TemplatePage {
 
     public AccommodationListPage(PageParameters parameters) {
         super(parameters);

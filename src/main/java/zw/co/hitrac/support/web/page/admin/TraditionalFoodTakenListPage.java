@@ -11,12 +11,13 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Nutrition.TraditionalFoodTaken;
 import zw.co.hitrac.support.web.model.TraditionalFoodTakenListModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author pchikumba
  */
-public class TraditionalFoodTakenListPage extends WebPage{
+public class TraditionalFoodTakenListPage extends TemplatePage{
     
 public TraditionalFoodTakenListPage(PageParameters parameters) {
         super(parameters);

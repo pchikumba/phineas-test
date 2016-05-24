@@ -19,7 +19,7 @@ import zw.co.hitrac.support.web.model.SurplusProListModel;
  *
  * @author gerald matsika
  */
-public class SurplusProListPage extends WebPage{
+public class SurplusProListPage extends TemplatePage{
     
         public SurplusProListPage(PageParameters parameters) {
         super(parameters);

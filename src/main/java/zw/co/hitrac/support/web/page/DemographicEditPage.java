@@ -45,7 +45,7 @@ import zw.co.hitrac.support.web.model.ReligionListModel;
  * @author pchikumba
  * tndangana 01/05/2016
  */
-public class DemographicEditPage extends WebPage {
+public class DemographicEditPage extends TemplatePage {
 
     private DemographicModel demographicModel;
     @SpringBean

@@ -24,7 +24,7 @@ import zw.co.hitrac.support.web.model.PurposeModel;
  * @author gerald matsika
  * 02/05/16
  */
-public class PurposeEditPage extends WebPage{
+public class PurposeEditPage extends TemplatePage{
     
 
     private PurposeModel purposeModel;

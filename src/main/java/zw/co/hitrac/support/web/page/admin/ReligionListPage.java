@@ -15,12 +15,13 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.web.model.ReligionListModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author pchikumba
  */
-public class ReligionListPage extends WebPage {
+public class ReligionListPage extends TemplatePage {
 
     public ReligionListPage(PageParameters parameters) {
         super(parameters);

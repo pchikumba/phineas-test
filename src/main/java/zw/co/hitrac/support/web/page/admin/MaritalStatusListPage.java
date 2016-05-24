@@ -15,12 +15,13 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.MaritalStatus;
 import zw.co.hitrac.support.web.model.MaritalStatusListModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author hitrac
  */
-public class MaritalStatusListPage extends WebPage {
+public class MaritalStatusListPage extends TemplatePage {
 
     public MaritalStatusListPage(PageParameters parameters) {
         super(parameters);

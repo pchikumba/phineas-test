@@ -14,13 +14,14 @@ import zw.co.hitrac.support.business.service.ReligionService;
 
 import zw.co.hitrac.support.web.model.ReligionModel;
 import zw.co.hitrac.support.web.page.HomePage;
+import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
  *
  * @author pchikumba 27/04/2016
  *
  */
-public class ReligionEditPage extends WebPage {
+public class ReligionEditPage extends TemplatePage {
 
     private ReligionModel religionModel;
 
