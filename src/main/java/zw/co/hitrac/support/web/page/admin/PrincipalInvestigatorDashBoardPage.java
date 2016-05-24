@@ -12,9 +12,9 @@ import zw.co.hitrac.support.web.page.TemplatePage;
  * @author tonderai ndangana
  * 02/04/2016
  */
-public class PrincipalInvestigatorAdminPage  extends TemplatePage{
+public class PrincipalInvestigatorDashBoardPage  extends TemplatePage{
 
-    public PrincipalInvestigatorAdminPage(PageParameters parameters) {
+    public PrincipalInvestigatorDashBoardPage(PageParameters parameters) {
         super(parameters);
        
            

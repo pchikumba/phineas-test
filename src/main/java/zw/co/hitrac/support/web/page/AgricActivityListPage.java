@@ -19,7 +19,7 @@ import zw.co.hitrac.support.web.model.AgricActivityListModel;
  *
  * @author gerald matsika
  */
-public class AgricActivityListPage extends WebPage{
+public class AgricActivityListPage extends TemplatePage{
     
     
     public AgricActivityListPage(PageParameters parameters) {

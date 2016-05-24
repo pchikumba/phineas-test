@@ -14,7 +14,7 @@ import zw.co.hitrac.support.web.model.DemographicListModel;
  *
  * @author pchikumba
  */
-public class DemographicListPage extends WebPage {
+public class DemographicListPage extends TemplatePage {
 
     public DemographicListPage(PageParameters parameters) {
         super(parameters);
