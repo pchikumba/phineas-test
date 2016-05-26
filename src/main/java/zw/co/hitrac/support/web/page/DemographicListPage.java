@@ -30,11 +30,11 @@ public class DemographicListPage extends TemplatePage {
                 item.add(new Label("dob"));
                 item.add(new Label("gender"));
                 item.add(new Label("maritalstatus.statustype"));
-                item.add(new Label("qualification"));
+                item.add(new Label("qualification.qualificationtype"));
                 item.add(new Label("religion.religiontype"));
                 item.add(new Label("residentialaddress"));
-                item.add(new Label("accommodation"));
-                item.add(new Label("income"));
+                item.add(new Label("accommodation.accommodationtype"));
+                item.add(new Label("income.incomelevel"));
                 item.add(new Label("occupation"));
 
                 PageParameters pageParameters = new PageParameters();

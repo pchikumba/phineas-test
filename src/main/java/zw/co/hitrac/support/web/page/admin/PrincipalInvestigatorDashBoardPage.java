@@ -21,6 +21,7 @@ public class PrincipalInvestigatorDashBoardPage  extends TemplatePage{
             
              add(new BookmarkablePageLink("staticdata", StaticDataPage.class));
               add(new BookmarkablePageLink("questionnaire", QuestionnaireInforPage.class));
+              add(new BookmarkablePageLink("patientview", PatientViewPage.class));
     }
     
     

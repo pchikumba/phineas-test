@@ -31,9 +31,9 @@ public class AgricActivityListPage extends TemplatePage{
 
             @Override
             protected void populateItem(ListItem<AgricActivity> item) {
-                item.add(new Label("agricpractice"));
-                item.add(new Label("purpose"));
-                item.add(new Label("surpluspro"));
+                item.add(new Label("agricpractice.agricpracticetype"));
+                item.add(new Label("purpose.producingsp"));
+                item.add(new Label("surpluspro.purpose"));
            
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());

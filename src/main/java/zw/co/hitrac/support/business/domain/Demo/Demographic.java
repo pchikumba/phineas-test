@@ -3,12 +3,17 @@ package zw.co.hitrac.support.business.domain.Demo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
+import zw.co.hitrac.support.business.domain.Agric.AgricActivity;
+import zw.co.hitrac.support.business.domain.Nutrition.Nutrition;
+import zw.co.hitrac.support.business.domain.Pysch.PyschSupport;
 
 /**
  *
@@ -21,31 +26,57 @@ public class Demographic implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String name;
+     private Long id;
+    @OneToMany
+    private List<Nutrition> nutrition;
+    @OneToMany
+    private List<PyschSupport> psychsupport;
+    @OneToMany
+    private List<AgricActivity> agricactivity;
+     private String name;
     private String surname;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dob; 
-    
     private Gender gender;
     @ManyToOne
     private MaritalStatus maritalstatus;
-    
-   
-    @ManyToOne
+   @ManyToOne
     private Religion religion;
-    
     @ManyToOne
     private Qualification qualification;
-    
-    private String residentialaddress;
+   private String residentialaddress;
     @ManyToOne
     private Accommodation accommodation;
-    
     @ManyToOne
-    private Income income;
+    private Income income ;
     private String occupation;
+    public List<Nutrition> getNutrition() {
+        return nutrition;
+    }
 
+    public void setNutrition(List<Nutrition> nutrition) {
+        this.nutrition = nutrition;
+    }
+
+    public List<PyschSupport> getPsychsupport() {
+        return psychsupport;
+    }
+
+    public void setPsychsupport(List<PyschSupport> psychsupport) {
+        this.psychsupport = psychsupport;
+    }
+    
+
+    
+
+    public List<AgricActivity> getAgricactivity() {
+        return agricactivity;
+    }
+
+    public void setAgricactivity(List<AgricActivity> agricactivity) {
+        this.agricactivity = agricactivity;
+    }
+    
     public String getName() {
         return name;
     }
