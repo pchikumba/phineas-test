@@ -25,7 +25,7 @@ public class DemographicListPage extends TemplatePage {
 
             @Override
             protected void populateItem(ListItem<Demographic> item) {
-                item.add(new Label("name"));
+                item.add(new Label("firstname"));
                 item.add(new Label("surname"));
                 item.add(new Label("dob"));
                 item.add(new Label("gender"));

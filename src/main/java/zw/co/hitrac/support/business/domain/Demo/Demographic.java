@@ -33,7 +33,7 @@ public class Demographic implements Serializable {
     private List<PyschSupport> psychsupport;
     @OneToMany
     private List<AgricActivity> agricactivity;
-     private String name;
+     private String firstname;
     private String surname;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dob; 
@@ -76,14 +76,16 @@ public class Demographic implements Serializable {
     public void setAgricactivity(List<AgricActivity> agricactivity) {
         this.agricactivity = agricactivity;
     }
-    
-    public String getName() {
-        return name;
+
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
+    
+  
 
     public String getSurname() {
         return surname;

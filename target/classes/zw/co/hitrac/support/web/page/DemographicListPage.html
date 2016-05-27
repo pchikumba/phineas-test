@@ -4,19 +4,16 @@
         <title>STudent List Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <!-- Bootstrap Core CSS -->
+        <!-- Bootstrap Core CSS -->
         <link href="resources/css/bootstrap.min.css" rel="stylesheet">
         <!-- MetisMenu CSS -->
         <link href="resources/css/metisMenu.min.css" rel="stylesheet">
         <!-- Timeline CSS -->
         <link href="/timeline.css" rel="stylesheet">
-
         <!-- Custom CSS -->
         <link href="resources/css/sb-admin-2.css" rel="stylesheet">
-
         <!-- Morris Charts CSS -->
         <link href="resources/css/morris.css" rel="stylesheet">
-
         <!-- Custom Fonts -->
         <link href="resources/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
     </head>
@@ -29,71 +26,64 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-    
-        <div class="row">
-            <div class="col-lg-12">
-                <a wicket:id="new">Create New</a>
-                 <a wicket:id="back">Back</a>
-                <div class="panel panel-default">
-                    <div class="panel-heading"></div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <div class="dataTable_wrapper">
-                            <table border="0" style="width:70%">
-                           <!-- <table class="table table-striped table-bordered table-hover" id="dataTables-example">-->
-                                
-                                <thead>
-                                    <tr>
-                                        <th><h2>Demographic</h2></th>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <th>First Name</th>
-                                        <th>Surname</th>
-                                        <th>Date Of Birth</th>
-                                        <th>Gender</th>
-                                        <th>Marital Status</th>
-                                        <th>Educational Qualifications</th>
-                                        <th>Religion</th>
-                                        <th>Residential Address</th>
-                                        <th>Accommodation Type</th>
-                                        <th>Monthly Income</th>
-                                        <th>Occupation</th>
+        <a wicket:id="new">Create New</a>
+        <a wicket:id="back">Back</a>
+        <table class="table table-striped">
+            <tr wicket:id="demographic" class="odd gradeX">
+            <tr>
+                <td>First Name</td>
+                <td wicket:id="firstname">Phineas</td>
+            </tr>
+
+            <tr>
+                <td>Surname</td>
+                <td wicket:id="surname">Chikumba</td>
+            </tr>
+            <tr>
+                <td>Date Of Birth</td>
+                <td wicket:id="dob"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td wicket:id="gender"></td>
+            </tr>
+            <tr>
+                <td>Marital Status</td>
+                <td wicket:id="maritalstatus.statustype"></td>
+            </tr>
+            <tr>
+                <td>Educational Qualifications</td>
+                <td wicket:id="qualification.qualificationtype"></td>
+            </tr>
+            <tr>
+                <td>Religion</td>
+                <td wicket:id="religion.religiontype"></td>
+            </tr>
 
 
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr wicket:id="demographic" class="odd gradeX">
-                                        <td wicket:id="name">Phineas</td>
-                                        <td wicket:id="surname">Chikumba</td>
-                                        <td wicket:id="dob"></td>
-                                        <td wicket:id="gender"></td>
-                                        <td wicket:id="maritalstatus.statustype"></td>
-                                        <td wicket:id="qualification.qualificationtype"></td>
-                                        <td wicket:id="religion.religiontype"></td>
-                                        <td wicket:id="residentialaddress"></td>
-                                        <td wicket:id="accommodation.accommodationtype"></td>
-                                        <td wicket:id="income.incomelevel"></td>
-                                        <td wicket:id="occupation"></td>
-
-
-
-                                        <td><a wicket:id="edit"><i class="fa fa-pencil fa-fw"></i>Edit</a></td>
-                                    </tr>                                     
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                
-                </div>
-     
-            </div>
+            <tr>
+                <td>Residential Address</td>
+                <td wicket:id="residentialaddress"></td>
+            </tr>
+            <tr>
+                <td>Accommodation Type</td>
+                <td wicket:id="accommodation.accommodationtype"></td>
+            </tr>
+            <tr>
+                <td>Monthly Income</td>
+                <td wicket:id="income.incomelevel"></td>
+            </tr>
+            <tr>
+                <td>Occupation</td>
+                <td wicket:id="occupation"></td>
+            </tr>
+            <td><a wicket:id="edit"><i class="fa fa-pencil fa-fw"></i>Edit</a>
+            </td>
+        </tr>
+        
             
-        </div>
-        </wicket:extend>
+        </table>
+    </wicket:extend>
 
-    </body>
+</body>
 </html>

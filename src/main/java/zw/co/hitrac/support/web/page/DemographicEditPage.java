@@ -81,7 +81,7 @@ public class DemographicEditPage extends TemplatePage {
         
    
 
-        form.add(new RequiredTextField("name"));
+        form.add(new RequiredTextField("firstname"));
         form.add(new RequiredTextField("surname"));
         form.add(new DateTextField("dob", dobModel, new PatternDateConverter("dd/MM/yy", true)).add(new DatePicker()));
         form.add(new DropDownChoice("income", incomelistmodel, incChoice));

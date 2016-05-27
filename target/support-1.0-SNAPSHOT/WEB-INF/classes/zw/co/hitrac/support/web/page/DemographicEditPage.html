@@ -4,7 +4,7 @@
         <title>Support</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <!-- Bootstrap Core CSS -->
+        <!-- Bootstrap Core CSS -->
         <link href="resources/css/bootstrap.min.css" rel="stylesheet">
         <!-- MetisMenu CSS -->
         <link href="resources/css/metisMenu.min.css" rel="stylesheet">
@@ -27,76 +27,100 @@
         <div wicket:id="feedback">here we are !!</div>
         <div><a wicket:id="back">Back</a></div>
         <form wicket:id="form">
-            <table>
-                <div>
-                    <label>First Name</label>
-                    <input wicket:id="name" type="text"/>
-                </div>
-                <div>
-                    <label>Last Name</label>
-                    <input wicket:id="surname" type="text"/>
-                </div>
+            <table class="table table-striped">
 
-                <div>
-                    <label>Date Of Birth</label>
-                    <input wicket:id="dob" type="text"/>
-                </div>
-               <label>Gender</label>
-                <div wicket:id="gender" input type="radio">Gender</div>
-                
-                
-                 <div>
-                    <label>Marital Status</label>
-                    <select wicket:id="maritalstatus" type="text"/>
-                </div>
-                
-                  <div>
-                    <label>Qualification</label>
-                    <select wicket:id="qualification" type="text"/>
-                </div>
-                
+                <tr>
+                    <td>
 
+                        <label>First Name</label>
+                        <input wicket:id="firstname" type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Last Name</label>
+                        <input wicket:id="surname" type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
 
+                        <label>Date Of Birth</label>
+                        <input wicket:id="dob" type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Gender</label>
+                        <div wicket:id="gender" input type="radio">Gender</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
 
+                        <label>Marital Status</label>
+                        <select wicket:id="maritalstatus" type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Qualification</label>
+                        <select wicket:id="qualification" type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>religion</label>
+                        <select wicket:id="religion" type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <label>residential address</label>
+                            <input wicket:id="residentialaddress" type="text"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <label>accommodation type</label>
+                            <select wicket:id="accommodation" type="text"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <label>monthly income</label>
+                            <select wicket:id="income" type="text"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <label>occupation</label>
+                            <input wicket:id="occupation" type="text"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
 
-                <div>
-                    <label>religion</label>
-                    <select wicket:id="religion" type="text"/>
-                </div>
-                
-              
+                    <td>
+                        <div>
+                            <input wicket:id="submit" type="submit"/>
 
+                        </div>
+                    </td>
 
-                <div>
-                    <label>residential address</label>
-                    <input wicket:id="residentialaddress" type="text"/>
-                </div>
+                </tr>
 
-                <div>
-                    <label>accommodation type</label>
-                    <select wicket:id="accommodation" type="text"/>
-                </div>
-
-                <div>
-                    <label>monthly income</label>
-                    <select wicket:id="income" type="text"/>
-                </div>
-
-                <div>
-                    <label>occupation</label>
-                    <input wicket:id="occupation" type="text"/>
-                </div>
-
-
-
-                <div>
-                    <input wicket:id="submit" type="submit"/>
-
-                </div>
             </table>
         </form>
-        </wicket:extend>
+    </wicket:extend>
 
-    </body>
+</body>
 
 </html>
