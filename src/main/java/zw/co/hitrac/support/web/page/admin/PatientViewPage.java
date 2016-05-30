@@ -6,10 +6,11 @@
 package zw.co.hitrac.support.web.page.admin;
 
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.CompoundPropertyModel;
-import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Agric.AgricActivity;
@@ -17,6 +18,10 @@ import zw.co.hitrac.support.business.domain.Demo.Demographic;
 import zw.co.hitrac.support.business.domain.Nutrition.Nutrition;
 import zw.co.hitrac.support.business.domain.Pysch.PyschSupport;
 import zw.co.hitrac.support.web.model.DemographicModel;
+import zw.co.hitrac.support.web.page.AgricActivityEditPage;
+import zw.co.hitrac.support.web.page.DemographicEditPage;
+import zw.co.hitrac.support.web.page.NutritionEditPage;
+import zw.co.hitrac.support.web.page.PyschSupportEditPage;
 import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
@@ -45,6 +50,7 @@ public class PatientViewPage extends TemplatePage {
         add(createAgricActivityListView());
         add(createNutritionListView());
         add(createPsychListView());
+//        add(createDemoGraphicEditLink());
         
         
          
@@ -110,8 +116,10 @@ public class PatientViewPage extends TemplatePage {
                 li.add(new Label("recommender"));
                 li.add(new Label("traditionalFoodTaken"));
                 li.add(new Label("traditionalFoodEnum"));
+                li.add(createNutritionEditLink(li));
             }
 
+   
         };
         return listView;
     }
@@ -125,6 +133,7 @@ public class PatientViewPage extends TemplatePage {
                 item.add(new Label("agricpractice"));
                 item.add(new Label("purpose"));
                 item.add(new Label("surpluspro"));
+                item.add(createAgricActivityListViewEDitLink(item));
 
             }
 
@@ -132,26 +141,7 @@ public class PatientViewPage extends TemplatePage {
         return listView ;
     }
     
-//      private ListView<PyschSupport> createPyschSupportListView() {
-//        ListView<PyschSupport> listView = new ListView<PyschSupport>("ps"){
-//            
-//            
-//             @Override
-//              protected void populateItem(ListItem<PyschSupport> li) {
-//                  li.setModel(new CompoundPropertyModel<PyschSupport>(li.getModel()));
-//                  li.add(new Label("trainingPsg"));
-//                   li.add(new Label("projectdone"));
-//                    li.add(new Label("supnetjoined"));
-//                    li.add(new Label("znnnpaffil"));
-//                    li.add(new Label("socialmedia"));
-//                    li.add(new Label("internetacces"));
-//                    li.add(new Label("mobileOs"));
-//        }
-//        
-//        } ;
-//        return listView;
-//      }
-    
+
     
     
       private ListView<PyschSupport> createPsychListView() {
@@ -167,6 +157,7 @@ public class PatientViewPage extends TemplatePage {
                     li.add(new Label("socialmedia"));
                     li.add(new Label("internetacces"));
                     li.add(new Label("mobileOs"));
+                    li.add(createPsychListViewEditLink(li));
               }
         };
         return listView;
@@ -192,6 +183,35 @@ public class PatientViewPage extends TemplatePage {
       CompoundPropertyModel<Demographic> model = new CompoundPropertyModel<Demographic>(demoModel);
         return model;
     }
+    
+      private Link<Void> createNutritionEditLink(ListItem<Nutrition> li)  {
+        PageParameters pageParameters = new PageParameters();
+        pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
+        Link<Void> createLink = new BookmarkablePageLink<Void>("editNutrition", NutritionEditPage.class, pageParameters);
+        return createLink;
+    }
+       private Link<Void> createPsychListViewEditLink(ListItem<PyschSupport> li)  {
+        PageParameters pageParameters = new PageParameters();
+        pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
+        Link<Void> createLink = new BookmarkablePageLink<Void>("editPyschSupport", PyschSupportEditPage.class, pageParameters);
+        return createLink;
+    }
+       
+       
+        private Link<Void> createAgricActivityListViewEDitLink(ListItem<AgricActivity> item)  {
+        PageParameters pageParameters = new PageParameters();
+        pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
+        Link<Void> createLink = new BookmarkablePageLink<Void>("editAgricActivity", AgricActivityEditPage.class, pageParameters);
+        return createLink;
+    }
+             
+//       private Link<Void> createDemoGraphicEditLink()  {
+//        PageParameters pageParameters = new PageParameters();
+//        pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
+//        Link<Void> createLink = new BookmarkablePageLink<Void>("editDemographic", DemographicEditPage.class, pageParameters);
+//        return createLink;
+//    }
+//               
 
 }
 

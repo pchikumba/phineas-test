@@ -8,9 +8,12 @@ import org.apache.wicket.util.string.StringValue;
  * @author Tonderai Ndangana
  * 21/04/2016
  */
+
 public class SupportPageParametersUtil {
 
     public final static String ID = "id";
+     public final static String PAGE = "page";
+    public final static String SEARCH = "search";
 
     private SupportPageParametersUtil() {
     }
