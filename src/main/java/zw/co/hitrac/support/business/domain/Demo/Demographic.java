@@ -35,7 +35,7 @@ public class Demographic implements Serializable {
     @OneToMany(fetch = FetchType.EAGER)
     private List<AgricActivity> agricactivity;
 
-    private String name;
+    private String firstname;
 
     private String surname;
     @Temporal(javax.persistence.TemporalType.DATE)

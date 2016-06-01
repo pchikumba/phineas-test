@@ -16,7 +16,7 @@ import zw.co.hitrac.support.business.domain.Demo.Demographic;
 public interface DemographicRepo extends JpaRepository<Demographic, Serializable>{
     
     
-    @Query("Select c from Demographic c where c.name like %:name% or c.surname like %:name%" )
+    @Query("Select c from Demographic c where c.firstname like %:name% or c.surname like %:name%" )
     public Page<Demographic> findDemographics(Pageable pageable,@Param("name") String name);
 
 //    public Page<Demographic> findDemographics(PageRequest pageRequest, String searchTerm);
