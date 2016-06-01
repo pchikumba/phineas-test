@@ -8,6 +8,7 @@ package zw.co.hitrac.support.business.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import zw.co.hitrac.support.business.domain.Demo.Demographic;
@@ -28,13 +29,16 @@ public class DemographicSearchServiceImpl implements DemographicSearchService{
     
    private static final int PAGE_SIZE = 50;
 
-    public Page<Demographic> searchStudent(Integer pageNumber) {
+
+
+    public Page<Demographic> searchDemographic(Integer pageNumber)  {
        PageRequest pageRequest=new PageRequest(pageNumber-1,PAGE_SIZE,Sort.Direction.ASC,"surname");
         return demorepo.findAll(pageRequest);}
 
-    public Page<Demographic> searchStudent(String searchTerm, Integer pageNumber) {
+    public Page<Demographic> searchDemographic(String searchTerm, Integer pageNumber) {
         PageRequest pageRequest=new PageRequest(pageNumber-1,PAGE_SIZE,Sort.Direction.ASC,"surname");
         return demorepo.findDemographics(pageRequest,searchTerm);
     }
+
     
 }

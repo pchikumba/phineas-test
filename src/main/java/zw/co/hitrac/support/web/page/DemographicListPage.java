@@ -15,6 +15,7 @@ import zw.co.hitrac.support.business.domain.Demo.Demographic;
 import zw.co.hitrac.support.web.conf.GeneralSearch;
 import zw.co.hitrac.support.web.model.DemographicListModel;
 import zw.co.hitrac.support.web.model.GeneralSearchModel;
+import zw.co.hitrac.support.web.page.admin.PatientViewPage;
 
 /**
  *
@@ -26,12 +27,13 @@ public class DemographicListPage extends TemplatePage {
 
     public DemographicListPage(PageParameters parameters) {
         super(parameters);
-        createDemographicListModel(parameters);
+       createDemographicListModel(parameters);
         add(createSearchForm());
 
-        add(new BookmarkablePageLink("back", HomePage.class));
+//        add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", DemographicEditPage.class));
-        add(new PropertyListView<Demographic>("demographic", new DemographicListModel()) {
+       
+        add(new PropertyListView<Demographic>("demographic", demographicListModel) {
         
             @Override
             protected void populateItem(ListItem<Demographic> item) {
@@ -51,35 +53,21 @@ public class DemographicListPage extends TemplatePage {
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());
                 item.add(new BookmarkablePageLink("edit", DemographicEditPage.class, pageParameters));
+                 item.add(new BookmarkablePageLink("patientview", PatientViewPage.class, pageParameters));
             }
 
         });
 
     }
     
-    
-     private DemographicListModel createDemographicListModel(PageParameters parameters) {
-        int page = 1;
-        StringValue pageValue = parameters.get(SupportPageParametersUtil.PAGE);
-        if (pageValue != null) {
-            try {
-                page = Integer.valueOf(pageValue.toString());
-            } catch (NumberFormatException ex) {
-                page = 1;
-            }
-        }
-
-        demographicListModel = new DemographicListModel(page, parameters.get(SupportPageParametersUtil.SEARCH).toString());
-        return demographicListModel;
-    }
-
-    private Form<GeneralSearch> createSearchForm() {
+     private Form<GeneralSearch> createSearchForm() {
 
         GeneralSearchModel generalSearchModel = new GeneralSearchModel();
         generalSearchModel.getObject().setSearchInput( demographicListModel.getSearchQuery());
         Form<GeneralSearch> searchForm = new Form<GeneralSearch>("searchForm", new CompoundPropertyModel<GeneralSearch>(generalSearchModel)) {
             @Override
             protected void onSubmit() {
+                System.out.println("demographic--------------------------" + DemographicListPage.class);
                 GeneralSearch generalSearch = getModelObject();
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.PAGE, 1);
@@ -100,5 +88,23 @@ public class DemographicListPage extends TemplatePage {
         return searchInputField;
     }
 
+    
+    
+     private DemographicListModel createDemographicListModel(PageParameters parameters) {
+        int page = 1;
+        StringValue pageValue = parameters.get(SupportPageParametersUtil.PAGE);
+        if (pageValue != null) {
+            try {
+                page = Integer.valueOf(pageValue.toString());
+            } catch (NumberFormatException ex) {
+                page = 1;
+            }
+        }
+
+        demographicListModel = new DemographicListModel(page, parameters.get(SupportPageParametersUtil.SEARCH).toString());
+        return demographicListModel;
+    }
+
+   
 
 }

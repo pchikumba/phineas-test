@@ -16,15 +16,15 @@
         </tr>
         <tr>
             <th>Marital Status</th>
-            <td><span wicket:id="maritalstatus"></span></td>
+            <td><span wicket:id="maritalstatus.statustype"></span></td>
         </tr>
         <tr>
             <th>Qualification</th>
-            <td><span wicket:id="qualification"></span></td>
+            <td><span wicket:id="qualification.qualificationtype"></span></td>
         </tr>
         <tr>
             <th>Religion</th>
-            <td><span wicket:id="religion"></span></td>
+            <td><span wicket:id="religion.religiontype"></span></td>
         </tr>
         <tr>
             <th>Residential Address</th>
@@ -32,11 +32,11 @@
         </tr>
           <tr>
             <th>Accommodation type</th>
-            <td><span wicket:id="accommodation"></span></td>
+            <td><span wicket:id="accommodation.accommodationtype"></span></td>
         </tr>
           <tr>
             <th>Income level</th>
-            <td><span wicket:id="income"></span></td>
+            <td><span wicket:id="income.incomelevel"></span></td>
         </tr>
           <tr>
             <th>Occupation</th>
@@ -128,4 +128,23 @@
             </tr> 
         </tbody>
     </table>
+    
+    
+      <table class="table table-striped" style="width:1200px;">
+      <tr>
+          <td> <a class="btn btn-success" wicket:id="addNutritionDetails" href="#">
+        <i class="icon-arrow-right"></i>Add New Nutrition
+    </a></td>
+    <td>
+    <a class="btn btn-success" wicket:id="addAgricActivityDetails" href="#">
+        <i class="icon-arrow-right"></i>Add New Agriculture Activity
+ </a></td>
+ <td> <a class="btn btn-success" wicket:id="addPsychSupportDetails" href="#">
+        <i class="icon-arrow-right"></i>Add PsychSupport
+
+     </a>
+ </td>
+      </tr>
+      
+      </table>
   </wicket:extend>

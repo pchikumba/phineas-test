@@ -8,6 +8,7 @@ package zw.co.hitrac.support.business.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import zw.co.hitrac.support.business.domain.Demo.Demographic;
 import zw.co.hitrac.support.business.domain.Nutrition.Nutrition;
 import zw.co.hitrac.support.business.repository.NutritionRepo;
 import zw.co.hitrac.support.business.service.NutritionService;
@@ -35,6 +36,10 @@ public class NutritionServiceImpl implements NutritionService {
         
         nutritionrepo.delete(nutrition);
         
+    }
+
+    public List<Nutrition> getNutritions(Demographic demographic) {
+        return nutritionrepo.findByDemographic(demographic);
     }
     
     

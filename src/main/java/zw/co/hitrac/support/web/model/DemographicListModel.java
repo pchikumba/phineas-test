@@ -1,4 +1,3 @@
-
 package zw.co.hitrac.support.web.model;
 
 import java.util.ArrayList;
@@ -16,44 +15,47 @@ import zw.co.hitrac.support.business.service.DemographicService;
  *
  * @author pchikumba
  */
-public class DemographicListModel extends LoadableDetachableModel<List<Demographic>>{
-    
-   
-//   private DemographicService demographicservice;
-   @SpringBean
-   private DemographicSearchService demographicSearchService;
-    
-        private Integer pageNumber;
-    private  String searchQuery = "";
-   
-   public DemographicListModel(){
-          this.pageNumber = pageNumber;
-        this.searchQuery = searchQuery;
-       Injector.get().inject(this);
-       
-       
-   }
+public class DemographicListModel extends LoadableDetachableModel<List<Demographic>> {
 
-    public DemographicListModel(int page, String toString) {
+//   private DemographicService demographicservice;
+    @SpringBean
+    private DemographicSearchService demographicSearchService;
+
+    private final Integer pageNumber;
+    private final String searchQuery;
+
+    public DemographicListModel() {
+        this(1,"");
+                
     }
-  
-   @Override
+    
+    
+
+    public DemographicListModel(Integer pageNumber, String searchQuery) {
+        this.pageNumber = pageNumber;
+        this.searchQuery = searchQuery;
+        Injector.get().inject(this);
+    }
+
+    
+    
+
+    @Override
     protected List<Demographic> load() {
-         Page<Demographic> page;
-          if (Strings.isEmpty(searchQuery) || searchQuery.length() < 3) {
+        Page<Demographic> page;
+        if (Strings.isEmpty(searchQuery) || searchQuery.length() < 3) {
             List<Demographic> emptyDemographic = new ArrayList<Demographic>();
             return emptyDemographic;
         } else {
-            return demographicSearchService.searchStudent(searchQuery, pageNumber).getContent();
+            return demographicSearchService.searchDemographic(searchQuery, pageNumber).getContent();
         }
-       
+
     }
 
     public String getSearchQuery() {
 //       String searchQuery;
-        
-         return searchQuery;
-   }
-    
-    
+
+        return searchQuery;
+    }
+
 }
