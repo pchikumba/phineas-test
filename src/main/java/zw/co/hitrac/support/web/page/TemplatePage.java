@@ -21,6 +21,7 @@ public abstract class TemplatePage extends WebPage{
         add(new BookmarkablePageLink("admin",PrincipalInvestigatorDashBoardPage.class));
         add(new BookmarkablePageLink("users",UserListPage.class));
         add(new BookmarkablePageLink("staticdata", StaticDataPage.class));
+        add(new BookmarkablePageLink("homepage", HomePage.class));
         
         //add(new BookmarkablePageLink("demographic",DemographicListPage.class));
 //        add(new BookmarkablePageLink("agricactivity", AgricActivityListPage.class));

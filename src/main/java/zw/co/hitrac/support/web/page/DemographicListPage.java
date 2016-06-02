@@ -30,7 +30,7 @@ public class DemographicListPage extends TemplatePage {
        createDemographicListModel(parameters);
         add(createSearchForm());
 
-//        add(new BookmarkablePageLink("back", HomePage.class));
+   add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", DemographicEditPage.class));
        
         add(new PropertyListView<Demographic>("demographic", demographicListModel) {
