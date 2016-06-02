@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>STudent List Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap Core CSS -->
@@ -26,64 +25,47 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-        <a wicket:id="new">Create New</a>
-        <a wicket:id="back">Back</a>
+
         <table class="table table-striped">
-            <tr wicket:id="demographic" class="odd gradeX">
-            <tr>
-                <td>First Name</td>
-                <td wicket:id="firstname">Phineas</td>
-            </tr>
 
-            <tr>
-                <td>Surname</td>
-                <td wicket:id="surname">Chikumba</td>
-            </tr>
-            <tr>
-                <td>Date Of Birth</td>
-                <td wicket:id="dob"></td>
-            </tr>
-            <tr>
-                <td>Gender</td>
-                <td wicket:id="gender"></td>
-            </tr>
-            <tr>
-                <td>Marital Status</td>
-                <td wicket:id="maritalstatus.statustype"></td>
-            </tr>
-            <tr>
-                <td>Educational Qualifications</td>
-                <td wicket:id="qualification.qualificationtype"></td>
-            </tr>
-            <tr>
-                <td>Religion</td>
-                <td wicket:id="religion.religiontype"></td>
-            </tr>
-
-
-            <tr>
-                <td>Residential Address</td>
-                <td wicket:id="residentialaddress"></td>
-            </tr>
-            <tr>
-                <td>Accommodation Type</td>
-                <td wicket:id="accommodation.accommodationtype"></td>
-            </tr>
-            <tr>
-                <td>Monthly Income</td>
-                <td wicket:id="income.incomelevel"></td>
-            </tr>
-            <tr>
-                <td>Occupation</td>
-                <td wicket:id="occupation"></td>
-            </tr>
-            <td><a wicket:id="edit"><i class="fa fa-pencil fa-fw"></i>Edit</a>
-            </td>
-        </tr>
-        
-            
+            <thead>
+                <tr style="background-color: #faebcc">
+                    <th>First Name</th>  
+                    <th>Surname</th>
+                    <th>Date Of Birth</th>
+                    <th>Gender</th>
+                    <th>Marital Status</th>
+                    <th>Educational Qualifications</th>
+                    <th>Religion</th>
+                    <th>Residential Address</th>
+                    <th>Accommodation Type</th>
+                    <th>Monthly Income</th>
+                    <th>Occupation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr wicket:id="demographic" class="odd gradeX">
+                    <td wicket:id="firstname"></td>
+                    <td wicket:id="surname"></td>
+                    <td wicket:id="dob"></td>
+                    <td wicket:id="gender"></td>
+                    <td wicket:id="maritalstatus.statustype"></td>
+                    <td wicket:id="qualification.qualificationtype"></td>
+                    <td wicket:id="religion.religiontype"></td>
+                    <td wicket:id="residentialaddress"></td>
+                    <td wicket:id="accommodation.accommodationtype"></td>
+                    <td wicket:id="income.incomelevel"></td>
+                    <td wicket:id="occupation"></td>
+                    <td><a wicket:id="edit" class="btn btn-success"><i></i>Edit</a></td>
+                </tr>
+            </tbody>
         </table>
+
+        <a wicket:id="new" class="btn btn-success">ADD-NEW</a>
+        <a wicket:id="back" class="btn btn-danger">BACK</a>
+
     </wicket:extend>
+
 
 </body>
 </html>

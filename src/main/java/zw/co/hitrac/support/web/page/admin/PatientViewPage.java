@@ -51,7 +51,7 @@ public class PatientViewPage extends TemplatePage {
     }
 
     private Label createFirstNameLabel() {
-        Label firstNameLabel = new Label("name");
+        Label firstNameLabel = new Label("firstname");
         return firstNameLabel;
     }
 
