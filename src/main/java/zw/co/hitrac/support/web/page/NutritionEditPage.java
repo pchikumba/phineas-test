@@ -21,6 +21,7 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Nutrition.Nutrition;
 import zw.co.hitrac.support.business.domain.Nutrition.TraditionalFoodEnum;
+import zw.co.hitrac.support.business.service.DemographicService;
 import zw.co.hitrac.support.business.service.NutritionService;
 import zw.co.hitrac.support.web.model.FrequencyOfConsumptionListModel;
 import zw.co.hitrac.support.web.model.NutritionModel;
@@ -39,13 +40,19 @@ public class NutritionEditPage extends TemplatePage {
     
     @SpringBean
     private NutritionService nutritionService;
+    @SpringBean
+    private DemographicService demographicService;
 
-    public NutritionEditPage(PageParameters parameters) {
+    public NutritionEditPage(PageParameters parameters, final Long demoId) {
         super(parameters);
         createNutritionModel(parameters);
         add(new FeedbackPanel("feedback"));
-        add(new BookmarkablePageLink("back", NutritionListPage.class));
         
+        
+        
+        
+        nutritionModel = new  NutritionModel(null);
+        nutritionModel.getObject().setDemographic(demographicService.find(demoId));
         Form<Nutrition> form = new Form<Nutrition>("form",new CompoundPropertyModel<Nutrition>(nutritionModel));
         FrequencyOfConsumptionListModel frequencyOfConsumptionListModel = new FrequencyOfConsumptionListModel();
         ChoiceRenderer<FrequencyOfConsumptionListModel> frequencyOfConsumptionListModelChoice = new ChoiceRenderer<FrequencyOfConsumptionListModel> ("frequencyType","id");
@@ -56,7 +63,7 @@ public class NutritionEditPage extends TemplatePage {
         TraditionalFoodTakenListModel traditionalFoodTakenListModel = new TraditionalFoodTakenListModel();
          ChoiceRenderer<TraditionalFoodTakenListModel> traditionalFoodTakenListModelChoice = new  ChoiceRenderer<TraditionalFoodTakenListModel> ("tdFood","id");
          
-         
+        form.add(new BookmarkablePageLink("back", NutritionListPage.class));
         form.add(new DropDownChoice("frequencyOfConsumption", frequencyOfConsumptionListModel, frequencyOfConsumptionListModelChoice));
         form.add(new DropDownChoice("recommender", recommenderListModel, recommenderListModelListModelChoice));
         form.add(new DropDownChoice("traditionalFoodTaken", traditionalFoodTakenListModel, traditionalFoodTakenListModelChoice));
@@ -68,7 +75,9 @@ public class NutritionEditPage extends TemplatePage {
          @Override
         public void onSubmit(){
         Nutrition nutrition = nutritionModel.getObject();
+        nutrition.setDemographic(demographicService.find(demoId));
        nutritionService.save(nutrition);
+             System.out.println("----------------------This");
         setResponsePage(NutritionListPage.class);
         }});
         add(form);

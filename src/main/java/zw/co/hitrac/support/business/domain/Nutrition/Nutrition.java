@@ -12,6 +12,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import zw.co.hitrac.support.business.domain.Demo.Demographic;
 
 /**
  *
@@ -23,8 +25,15 @@ public class Nutrition implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    @ManyToOne
     private FrequencyOfConsumption  frequencyOfConsumption ;
+    
+    @ManyToOne
+    private Demographic demographic;
+    @ManyToOne
     private Recommender recommender;
+    @ManyToOne
     private TraditionalFoodTaken traditionalFoodTaken;
     @Enumerated(EnumType.STRING)
     private TraditionalFoodEnum traditionalFoodEnum ;
@@ -67,6 +76,14 @@ public class Nutrition implements Serializable {
 
     public void setTraditionalFoodEnum(TraditionalFoodEnum traditionalFoodEnum) {
         this.traditionalFoodEnum = traditionalFoodEnum;
+    }
+
+    public Demographic getDemographic() {
+        return demographic;
+    }
+
+    public void setDemographic(Demographic demographic) {
+        this.demographic = demographic;
     }
 
 
