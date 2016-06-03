@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
     </head>
     <body>
     <wicket:extend>
@@ -34,40 +34,41 @@
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
-                  
+        </div>
+
         <table class="table table-striped">
 
             <thead>
                 <tr style="background-color: #faebcc">
                     <th>First Name</th>  
                     <th>Surname</th>
-                    <th>Date Of Birth</th>
+                    <!--                    <th>Date Of Birth</th>-->
                     <th>Gender</th>
-                    <th>Marital Status</th>
-                    <th>Educational Qualifications</th>
-                    <th>Religion</th>
-                    <th>Residential Address</th>
-                    <th>Accommodation Type</th>
-                    <th>Monthly Income</th>
-                    <th>Occupation</th>
+                    <!--                    <th>Marital Status</th>
+                                        <th>Educational Qualifications</th>
+                                        <th>Religion</th>
+                                        <th>Residential Address</th>
+                                        <th>Accommodation Type</th>
+                                        <th>Monthly Income</th>
+                                        <th>Occupation</th>-->
                 </tr>
             </thead>
             <tbody>
                 <tr wicket:id="demographic" class="odd gradeX">
                     <td wicket:id="firstname"></td>
                     <td wicket:id="surname"></td>
-                    <td wicket:id="dob"></td>
+                    <!--                    <td wicket:id="dob"></td>-->
                     <td wicket:id="gender"></td>
-                    <td wicket:id="maritalstatus.statustype"></td>
-                    <td wicket:id="qualification.qualificationtype"></td>
-                    <td wicket:id="religion.religiontype"></td>
-                    <td wicket:id="residentialaddress"></td>
-                    <td wicket:id="accommodation.accommodationtype"></td>
-                    <td wicket:id="income.incomelevel"></td>
-                    <td wicket:id="occupation"></td>
+                    <!--                    <td wicket:id="maritalstatus.statustype"></td>-->
+                    <!--                    <td wicket:id="qualification.qualificationtype"></td>
+                                        <td wicket:id="religion.religiontype"></td>
+                                        <td wicket:id="residentialaddress"></td>
+                                        <td wicket:id="accommodation.accommodationtype"></td>
+                                        <td wicket:id="income.incomelevel"></td>
+                                        <td wicket:id="occupation"></td>-->
                     <td><a wicket:id="edit" class="btn btn-success"><i></i>Edit</a></td>
+                    <td><a wicket:id="patientview" class="btn btn-success"><i></i>View</a></td>
                 </tr>
             </tbody>
         </table>

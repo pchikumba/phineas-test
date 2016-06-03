@@ -6,7 +6,6 @@
 package zw.co.hitrac.support.business.domain.HealthInformation;
 
 import java.io.Serializable;
-import java.time.Year;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,28 +17,28 @@ import javax.persistence.Id;
  */
 @Entity
 public class YearOfVct implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Year vctyear;        
+//    private Year vctyear;
 
     public Long getId() {
         return id;
     }
-    
 
     public void setId(Long id) {
         this.id = id;
     }
-    
-     public Year getVctyear(){
-     return vctyear;
-     }
-     public void setVctyear(Year vctyear){
-     this.vctyear = vctyear;
-     }
 
+//    public Year getVctyear() {
+//        return vctyear;
+//    }
+//
+//    public void setVctyear(Year vctyear) {
+//        this.vctyear = vctyear;
+//    }
     @Override
     public int hashCode() {
         int hash = 0;
@@ -64,5 +63,5 @@ public class YearOfVct implements Serializable {
     public String toString() {
         return "zw.co.hitrac.support.business.domain.HealthInformation.Year[ id=" + id + " ]";
     }
-    
+
 }

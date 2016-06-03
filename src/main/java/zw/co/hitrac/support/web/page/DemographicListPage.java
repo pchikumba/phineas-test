@@ -22,26 +22,26 @@ import zw.co.hitrac.support.web.page.admin.PatientViewPage;
  * @author pchikumba
  */
 public class DemographicListPage extends TemplatePage {
-    
+
     private DemographicListModel demographicListModel;
 
     public DemographicListPage(PageParameters parameters) {
         super(parameters);
-       createDemographicListModel(parameters);
+        createDemographicListModel(parameters);
         add(createSearchForm());
 
-   add(new BookmarkablePageLink("back", HomePage.class));
+        add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", DemographicEditPage.class));
-       
+
         add(new PropertyListView<Demographic>("demographic", demographicListModel) {
-        
+
             @Override
             protected void populateItem(ListItem<Demographic> item) {
                 item.add(new Label("firstname"));
                 item.add(new Label("surname"));
 //                item.add(new Label("dob"));
                 item.add(new Label("gender"));
-                 
+
 //                item.add(new Label("maritalstatus.statustype"));
 //                item.add(new Label("qualification.qualificationtype"));
 //                item.add(new Label("religion.religiontype"));
@@ -49,21 +49,20 @@ public class DemographicListPage extends TemplatePage {
 //                item.add(new Label("accommodation.accommodationtype"));
 //                item.add(new Label("income.incomelevel"));
 //                item.add(new Label("occupation"));
-
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());
                 item.add(new BookmarkablePageLink("edit", DemographicEditPage.class, pageParameters));
-                 item.add(new BookmarkablePageLink("patientview", PatientViewPage.class, pageParameters));
+                item.add(new BookmarkablePageLink("patientview", PatientViewPage.class, pageParameters));
             }
 
         });
 
     }
-    
-     private Form<GeneralSearch> createSearchForm() {
+
+    private Form<GeneralSearch> createSearchForm() {
 
         GeneralSearchModel generalSearchModel = new GeneralSearchModel();
-        generalSearchModel.getObject().setSearchInput( demographicListModel.getSearchQuery());
+        generalSearchModel.getObject().setSearchInput(demographicListModel.getSearchQuery());
         Form<GeneralSearch> searchForm = new Form<GeneralSearch>("searchForm", new CompoundPropertyModel<GeneralSearch>(generalSearchModel)) {
             @Override
             protected void onSubmit() {
@@ -88,9 +87,7 @@ public class DemographicListPage extends TemplatePage {
         return searchInputField;
     }
 
-    
-    
-     private DemographicListModel createDemographicListModel(PageParameters parameters) {
+    private DemographicListModel createDemographicListModel(PageParameters parameters) {
         int page = 1;
         StringValue pageValue = parameters.get(SupportPageParametersUtil.PAGE);
         if (pageValue != null) {
@@ -104,7 +101,5 @@ public class DemographicListPage extends TemplatePage {
         demographicListModel = new DemographicListModel(page, parameters.get(SupportPageParametersUtil.SEARCH).toString());
         return demographicListModel;
     }
-
-   
 
 }
