@@ -13,25 +13,25 @@ import zw.co.hitrac.support.business.service.DemographicService;
  */
 @Service
 public class DemographicServiceImpl implements DemographicService {
-
+    
     @Autowired
     private DemographicRepo demographicRepo;
-
+    
     public Demographic save(Demographic demographic) {
         return demographicRepo.save(demographic);
     }
-
+    
     public List<Demographic> findAll() {
         return demographicRepo.findAll();
     }
-
+    
     public Demographic find(Long id) {
-        Demographic demographic = demographicRepo.findOne(id);
-        return demographic;
+        return demographicRepo.findOne(id);
+        
     }
-
+    
     public void delete(Demographic demographic) {
         demographicRepo.delete(demographic);
     }
-
+    
 }

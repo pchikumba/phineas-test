@@ -1,6 +1,5 @@
 package zw.co.hitrac.support.web.page.admin;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -13,7 +12,6 @@ import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.business.service.ReligionService;
 
 import zw.co.hitrac.support.web.model.ReligionModel;
-import zw.co.hitrac.support.web.page.HomePage;
 import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
@@ -32,7 +30,7 @@ public class ReligionEditPage extends TemplatePage {
         super(parameters);
         createReligionModel(parameters);
         add(new FeedbackPanel("feedback"));
-        add(new BookmarkablePageLink("back", HomePage.class));
+        add(new BookmarkablePageLink("back", StaticDataPage.class));
         Form<Religion> form = new Form<Religion>("form", new CompoundPropertyModel<Religion>(religionModel));;
         form.add(new RequiredTextField("religiontype"));
 

@@ -6,16 +6,13 @@
 package zw.co.hitrac.support.business.repository;
 
 import java.io.Serializable;
-import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-import zw.co.hitrac.support.business.domain.Agric.AgricActivity;
-import zw.co.hitrac.support.business.domain.Demo.Demographic;
+import zw.co.hitrac.support.business.domain.Ict.ApplicableSocialMedia;
 
 /**
  *
- * @author gerald matsika
+ * @author hitrac
  */
-public interface AgricActivityRepo extends JpaRepository<AgricActivity, Serializable> {
-
-    public List<AgricActivity> findByDemographic(Demographic demographic);
+public interface ApplicableSocialMediaRepo extends JpaRepository<ApplicableSocialMedia, Serializable> {
+    
 }

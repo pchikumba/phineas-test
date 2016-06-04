@@ -5,7 +5,6 @@
  */
 package zw.co.hitrac.support.web.page.admin;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -23,8 +22,8 @@ import zw.co.hitrac.support.web.page.TemplatePage;
  *
  * @author pchikumba
  */
-public class TraditionalFoodTakenEditPage extends TemplatePage{
-  
+public class TraditionalFoodTakenEditPage extends TemplatePage {
+
     private TraditionalFoodTakenModel traditionalFoodTakenModel;
 
     @SpringBean
@@ -34,7 +33,7 @@ public class TraditionalFoodTakenEditPage extends TemplatePage{
         super(parameters);
         createTraditionalDishModel(parameters);
         add(new FeedbackPanel("feedback"));
-       add(new BookmarkablePageLink("back", TraditionalFoodTakenListPage.class));
+        add(new BookmarkablePageLink("back", StaticDataPage.class));
 
         Form<TraditionalFoodTaken> form = new Form<TraditionalFoodTaken>("form", new CompoundPropertyModel<TraditionalFoodTaken>(traditionalFoodTakenModel));;
         form.add(new RequiredTextField("tdFood"));
@@ -59,5 +58,3 @@ public class TraditionalFoodTakenEditPage extends TemplatePage{
     }
 
 }
-
-

@@ -5,7 +5,6 @@
  */
 package zw.co.hitrac.support.web.page;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.list.ListItem;
@@ -20,8 +19,9 @@ import zw.co.hitrac.support.web.model.PurposeListModel;
  * @author gerald matsika
  *
  */
-public class PurposeListPage extends TemplatePage{
-        public PurposeListPage(PageParameters parameters) {
+public class PurposeListPage extends TemplatePage {
+
+    public PurposeListPage(PageParameters parameters) {
         super(parameters);
         add(new BookmarkablePageLink("back", HomePage.class));
         add(new BookmarkablePageLink("new", PurposeEditPage.class));
@@ -29,7 +29,7 @@ public class PurposeListPage extends TemplatePage{
 
             @Override
             protected void populateItem(ListItem<Purpose> item) {
-                item.add(new Label("sp"));
+                item.add(new Label("producingsp"));
 
                 PageParameters pageParameters = new PageParameters();
                 pageParameters.add(SupportPageParametersUtil.ID, item.getModelObject().getId());
@@ -42,6 +42,3 @@ public class PurposeListPage extends TemplatePage{
     }
 
 }
-
-    
-

@@ -5,7 +5,6 @@
  */
 package zw.co.hitrac.support.web.page.admin;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -24,8 +23,8 @@ import zw.co.hitrac.support.web.page.TemplatePage;
  *
  * @author pchikumba
  */
-public class FrequencyOfConsumptionEditPage extends TemplatePage{
-    
+public class FrequencyOfConsumptionEditPage extends TemplatePage {
+
     private FrequencyOfConsumptionModel frequencyModel;
 
     @SpringBean
@@ -35,7 +34,7 @@ public class FrequencyOfConsumptionEditPage extends TemplatePage{
         super(parameters);
         createFrequencyModel(parameters);
         add(new FeedbackPanel("feedback"));
-       add(new BookmarkablePageLink("back", FrequencyOfConsumptionListPage.class));
+        add(new BookmarkablePageLink("back", StaticDataPage.class));
 
         Form<FrequencyOfConsumption> form = new Form<FrequencyOfConsumption>("form", new CompoundPropertyModel<FrequencyOfConsumption>(frequencyModel));;
         form.add(new RequiredTextField("frequencyType"));
@@ -60,6 +59,3 @@ public class FrequencyOfConsumptionEditPage extends TemplatePage{
     }
 
 }
-
-    
-

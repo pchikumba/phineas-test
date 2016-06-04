@@ -8,6 +8,7 @@ package zw.co.hitrac.support.business.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import zw.co.hitrac.support.business.domain.Demo.Demographic;
 import zw.co.hitrac.support.business.domain.Pysch.PyschSupport;
 import zw.co.hitrac.support.business.repository.PyschSupportRepo;
 import zw.co.hitrac.support.business.service.PyschSupportService;
@@ -17,18 +18,17 @@ import zw.co.hitrac.support.business.service.PyschSupportService;
  * @author hitrac
  */
 @Service
-public class PyschSupportServiceImpl implements PyschSupportService{
-    
-    
+public class PyschSupportServiceImpl implements PyschSupportService {
+
     @Autowired
     private PyschSupportRepo psychRepo;
 
     public PyschSupport save(PyschSupport pyschSupport) {
-              return psychRepo.save(pyschSupport);
+        return psychRepo.save(pyschSupport);
     }
 
     public List<PyschSupport> findAll() {
-      return psychRepo.findAll();
+        return psychRepo.findAll();
     }
 
     public PyschSupport find(Long id) {
@@ -38,5 +38,9 @@ public class PyschSupportServiceImpl implements PyschSupportService{
     public void delete(PyschSupport pyschSupport) {
         psychRepo.delete(pyschSupport);
     }
-    
+
+    public List<PyschSupport> getPsychSupport(Demographic demographic) {
+        return psychRepo.findByDemographic(demographic);
+    }
+
 }

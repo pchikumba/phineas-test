@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import zw.co.hitrac.support.business.domain.Agric.AgricActivity;
+import zw.co.hitrac.support.business.domain.Demo.Demographic;
 import zw.co.hitrac.support.business.repository.AgricActivityRepo;
 import zw.co.hitrac.support.business.service.AgricActivityService;
 
@@ -17,7 +18,7 @@ import zw.co.hitrac.support.business.service.AgricActivityService;
  * @author gerald matsika
  */
 @Service
-public class AgricActivityServiceImpl implements AgricActivityService{
+public class AgricActivityServiceImpl implements AgricActivityService {
     
     @Autowired
     private AgricActivityRepo agricActivityRepo;
@@ -26,17 +27,21 @@ public class AgricActivityServiceImpl implements AgricActivityService{
         return agricActivityRepo.save(agricActivity);
     }
     
-        public List<AgricActivity> findAll() {
+    public List<AgricActivity> findAll() {
         return agricActivityRepo.findAll();
     }
-
+    
     public AgricActivity find(Long id) {
         AgricActivity agricActivity = agricActivityRepo.findOne(id);
         return agricActivity;
     }
-
+    
     public void delete(AgricActivity agricActivity) {
         agricActivityRepo.delete(agricActivity);
+    }
+    
+    public List<AgricActivity> getAgricActivity(Demographic demographic) {
+        return agricActivityRepo.findByDemographic(demographic);
     }
     
 }

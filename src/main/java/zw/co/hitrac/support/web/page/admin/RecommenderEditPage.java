@@ -5,7 +5,6 @@
  */
 package zw.co.hitrac.support.web.page.admin;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -24,21 +23,19 @@ import zw.co.hitrac.support.web.page.TemplatePage;
  *
  * @author pchikumba
  */
-public class RecommenderEditPage extends TemplatePage{
-   
-    
+public class RecommenderEditPage extends TemplatePage {
+
     private RecommenderModel recommenderModel;
-    
-     @SpringBean
-     
-     private RecommenderService recommenderService;
-     
-     
-     public RecommenderEditPage(PageParameters parameters) {
+
+    @SpringBean
+
+    private RecommenderService recommenderService;
+
+    public RecommenderEditPage(PageParameters parameters) {
         super(parameters);
         createFoodRecommenderModel(parameters);
         add(new FeedbackPanel("feedback"));
-       add(new BookmarkablePageLink("back", RecommenderListPage.class));
+        add(new BookmarkablePageLink("back", StaticDataPage.class));
 
         Form<Recommender> form = new Form<Recommender>("form", new CompoundPropertyModel<Recommender>(recommenderModel));;
         form.add(new RequiredTextField("nameofRec"));
@@ -63,6 +60,3 @@ public class RecommenderEditPage extends TemplatePage{
     }
 
 }
-
-    
-

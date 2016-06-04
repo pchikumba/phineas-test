@@ -15,31 +15,27 @@ import zw.co.hitrac.support.business.service.AgricActivityService;
  *
  * @author gerald matsika
  */
-public class AgricActivityModel extends LoadableDetachableModel<AgricActivity>{
-    
-        private Long id;
+public class AgricActivityModel extends LoadableDetachableModel<AgricActivity> {
+
+    private Long id;
     @SpringBean
     private AgricActivityService agricactivityService;
-    public AgricActivityModel(Long id){
-        this.id=id;
+
+    public AgricActivityModel(Long id) {
+        this.id = id;
         Injector.get().inject(this);
     }
-    
-    
 
     @Override
     protected AgricActivity load() {
-        
-        if (id== null){
-        return new AgricActivity();
-        }
-        else{
+
+        if (id == null) {
+            return new AgricActivity();
+        } else {
             return agricactivityService.find(id);
-        
+
         }
-        
+
     }
-    
-    
 
 }

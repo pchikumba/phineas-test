@@ -1,4 +1,3 @@
-
 package zw.co.hitrac.support.business.domain.Demo;
 
 import java.io.Serializable;
@@ -20,14 +19,13 @@ import zw.co.hitrac.support.business.domain.Pysch.PyschSupport;
  *
  * @author pchikumba
  */
-
 @Entity
 public class Demographic implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-     private Long id;
+    private Long id;
     @OneToMany(fetch = FetchType.EAGER)
     private List<Nutrition> nutrition;
     @OneToMany(fetch = FetchType.EAGER)
@@ -39,20 +37,21 @@ public class Demographic implements Serializable {
 
     private String surname;
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dob; 
+    private Date dob;
     private Gender gender;
     @ManyToOne
     private MaritalStatus maritalstatus;
-   @ManyToOne
+    @ManyToOne
     private Religion religion;
     @ManyToOne
     private Qualification qualification;
-   private String residentialaddress;
+    private String residentialaddress;
     @ManyToOne
     private Accommodation accommodation;
     @ManyToOne
-    private Income income ;
+    private Income income;
     private String occupation;
+
     public List<Nutrition> getNutrition() {
         return nutrition;
     }
@@ -68,9 +67,6 @@ public class Demographic implements Serializable {
     public void setPsychsupport(List<PyschSupport> psychsupport) {
         this.psychsupport = psychsupport;
     }
-    
-
-    
 
     public List<AgricActivity> getAgricactivity() {
         return agricactivity;
@@ -87,8 +83,6 @@ public class Demographic implements Serializable {
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
-    
-  
 
     public String getSurname() {
         return surname;
@@ -112,9 +106,7 @@ public class Demographic implements Serializable {
 
     public void setReligion(Religion religion) {
         this.religion = religion;
-    }  
-
-  
+    }
 
     public String getResidentialaddress() {
         return residentialaddress;
@@ -140,9 +132,6 @@ public class Demographic implements Serializable {
         this.income = income;
     }
 
-  
-
- 
     public String getOccupation() {
         return occupation;
     }
@@ -183,7 +172,6 @@ public class Demographic implements Serializable {
         this.qualification = qualification;
     }
 
-  
     @Override
     public int hashCode() {
         int hash = 0;

@@ -15,31 +15,26 @@ import zw.co.hitrac.support.business.service.AgricPracticeService;
  *
  * @author gerald matsika
  */
-public class AgricPracticeModel extends LoadableDetachableModel<AgricPractice>{
-    
-    
-  private Long id;  
-    
-  @SpringBean
+public class AgricPracticeModel extends LoadableDetachableModel<AgricPractice> {
+
+    private Long id;
+
+    @SpringBean
     private AgricPracticeService agricpracticeService;
-    public AgricPracticeModel(Long id){
-        this.id=id;
-        Injector.get().inject(this);
+
+    public AgricPracticeModel(Long id) {
+        this.id = id;
+        Injector.get().inject(id);
     }
-    
-    
+
     @Override
     protected AgricPractice load() {
-        
-      if (id==null){
-         return new AgricPractice();
-      } else{
-          return agricpracticeService.find(id);
-      } 
+
+        if (id == null) {
+            return new AgricPractice();
+        } else {
+            return agricpracticeService.find(id);
+        }
     }
 
- 
 }
-
-    
-

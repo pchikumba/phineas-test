@@ -6,14 +6,17 @@
 package zw.co.hitrac.support.business.repository;
 
 import java.io.Serializable;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import zw.co.hitrac.support.business.domain.Demo.Demographic;
 import zw.co.hitrac.support.business.domain.Pysch.PyschSupport;
 
 /**
  *
- * @author tonderai ndangana
- * 30/04/2016
+ * @author tonderai ndangana 30/04/2016
  */
 public interface PyschSupportRepo extends JpaRepository< PyschSupport, Serializable> {
-    
+
+    public List<PyschSupport> findByDemographic(Demographic demographic);
+
 }

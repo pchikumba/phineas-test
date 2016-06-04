@@ -5,8 +5,6 @@
  */
 package zw.co.hitrac.support.web.page;
 
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -18,28 +16,27 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Agric.Purpose;
 import zw.co.hitrac.support.business.service.PurposeService;
 import zw.co.hitrac.support.web.model.PurposeModel;
+import zw.co.hitrac.support.web.page.admin.StaticDataPage;
 
 /**
  *
- * @author gerald matsika
- * 02/05/16
+ * @author gerald matsika 02/05/16
  */
-public class PurposeEditPage extends TemplatePage{
-    
+public class PurposeEditPage extends TemplatePage {
 
     private PurposeModel purposeModel;
 
     @SpringBean
-    private  PurposeService purposeService;
+    private PurposeService purposeService;
 
     public PurposeEditPage(PageParameters parameters) {
         super(parameters);
         createPurposeModel(parameters);
         add(new FeedbackPanel("feedback"));
-       add(new BookmarkablePageLink("back", PurposeListPage.class));
+        add(new BookmarkablePageLink("back", StaticDataPage.class));
 
         Form<Purpose> form = new Form<Purpose>("form", new CompoundPropertyModel<Purpose>(purposeModel));;
-        form.add(new RequiredTextField("sp"));
+        form.add(new RequiredTextField("producingsp"));
 
         form.add(new org.apache.wicket.markup.html.form.Button("submit") {
             @Override
@@ -60,4 +57,3 @@ public class PurposeEditPage extends TemplatePage{
     }
 
 }
-

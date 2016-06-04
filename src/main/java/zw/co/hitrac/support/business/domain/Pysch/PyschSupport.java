@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import zw.co.hitrac.support.business.domain.Demo.Demographic;
 
 /**
  *
@@ -17,6 +18,7 @@ import javax.persistence.Id;
  */
 @Entity
 public class PyschSupport implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,12 +28,12 @@ public class PyschSupport implements Serializable {
 //    support group or social network joined
     private String supnetjoined;
 //    are you affiliated to znnnp+
-    private Boolean znnnpaffil=Boolean.FALSE;
+    private Boolean znnnpaffil = Boolean.FALSE;
     private Boolean socialmedia = Boolean.FALSE;
     private Boolean internetacces = Boolean.FALSE;
     private String mobileOs;
     private String specifysocial;
-    
+    private Demographic demographic;
 
     public Long getId() {
         return id;
@@ -39,6 +41,14 @@ public class PyschSupport implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Demographic getDemographic() {
+        return demographic;
+    }
+
+    public void setDemographic(Demographic demographic) {
+        this.demographic = demographic;
     }
 
     public String getTrainingPsg() {
@@ -104,8 +114,6 @@ public class PyschSupport implements Serializable {
     public void setSpecifysocial(String specifysocial) {
         this.specifysocial = specifysocial;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -131,5 +139,5 @@ public class PyschSupport implements Serializable {
     public String toString() {
         return "zw.co.hitrac.support.business.domain.Pysch.PyschSupport[ id=" + id + " ]";
     }
-    
+
 }

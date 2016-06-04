@@ -5,8 +5,6 @@
  */
 package zw.co.hitrac.support.web.page;
 
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -18,14 +16,14 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Agric.SurplusPro;
 import zw.co.hitrac.support.business.service.SurplusProService;
 import zw.co.hitrac.support.web.model.SurplusProModel;
+import zw.co.hitrac.support.web.page.admin.StaticDataPage;
 
 /**
  *
  * @author gerald matsika
  */
-public class SurplusProEditPage extends TemplatePage{
-    
-    
+public class SurplusProEditPage extends TemplatePage {
+
     private SurplusProModel surplusproModel;
 
     @SpringBean
@@ -35,7 +33,7 @@ public class SurplusProEditPage extends TemplatePage{
         super(parameters);
         createSurplusProModel(parameters);
         add(new FeedbackPanel("feedback"));
-       add(new BookmarkablePageLink("back", SurplusProListPage.class));
+        add(new BookmarkablePageLink("back", StaticDataPage.class));
 
         Form<SurplusPro> form = new Form<SurplusPro>("form", new CompoundPropertyModel<SurplusPro>(surplusproModel));;
         form.add(new RequiredTextField("purpose"));
@@ -59,6 +57,3 @@ public class SurplusProEditPage extends TemplatePage{
     }
 
 }
-
-    
-

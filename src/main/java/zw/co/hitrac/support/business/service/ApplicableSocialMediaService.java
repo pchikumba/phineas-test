@@ -6,12 +6,12 @@
 package zw.co.hitrac.support.business.service;
 
 import zw.co.hitrac.support.BusinessComponent;
-import zw.co.hitrac.support.business.domain.Agric.Purpose;
+import zw.co.hitrac.support.business.domain.Ict.ApplicableSocialMedia;
 
 /**
  *
- * @author gerald matsika
+ * @author hitrac
  */
-public interface PurposeService extends BusinessComponent<Purpose> {
-
+public interface ApplicableSocialMediaService extends BusinessComponent<ApplicableSocialMedia> {
+    
 }

@@ -7,12 +7,10 @@ package zw.co.hitrac.support.web.page;
 
 import java.util.Arrays;
 import java.util.List;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RadioChoice;
-import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
@@ -30,14 +28,12 @@ import zw.co.hitrac.support.web.model.TraditionalFoodTakenListModel;
 
 /**
  *
- * @author pchikumba
- * 05.05.2016
+ * @author pchikumba 05.05.2016
  */
 public class NutritionEditPage extends TemplatePage {
-    
 
     private NutritionModel nutritionModel;
-    
+
     @SpringBean
     private NutritionService nutritionService;
     @SpringBean
@@ -47,41 +43,38 @@ public class NutritionEditPage extends TemplatePage {
         super(parameters);
         createNutritionModel(parameters);
         add(new FeedbackPanel("feedback"));
-        
-        
-        
-        
-        nutritionModel = new  NutritionModel(null);
+
+        nutritionModel = new NutritionModel(null);
         nutritionModel.getObject().setDemographic(demographicService.find(demoId));
-        Form<Nutrition> form = new Form<Nutrition>("form",new CompoundPropertyModel<Nutrition>(nutritionModel));
+        Form<Nutrition> form = new Form<Nutrition>("form", new CompoundPropertyModel<Nutrition>(nutritionModel));
         FrequencyOfConsumptionListModel frequencyOfConsumptionListModel = new FrequencyOfConsumptionListModel();
-        ChoiceRenderer<FrequencyOfConsumptionListModel> frequencyOfConsumptionListModelChoice = new ChoiceRenderer<FrequencyOfConsumptionListModel> ("frequencyType","id");
-        
-         RecommenderListModel recommenderListModel = new RecommenderListModel();
-        ChoiceRenderer<RecommenderListModel> recommenderListModelListModelChoice = new ChoiceRenderer<RecommenderListModel>  ("nameofRec","id");
-        
+        ChoiceRenderer<FrequencyOfConsumptionListModel> frequencyOfConsumptionListModelChoice = new ChoiceRenderer<FrequencyOfConsumptionListModel>("frequencyType", "id");
+
+        RecommenderListModel recommenderListModel = new RecommenderListModel();
+        ChoiceRenderer<RecommenderListModel> recommenderListModelListModelChoice = new ChoiceRenderer<RecommenderListModel>("nameofRec", "id");
+
         TraditionalFoodTakenListModel traditionalFoodTakenListModel = new TraditionalFoodTakenListModel();
-         ChoiceRenderer<TraditionalFoodTakenListModel> traditionalFoodTakenListModelChoice = new  ChoiceRenderer<TraditionalFoodTakenListModel> ("tdFood","id");
-         
+        ChoiceRenderer<TraditionalFoodTakenListModel> traditionalFoodTakenListModelChoice = new ChoiceRenderer<TraditionalFoodTakenListModel>("tdFood", "id");
+
         form.add(new BookmarkablePageLink("back", NutritionListPage.class));
         form.add(new DropDownChoice("frequencyOfConsumption", frequencyOfConsumptionListModel, frequencyOfConsumptionListModelChoice));
         form.add(new DropDownChoice("recommender", recommenderListModel, recommenderListModelListModelChoice));
         form.add(new DropDownChoice("traditionalFoodTaken", traditionalFoodTakenListModel, traditionalFoodTakenListModelChoice));
         form.add(TraditionalFoodEnumRadioButton().setRequired(true));
-                                                                                                                                                                                                                                                                                               
-  
-        form.add(new org.apache.wicket.markup.html.form.Button("submit"){
-        
-         @Override
-        public void onSubmit(){
-        Nutrition nutrition = nutritionModel.getObject();
-        nutrition.setDemographic(demographicService.find(demoId));
-       nutritionService.save(nutrition);
-             System.out.println("----------------------This");
-        setResponsePage(NutritionListPage.class);
-        }});
+
+        form.add(new org.apache.wicket.markup.html.form.Button("submit") {
+
+            @Override
+            public void onSubmit() {
+                Nutrition nutrition = nutritionModel.getObject();
+                nutrition.setDemographic(demographicService.find(demoId));
+                nutritionService.save(nutrition);
+                System.out.println("----------------------This");
+                setResponsePage(NutritionListPage.class);
+            }
+        });
         add(form);
-        
+
     }
 
 //    private void createPyschModel(PageParameters parameters) {
@@ -89,25 +82,19 @@ public class NutritionEditPage extends TemplatePage {
 //       nutritionModel = new NutritionModel(id);
 //       
 //    }
-           private RadioChoice<TraditionalFoodEnum> TraditionalFoodEnumRadioButton(){
-      List<TraditionalFoodEnum> traditionalFoodEnumList = Arrays.asList(TraditionalFoodEnum.values());
+    private RadioChoice<TraditionalFoodEnum> TraditionalFoodEnumRadioButton() {
+        List<TraditionalFoodEnum> traditionalFoodEnumList = Arrays.asList(TraditionalFoodEnum.values());
         ChoiceRenderer<TraditionalFoodEnum> choiceRenderer = new ChoiceRenderer<TraditionalFoodEnum>("traditionalFoodEnum");
         RadioChoice<TraditionalFoodEnum> TraditionalFoodEnumChoice = new RadioChoice("traditionalFoodEnum",
                 traditionalFoodEnumList, choiceRenderer);
-              return TraditionalFoodEnumChoice;
-    
-    
-    
-    
-}
+        return TraditionalFoodEnumChoice;
 
-    private void createNutritionModel(PageParameters parameters) {
-         Long id = SupportPageParametersUtil.extractId(parameters);
-       nutritionModel = new NutritionModel(id);
-       
     }
 
-    
-    
-    
+    private void createNutritionModel(PageParameters parameters) {
+        Long id = SupportPageParametersUtil.extractId(parameters);
+        nutritionModel = new NutritionModel(id);
+
+    }
+
 }

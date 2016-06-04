@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zw.co.hitrac.support.business.domain.Agric;
+package zw.co.hitrac.support.business.domain.Ict;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -13,16 +13,16 @@ import javax.persistence.Id;
 
 /**
  *
- * @author gerald matsika
+ * @author hitrac
  */
 @Entity
-public class Purpose implements Serializable {
+public class ApplicableSocialMedia implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String producingsp;
+    private String socialMediaType;
 
     public Long getId() {
         return id;
@@ -32,12 +32,12 @@ public class Purpose implements Serializable {
         this.id = id;
     }
 
-    public String getProducingsp() {
-        return producingsp;
+    public String getSocialMediaType() {
+        return socialMediaType;
     }
 
-    public void setProducingsp(String producingsp) {
-        this.producingsp = producingsp;
+    public void setSocialMediaType(String socialMediaType) {
+        this.socialMediaType = socialMediaType;
     }
 
     @Override
@@ -50,10 +50,10 @@ public class Purpose implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Purpose)) {
+        if (!(object instanceof ApplicableSocialMedia)) {
             return false;
         }
-        Purpose other = (Purpose) object;
+        ApplicableSocialMedia other = (ApplicableSocialMedia) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -62,7 +62,7 @@ public class Purpose implements Serializable {
 
     @Override
     public String toString() {
-        return "zw.co.hitrac.support.business.domain.Agric.Purpose[ id=" + id + " ]";
+        return "zw.co.hitrac.support.business.domain.Ict.ApplicableSocialMedia[ id=" + id + " ]";
     }
 
 }

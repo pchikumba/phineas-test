@@ -1,6 +1,5 @@
 package zw.co.hitrac.support.web.page.admin;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -10,10 +9,8 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Qualification;
-import zw.co.hitrac.support.business.domain.Demo.Religion;
 import zw.co.hitrac.support.business.service.QualificationService;
 import zw.co.hitrac.support.web.model.QualificationModel;
-import zw.co.hitrac.support.web.page.HomePage;
 import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
@@ -31,7 +28,7 @@ public class QualificationEditPage extends TemplatePage {
         super(parameters);
         createQualificatioModel(parameters);
         add(new FeedbackPanel("feedback"));
-        add(new BookmarkablePageLink("back", HomePage.class));
+        add(new BookmarkablePageLink("back", StaticDataPage.class));
         Form<Qualification> form = new Form<Qualification>("form", new CompoundPropertyModel<Qualification>(qualificationmodel));;
         form.add(new RequiredTextField("qualificationtype"));
 

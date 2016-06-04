@@ -9,26 +9,27 @@ import java.util.List;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
-import zw.co.hitrac.support.business.domain.Pysch.PyschSupport;
-import zw.co.hitrac.support.business.service.PyschSupportService;
+import zw.co.hitrac.support.business.domain.Ict.ApplicableSocialMedia;
+import zw.co.hitrac.support.business.service.ApplicableSocialMediaService;
 
 /**
  *
  * @author hitrac
  */
-public class PyschSupportListModel extends LoadableDetachableModel<List<PyschSupport>> {
+public class ApplicableSocialMediaModelListModel extends LoadableDetachableModel<List<ApplicableSocialMedia>> {
 
     @SpringBean
-    private PyschSupportService pyschService;
+    private ApplicableSocialMediaService applicableSocialMediaService;
 
-    public PyschSupportListModel() {
+    public ApplicableSocialMediaModelListModel() {
         Injector.get().inject(this);
+
     }
 
     @Override
-    protected List< PyschSupport> load() {
-        return pyschService.findAll();
+    protected List<ApplicableSocialMedia> load() {
 
+        return applicableSocialMediaService.findAll();
     }
 
 }

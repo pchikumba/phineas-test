@@ -1,4 +1,3 @@
-
 package zw.co.hitrac.support.web.page.admin;
 
 import java.util.List;
@@ -15,7 +14,9 @@ import zw.co.hitrac.support.business.domain.Agric.AgricActivity;
 import zw.co.hitrac.support.business.domain.Demo.Demographic;
 import zw.co.hitrac.support.business.domain.Nutrition.Nutrition;
 import zw.co.hitrac.support.business.domain.Pysch.PyschSupport;
+import zw.co.hitrac.support.business.service.AgricActivityService;
 import zw.co.hitrac.support.business.service.NutritionService;
+import zw.co.hitrac.support.business.service.PyschSupportService;
 import zw.co.hitrac.support.web.model.DemographicModel;
 import zw.co.hitrac.support.web.page.AgricActivityEditPage;
 import zw.co.hitrac.support.web.page.NutritionEditPage;
@@ -27,17 +28,23 @@ import zw.co.hitrac.support.web.page.TemplatePage;
  * @author g-birds
  */
 public class PatientViewPage extends TemplatePage {
-    
+
     private DemographicModel demoModel;
-    
+
     @SpringBean
-    private  NutritionService nutritionService;
+    private PyschSupportService pyschService;
+
+    @SpringBean
+    private NutritionService nutritionService;
+
+    @SpringBean
+    private AgricActivityService agricActivityService;
 
     public PatientViewPage(PageParameters parameters) {
         super(parameters);
         createDemographicModel(parameters);
         setDefaultModel(createCompoundPropertyModel());
-        
+
         add(createFirstNameLabel());
         add(createLastNameLabel());
         add(createGenderLabel());
@@ -48,16 +55,18 @@ public class PatientViewPage extends TemplatePage {
         add(createIncomeLabel());
         add(createOccupationLabel());
         add(createAccomodationLabel());
-        add(createAgricActivityListView());
+        List<AgricActivity> list3 = agricActivityService.getAgricActivity(demoModel.getObject());
+        add(createAgricActivityListView(list3));
         List<Nutrition> list = nutritionService.getNutritions(demoModel.getObject());
         add(createNutritionListView(list));
-        add(createPsychListView());
+
+        List<PyschSupport> list2 = pyschService.getPsychSupport(demoModel.getObject());
+        add(createPsychListView(list2));
 //        add(createDemoGraphicEditLink());
         add(addPsychSupportEditLink());
         add(addAgricActivityEditLink());
-        add( addNutritionEditLink());
-        
-         
+        add(addNutritionEditLink());
+
     }
 
     private Label createFirstNameLabel() {
@@ -99,7 +108,7 @@ public class PatientViewPage extends TemplatePage {
         Label accommodationLabel = new Label("accommodation.accommodationtype");
         return accommodationLabel;
     }
- 
+
     private Label createIncomeLabel() {
         Label incomeNameLabel = new Label("income.incomelevel");
         return incomeNameLabel;
@@ -115,100 +124,87 @@ public class PatientViewPage extends TemplatePage {
 
             @Override
             protected void populateItem(ListItem<Nutrition> li) {
-                 li.setModel(new CompoundPropertyModel<Nutrition>(li.getModel()));
-                li.add(new Label("frequencyOfConsumption"));
-                li.add(new Label("recommender"));
-                li.add(new Label("traditionalFoodTaken"));
+                li.setModel(new CompoundPropertyModel<Nutrition>(li.getModel()));
+                li.add(new Label("frequencyOfConsumption.frequencyType"));
+                li.add(new Label("recommender.nameofRec"));
+                li.add(new Label("traditionalFoodTaken.tdFood"));
                 li.add(new Label("traditionalFoodEnum"));
                 li.add(createNutritionEditLink(li));
             }
 
-   
         };
         return listView;
     }
 
-    private ListView<AgricActivity> createAgricActivityListView() {
-        ListView<AgricActivity> listView = new ListView<AgricActivity>("agricactivity") {
+    private ListView<AgricActivity> createAgricActivityListView(List<AgricActivity> li) {
+        ListView<AgricActivity> listView = new ListView<AgricActivity>("agricactivity", li) {
 
             @Override
             protected void populateItem(ListItem<AgricActivity> item) {
                 item.setModel(new CompoundPropertyModel<AgricActivity>(item.getModel()));
-                item.add(new Label("agricpractice"));
-                item.add(new Label("purpose"));
-                item.add(new Label("surpluspro"));
+                item.add(new Label("agricpractice.agricpracticetype"));
+                item.add(new Label("purpose.producingsp"));
+                item.add(new Label("surpluspro.purpose"));
                 item.add(createAgricActivityListViewEDitLink(item));
 
             }
 
         };
-        return listView ;
+        return listView;
     }
-    
 
-    
-    
-      private ListView<PyschSupport> createPsychListView() {
-        ListView<PyschSupport> listView = new ListView<PyschSupport>("psychsupport"){
-            
-             @Override
-              protected void populateItem(ListItem<PyschSupport> li) {
-                  li.setModel(new CompoundPropertyModel<PyschSupport>(li.getModel()));
-                  li.add(new Label("trainingPsg"));
-                   li.add(new Label("projectdone"));
-                    li.add(new Label("supnetjoined"));
-                    li.add(new Label("znnnpaffil"));
-                    li.add(new Label("socialmedia"));
-                    li.add(new Label("internetacces"));
-                    li.add(new Label("mobileOs"));
-                    li.add(createPsychListViewEditLink(li));
-              }
+    private ListView<PyschSupport> createPsychListView(List<PyschSupport> li) {
+        ListView<PyschSupport> listView = new ListView<PyschSupport>("psychsupport", li) {
+
+            @Override
+            protected void populateItem(ListItem<PyschSupport> li) {
+                li.setModel(new CompoundPropertyModel<PyschSupport>(li.getModel()));
+                li.add(new Label("trainingPsg"));
+                li.add(new Label("projectdone"));
+                li.add(new Label("supnetjoined"));
+                li.add(new Label("znnnpaffil"));
+                li.add(new Label("socialmedia"));
+                li.add(new Label("internetacces"));
+                li.add(new Label("mobileOs"));
+                li.add(createPsychListViewEditLink(li));
+            }
         };
         return listView;
-        
-      }
-    
-    
 
-    
-    
-    
-    
-    
+    }
 
     private void createDemographicModel(PageParameters parameters) {
-         Long id = SupportPageParametersUtil.extractId(parameters, SupportPageParametersUtil.ID);
+        Long id = SupportPageParametersUtil.extractId(parameters, SupportPageParametersUtil.ID);
         demoModel = new DemographicModel(id);
-        
-       
+
     }
 
     private CompoundPropertyModel<Demographic> createCompoundPropertyModel() {
-      CompoundPropertyModel<Demographic> model = new CompoundPropertyModel<Demographic>(demoModel);
+        CompoundPropertyModel<Demographic> model = new CompoundPropertyModel<Demographic>(demoModel);
         return model;
     }
-    
-      private Link<Void> createNutritionEditLink(ListItem<Nutrition> li)  {
+
+    private Link<Void> createNutritionEditLink(ListItem<Nutrition> li) {
         PageParameters pageParameters = new PageParameters();
         pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
         Link<Void> createLink = new BookmarkablePageLink<Void>("editNutrition", NutritionEditPage.class, pageParameters);
         return createLink;
     }
-       private Link<Void> createPsychListViewEditLink(ListItem<PyschSupport> li)  {
+
+    private Link<Void> createPsychListViewEditLink(ListItem<PyschSupport> li) {
         PageParameters pageParameters = new PageParameters();
         pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
         Link<Void> createLink = new BookmarkablePageLink<Void>("editPyschSupport", PyschSupportEditPage.class, pageParameters);
         return createLink;
     }
-       
-       
-        private Link<Void> createAgricActivityListViewEDitLink(ListItem<AgricActivity> item)  {
+
+    private Link<Void> createAgricActivityListViewEDitLink(ListItem<AgricActivity> item) {
         PageParameters pageParameters = new PageParameters();
         pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
         Link<Void> createLink = new BookmarkablePageLink<Void>("editAgricActivity", AgricActivityEditPage.class, pageParameters);
         return createLink;
     }
-             
+
 //       private Link<Void> createDemoGraphicEditLink()  {
 //        PageParameters pageParameters = new PageParameters();
 //        pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
@@ -216,12 +212,11 @@ public class PatientViewPage extends TemplatePage {
 //        return createLink;
 //    }
 //  
-        
-          private Link<Void> addNutritionEditLink() {
+    private Link<Void> addNutritionEditLink() {
         PageParameters pageParameters = new PageParameters();
         pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
         Link<Void> createLink = new Link<Void>("addNutritionDetails") {
-            
+
             @Override
             public void onClick() {
                 setResponsePage(new NutritionEditPage(getPageParameters(), demoModel.getObject().getId()));
@@ -229,27 +224,19 @@ public class PatientViewPage extends TemplatePage {
         };
         return createLink;
     }
-          
-              private Link<Void> addAgricActivityEditLink() {
+
+    private Link<Void> addAgricActivityEditLink() {
         PageParameters pageParameters = new PageParameters();
         pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
         Link<Void> createLink = new BookmarkablePageLink<Void>("addAgricActivityDetails", AgricActivityEditPage.class, pageParameters);
         return createLink;
     }
-          private Link<Void> addPsychSupportEditLink() {
+
+    private Link<Void> addPsychSupportEditLink() {
         PageParameters pageParameters = new PageParameters();
         pageParameters.add(SupportPageParametersUtil.ID, demoModel.getObject().getId());
         Link<Void> createLink = new BookmarkablePageLink<Void>("addPsychSupportDetails", PyschSupportEditPage.class, pageParameters);
         return createLink;
     }
 
-             
-
-                      
-                      
-}                     
-
-
-
-
-
+}

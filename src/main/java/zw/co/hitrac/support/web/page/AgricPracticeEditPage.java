@@ -5,7 +5,6 @@
  */
 package zw.co.hitrac.support.web.page;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -17,29 +16,27 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Agric.AgricPractice;
 import zw.co.hitrac.support.business.service.AgricPracticeService;
 import zw.co.hitrac.support.web.model.AgricPracticeModel;
+import zw.co.hitrac.support.web.page.admin.StaticDataPage;
 
 /**
  *
  * @author gerald matsika
  */
-public class AgricPracticeEditPage extends TemplatePage{
-    
-    
+public class AgricPracticeEditPage extends TemplatePage {
+
     private AgricPracticeModel agricpracticeModel;
 
     @SpringBean
     private AgricPracticeService agricpracticeService;
 
-   
     public AgricPracticeEditPage(PageParameters parameters) {
         super(parameters);
         createAgricPracticeModel(parameters);
         add(new FeedbackPanel("feedback"));
-       add(new BookmarkablePageLink("back", AgricPracticeListPage.class));
+        add(new BookmarkablePageLink("back", StaticDataPage.class));
 
         Form<AgricPractice> form = new Form<AgricPractice>("form", new CompoundPropertyModel<AgricPractice>(agricpracticeModel));
         form.add(new RequiredTextField("agricpracticetype"));
-    
 
         form.add(new org.apache.wicket.markup.html.form.Button("submit") {
             @Override
@@ -59,8 +56,4 @@ public class AgricPracticeEditPage extends TemplatePage{
 
     }
 
-  
 }
-
-    
-

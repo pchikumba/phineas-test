@@ -1,6 +1,5 @@
 package zw.co.hitrac.support.web.page.admin;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -12,7 +11,6 @@ import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Demo.Accommodation;
 import zw.co.hitrac.support.business.service.AccommodationService;
 import zw.co.hitrac.support.web.model.AccommodationModel;
-import zw.co.hitrac.support.web.page.HomePage;
 import zw.co.hitrac.support.web.page.TemplatePage;
 
 /**
@@ -31,7 +29,7 @@ public class AccommodationEditPage extends TemplatePage {
         super(parameters);
         createAccommodationModel(parameters);
         add(new FeedbackPanel("feedback"));
-        add(new BookmarkablePageLink("back", HomePage.class));
+        add(new BookmarkablePageLink("back", StaticDataPage.class));
         Form<Accommodation> form = new Form<Accommodation>("form", new CompoundPropertyModel<Accommodation>(accommodationModel));;
         form.add(new RequiredTextField("accommodationtype"));
 
