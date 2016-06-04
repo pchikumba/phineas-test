@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package zw.co.hitrac.support.web.page;
 
 import org.apache.wicket.markup.html.form.Form;
@@ -11,6 +6,7 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
+import zw.co.hitrac.support.SupportPageParametersUtil;
 import zw.co.hitrac.support.business.domain.Ict.ApplicableSocialMedia;
 import zw.co.hitrac.support.business.service.ApplicableSocialMediaService;
 import zw.co.hitrac.support.web.model.ApplicableSocialMediaModel;
@@ -27,10 +23,10 @@ public class ApplicableSocialMediaEditPage extends TemplatePage {
 
     public ApplicableSocialMediaEditPage(PageParameters parameters) {
         super(parameters);
+        createModel(parameters);
         add(new FeedbackPanel("feedback"));
 
         Form<ApplicableSocialMedia> form = new Form<ApplicableSocialMedia>("form", new CompoundPropertyModel<ApplicableSocialMedia>(applicableSocialMediaModel));
-
         form.add(new RequiredTextField("socialMediaType"));
 
         form.add(new org.apache.wicket.markup.html.form.Button("submit") {
@@ -44,6 +40,12 @@ public class ApplicableSocialMediaEditPage extends TemplatePage {
         });
         add(form);
 
+    }
+
+    private void createModel(PageParameters parameters) {
+
+        Long id = SupportPageParametersUtil.extractId(parameters);
+        applicableSocialMediaModel = new ApplicableSocialMediaModel(id);
     }
 
 }
