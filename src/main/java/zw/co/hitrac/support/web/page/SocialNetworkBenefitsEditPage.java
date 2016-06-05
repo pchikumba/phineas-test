@@ -36,6 +36,7 @@ public class SocialNetworkBenefitsEditPage extends TemplatePage {
         form.add(new RequiredTextField("socialBenefits"));
         form.add(new org.apache.wicket.markup.html.form.Button("submit") {
 
+            @Override
             public void onSubmit() {
                 SocialNetworkBenefits socialNetworkBenefits = socialNetworkBenefitsModel.getObject();
                 socialNetworkBenefitsService.save(socialNetworkBenefits);
